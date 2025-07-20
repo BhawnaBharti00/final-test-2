@@ -159,16 +159,16 @@
       Your browser does not support the video tag.
     </video>
     <p style="text-align:center; margin-top: 1rem;">
-      🔗 <a href="https://www.youtube.com/@yourchannel" target="_blank">Watch more on YouTube</a>
+      🔗 <a href="https://www.youtube.com/@yAsmrbabe12" target="_blank">Watch more on YouTube</a>
     </p>
   </section>
 
   <section id="illustration">
     <h2>🖌 Illustrations</h2>
     <div class="gallery">
-      <img src="b2.gif" alt="Illustration 1" />
+      <img src="b1.gif" alt="Illustration 1" />
       <img src="b2.gif" alt="Illustration 2" />
-      <img src="b2.gif" alt="Illustration 3" />
+      <img src="b3.gif" alt="Illustration 3" />
     </div>
   </section>
 
