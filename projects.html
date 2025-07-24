@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Upcoming Projects | Bhawna Creatives</title>
+  <title>Animation | Bhawna Creatives</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fdf2f8; /* Light pastel pink */
+      background: #fff0f5;
       color: #333;
     }
     header {
@@ -20,6 +20,11 @@
     header h1 {
       font-size: 2rem;
       color: #db2777;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #6b7280;
     }
     nav {
       text-align: center;
@@ -37,22 +42,44 @@
       padding: 3rem 1rem;
       text-align: center;
     }
-    .project-image {
+    .video-wrapper video {
       width: 90%;
-      max-width: 400px;
+      max-width: 600px;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .blog-text {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #444;
+    .explore-links {
+      margin-top: 3rem;
+    }
+    .explore-links a {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      background: #f9a8d4;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .explore-links a:hover {
+      background: #ec4899;
+    }
+    .upcoming {
       background: #fce7f3;
       padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      max-width: 700px;
+      margin: 3rem auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .upcoming h2 {
+      color: #db2777;
+      margin-bottom: 1rem;
+    }
+    .upcoming p {
+      font-size: 1.1rem;
+      color: #444;
     }
     footer {
       text-align: center;
@@ -70,21 +97,35 @@
 <body>
 
   <header>
-    <h1>✨ Upcoming Animation Project</h1>
+    <h1>🎬 Animation</h1>
+    <p>Exploring whimsical stories and peaceful motion, one frame at a time.</p>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="projects.html">Upcoming Projects</a>
+    <a href="projects.html">Projects</a>
   </nav>
 
   <section>
-    <img src="b3.gif" alt="Cat ASMR Preview" class="project-image" />
+    <h2 style="color:#ec4899; font-size:1.5rem; margin-bottom:1rem;">🎞 Featured Animation</h2>
+    <div class="video-wrapper">
+      <video controls>
+        <source src="b1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-    <div class="blog-text">
-      I'm currently working on a soft pastel animation titled <strong>"Cat ASMR: Purring in Peace."</strong>  
-      It features dreamy nature backgrounds, gentle movements, and soothing feline sounds —  
-      designed to bring calmness and comfort to your screen.
+    <div class="explore-links">
+      <h2 style="color:#ec4899; margin-top:3rem;">🔗 Explore Me</h2>
+      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
+      <a href="https://www.pinterest.com/bhawnabharti48" target="_blank">Pinterest</a>
+      <a href="https://www.linkedin.com/in/bhawnabharti48" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="upcoming">
+      <h2>🌸 Upcoming Animation Project</h2>
+      <p>I'm working on <strong>"Cat ASMR: Purring in Peace"</strong> — a cozy visual experience with pastel scenes, soft lighting, and relaxing feline sounds. Designed to help you unwind and breathe easy.</p>
+      <img src="b3.gif" alt="Cat ASMR Preview" style="width:90%; max-width:400px; border-radius:1rem; margin-top:1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
     </div>
   </section>
 
