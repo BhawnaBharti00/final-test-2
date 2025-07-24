@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home – Bhawna Creatives</title>
+  <title>Bhawna Creatives – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -24,76 +24,58 @@
       padding: 2rem;
     }
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       color: var(--hotpink);
     }
-    nav {
-      text-align: center;
-      background: var(--rose);
-      padding: 1rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      color: var(--hotpink);
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
       gap: 1rem;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
     }
-    .btn {
-      display: block;
-      text-align: center;
-      padding: 1rem;
+    .nav-buttons a {
       background: var(--hotpink);
       color: white;
-      border-radius: 1rem;
-      font-weight: bold;
+      padding: 1rem 2rem;
+      border-radius: 999px;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .btn:hover {
-      background: #be185d;
-    }
-    video {
-      width: 100%;
-      border-radius: 1rem;
-      margin: 1.5rem 0;
-    }
-    .youtube {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .youtube a {
-      display: inline-block;
-      background: #ff005c;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 50px;
       font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .youtube a:hover {
-      background: #c70046;
+    .nav-buttons a:hover {
+      background: #c0266b;
     }
-    .about {
+    .video-section, .youtube-section, .about-section, .services-section, .book-section, .feedback-section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
       background: white;
-      padding: 1.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
+    }
+    h2 {
+      color: var(--hotpink);
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 1rem;
+    }
+    .youtube-link a {
+      display: inline-block;
+      background: var(--rose);
+      padding: 0.8rem 1.6rem;
+      color: var(--hotpink);
+      font-weight: bold;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    .youtube-link a:hover {
+      background: var(--hotpink);
+      color: white;
     }
     footer {
       text-align: center;
@@ -106,50 +88,55 @@
 <body>
 
   <header>
-    <h1>🎨 Bhawna Creatives</h1>
-    <p>Welcome to a world of animation, imagination and inspiration!</p>
+    <h1>🎨 Welcome to Bhawna Creatives</h1>
+    <p>Bringing cozy stories and charming visuals to life ✨</p>
   </header>
 
-  <nav>
-    <a href="#services">💼 Services</a>
-    <a href="#feedback">📝 Feedback</a>
-  </nav>
+  <div class="nav-buttons">
+    <a href="animations.html">🎬 Animations</a>
+    <a href="illustrations.html">🖌 Illustrations</a>
+    <a href="services.html">💼 Services</a>
+    <a href="feedback.html">💬 Feedback</a>
+  </div>
 
-  <section>
-    <div class="button-grid">
-      <a class="btn" href="animation.html">🎬 Animation</a>
-      <a class="btn" href="illustration.html">🎨 Illustration</a>
-      <a class="btn" href="#services">💼 Services</a>
-      <a class="btn" href="#feedback">📝 Feedback</a>
-    </div>
+  <section class="video-section">
+    <h2>📺 Welcome Video – B1</h2>
+    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Welcome Video B1" allowfullscreen></iframe>
+  </section>
 
-    <h2>📺 Welcome Video</h2>
-    <video controls>
-      <source src="b1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+  <section class="youtube-section">
+    <h2>📌 Visit My YouTube Channel</h2>
+    <p class="youtube-link">
+      <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank">🌟 Watch More on YouTube</a>
+    </p>
+  </section>
 
-    <div class="youtube">
-      <a href="https://youtube.com/@yourchannel" target="_blank">📺 Visit My YouTube Channel</a>
-    </div>
+  <section class="about-section">
+    <h2>💡 About Me</h2>
+    <p>I'm Bhawna, a self-taught creative learning to grow my animation and storytelling skills. Passionate about art, nature, and cozy vibes. 🌸</p>
+  </section>
 
-    <div class="about">
-      <h2>🌸 About Me</h2>
-      <p>I’m learning to grow my creativity and skills in animation and illustration, exploring new ways to bring cozy, dreamy visuals to life.</p>
-    </div>
+  <section class="services-section">
+    <h2>💼 Services & Cost</h2>
+    <ul>
+      <li>Custom Animation: ₹1500+</li>
+      <li>Wedding Highlight Videos: ₹2000+</li>
+      <li>Illustration (Digital/Print): ₹1000+</li>
+    </ul>
+  </section>
 
-    <div id="services">
-      <h2>💼 Services & Cost</h2>
-      <p>Offering custom animation edits, illustrations, and video templates. Reach out for personalized pricing based on your needs.</p>
-      <p><strong>Book via email:</strong> <a href="mailto:bhawnacreatives@email.com">bhawnacreatives@email.com</a></p>
-    </div>
+  <section class="book-section">
+    <h2>📩 Book Your Edit</h2>
+    <p>Email me at <strong>bhawnacreatives@gmail.com</strong> to book your project!</p>
+  </section>
 
-    <div id="feedback">
-      <h2>📝 Feedback</h2>
-      <p>Your feedback helps me grow! Share your thoughts, suggestions, or project experience with Bhawna Creatives.</p>
-      <!-- Feedback form or link can be added here -->
-    </div>
-
+  <section class="feedback-section">
+    <h2>💬 Feedback</h2>
+    <form action="mailto:bhawnacreatives@gmail.com" method="POST" enctype="text/plain">
+      <label>Your Name:<br><input type="text" name="name" required></label><br><br>
+      <label>Your Feedback:<br><textarea name="feedback" rows="4" required></textarea></label><br><br>
+      <button type="submit">Send Feedback</button>
+    </form>
   </section>
 
   <footer>
