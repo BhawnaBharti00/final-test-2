@@ -69,7 +69,7 @@
     h2 {
       color: var(--hotpink);
     }
-    iframe {
+    iframe, video {
       width: 100%;
       height: 400px;
       border: none;
@@ -100,7 +100,7 @@
 <body>
 
   <header>
-    <img src="b1.gif" alt="Logo" class="logo-img">
+    <img src="b6.png" alt="Logo" class="logo-img">
     <h1>🎨 Welcome to Bhawna Creatives</h1>
     <p>Bringing soft, cozy & soothing animation to life ✨</p>
   </header>
@@ -113,8 +113,11 @@
   </div>
 
   <section class="video-section">
-    <h2>📺 Welcome Video – BB.mp4</h2>
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Welcome Video B1" allowfullscreen></iframe>
+    <h2>📺 Welcome </h2>
+    <video controls>
+      <source src="BB.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </section>
 
   <section class="youtube-section">
@@ -130,11 +133,12 @@
   </section>
 
   <section class="services-section">
-    <h2>💼 Services & Cost</h2>
+    <h2>💼 Services & Cost(Per minute)</h2>
     <ul>
       <li>Custom Animation: ₹1400</li>
+      <li>Infographics: ₹1200</li>
       <li>Animation with Edits: ₹2000</li>
-      <li>Illustration: ₹500</li>
+      <li>Illustration: ₹800</li>
     </ul>
   </section>
 
