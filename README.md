@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --pink: #ffe4e6;
+      --pink: #fff1f2;
       --rose: #fbcfe8;
       --hotpink: #db2777;
       --lavender: #e0bbff;
@@ -22,29 +22,41 @@
       text-align: center;
       background: var(--lavender);
       padding: 2rem;
+      position: relative;
     }
     header h1 {
       font-size: 2.2rem;
       color: var(--hotpink);
+      margin: 0.5rem 0 0;
+    }
+    .logo-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 20%;
+      border: 2px solid var(--hotpink);
     }
     .nav-buttons {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      margin: 2rem 0;
+      margin: 2rem auto;
+      max-width: 600px;
     }
     .nav-buttons a {
-      background: var(--hotpink);
-      color: white;
-      padding: 1rem 2rem;
+      background: var(--rose);
+      color: var(--hotpink);
+      padding: 0.9rem 2.2rem;
       border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      transition: all 0.3s ease;
     }
     .nav-buttons a:hover {
-      background: #c0266b;
+      background: var(--hotpink);
+      color: white;
     }
     .video-section, .youtube-section, .about-section, .services-section, .book-section, .feedback-section {
       max-width: 800px;
@@ -63,7 +75,7 @@
       border: none;
       border-radius: 1rem;
     }
-    .youtube-link a {
+    .youtube-link a, .book-link a {
       display: inline-block;
       background: var(--rose);
       padding: 0.8rem 1.6rem;
@@ -73,7 +85,7 @@
       text-decoration: none;
       margin-top: 1rem;
     }
-    .youtube-link a:hover {
+    .youtube-link a:hover, .book-link a:hover {
       background: var(--hotpink);
       color: white;
     }
@@ -88,6 +100,7 @@
 <body>
 
   <header>
+    <img src="b1.gif" alt="Logo" class="logo-img">
     <h1>🎨 Welcome to Bhawna Creatives</h1>
     <p>Bringing cozy stories and charming visuals to life ✨</p>
   </header>
@@ -126,8 +139,10 @@
   </section>
 
   <section class="book-section">
-    <h2>📩 Book Your Edit</h2>
-    <p>Email me at <strong>bhawnacreatives@gmail.com</strong> to book your project!</p>
+    <h2>📩 Book an Edit</h2>
+    <p class="book-link">
+      <a href="mailto:bhawnacreatives@gmail.com">📬 Click to Email Me Directly</a>
+    </p>
   </section>
 
   <section class="feedback-section">
