@@ -102,7 +102,7 @@
   <header>
     <img src="b1.gif" alt="Logo" class="logo-img">
     <h1>🎨 Welcome to Bhawna Creatives</h1>
-    <p>Bringing cozy stories and charming visuals to life ✨</p>
+    <p>Bringing soft, cozy & soothing animation to life ✨</p>
   </header>
 
   <div class="nav-buttons">
@@ -113,41 +113,41 @@
   </div>
 
   <section class="video-section">
-    <h2>📺 Welcome Video – B1</h2>
+    <h2>📺 Welcome Video – BB.mp4</h2>
     <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Welcome Video B1" allowfullscreen></iframe>
   </section>
 
   <section class="youtube-section">
     <h2>📌 Visit My YouTube Channel</h2>
     <p class="youtube-link">
-      <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank">🌟 Watch More on YouTube</a>
+      <a href="https://youtube.com/@berrypawsasmr?si=wdpINgYE3ZJoyCWu" target="_blank">🌟 Watch More on YouTube</a>
     </p>
   </section>
 
   <section class="about-section">
     <h2>💡 About Me</h2>
-    <p>I'm Bhawna, a self-taught creative learning to grow my animation and storytelling skills. Passionate about art, nature, and cozy vibes. 🌸</p>
+    <p>Hi! I'm Bhawna, a self-taught creative learning to grow my animation and storytelling skills. Passionate about art, nature, and cozy vibes. Open to meaningful collaboration and creative work. 🌸</p>
   </section>
 
   <section class="services-section">
     <h2>💼 Services & Cost</h2>
     <ul>
-      <li>Custom Animation: ₹1500+</li>
-      <li>Wedding Highlight Videos: ₹2000+</li>
-      <li>Illustration (Digital/Print): ₹1000+</li>
+      <li>Custom Animation: ₹1400</li>
+      <li>Animation with Edits: ₹2000</li>
+      <li>Illustration: ₹500</li>
     </ul>
   </section>
 
   <section class="book-section">
-    <h2>📩 Book an Edit</h2>
+    <h2>📩 Book Animation</h2>
     <p class="book-link">
-      <a href="mailto:bhawnacreatives@gmail.com">📬 Click to Email Me Directly</a>
+      <a href="mailto:bhartibhawna4488@gmail.com">📬 Click Here to Book</a>
     </p>
   </section>
 
   <section class="feedback-section">
     <h2>💬 Feedback</h2>
-    <form action="mailto:bhawnacreatives@gmail.com" method="POST" enctype="text/plain">
+    <form action="mailto:bhartibhawna4488@gmail.com" method="POST" enctype="text/plain">
       <label>Your Name:<br><input type="text" name="name" required></label><br><br>
       <label>Your Feedback:<br><textarea name="feedback" rows="4" required></textarea></label><br><br>
       <button type="submit">Send Feedback</button>
