@@ -1,68 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bhawna Creatives – Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --pink: #fff1f2;
+      --rose: #fbcfe8;
+      --hotpink: #db2777;
+      --lavender: #e0bbff;
+    }
     html {
       scroll-behavior: smooth;
     }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-    }
-    nav {
-      background-color: #f8f8f8;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      background: var(--pink);
       color: #333;
-      font-weight: bold;
     }
-    section {
-      padding: 100px 20px;
-      border-bottom: 1px solid #ddd;
+    header {
+      text-align: center;
+      background: var(--lavender);
+      padding: 1.5rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--hotpink);
+      margin: 0.3rem 0 0.2rem;
+    }
+    header p {
+      margin-top: 0.2rem;
+    }
+    .logo-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 20%;
+      border: 2px solid var(--hotpink);
+    }
+    .nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
+    .nav-buttons a {
+      background: var(--rose);
+      color: var(--hotpink);
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      width: 48%;
+      text-align: center;
+    }
+    .nav-buttons a:hover {
+      background: var(--hotpink);
+      color: white;
+    }
+    .video-section, .youtube-section, .about-section, .services-section, .book-section, .feedback-section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: var(--hotpink);
+    }
+    iframe, video {
+      width: 100%;
+      height: 240px;
+      border: none;
+      border-radius: 1rem;
+    }
+    .youtube-link a, .book-link a {
+      display: inline-block;
+      background: var(--rose);
+      padding: 0.8rem 1.6rem;
+      color: var(--hotpink);
+      font-weight: bold;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    .youtube-link a:hover, .book-link a:hover {
+      background: var(--hotpink);
+      color: white;
+    }
+    footer {
+      text-align: center;
+      background: var(--lavender);
+      padding: 2rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#service">Service</a>
-    <a href="#feedback">Feedback</a>
-  </nav>
+  <header>
+    <img src="b6.png" alt="Logo" class="logo-img">
+    <h1>🎨 Welcome to</h1>
+    <h1>Bhawna Creatives</h1>
+    <p>Bringing soft, cozy & soothing animation to life ✨</p>
+  </header>
 
-  <!-- Hero Section -->
-  <section id="home">
-    <h1>Welcome to My Website</h1>
-    <p>This is the hero section.</p>
+  <div class="nav-buttons">
+    <a href="animations.html">🎬 Animations</a>
+    <a href="illustrations.html">🖌 Illustrations</a>
+    <a href="#services">💼 Services</a>
+    <a href="#feedback">💬 Feedback</a>
+  </div>
+
+  <section class="video-section">
+    <h2>📺 Welcome </h2>
+    <video controls>
+      <source src="BB.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </section>
 
-  <!-- Service & Cost Section -->
-  <section id="service">
-    <h2>Service & Cost</h2>
-    <p>Details about your services and pricing go here.</p>
+  <section class="about-section">
+    <h2>💡 About Me</h2>
+    <p>Hi! I'm Bhawna, a self-taught creative learning to grow my animation and storytelling skills. Passionate about art, nature, and cozy vibes. Open to meaningful collaboration and creative work. 🌸</p>
   </section>
 
-  <!-- Other Content (Optional) -->
-  <section>
-    <h2>More Info</h2>
-    <p>Some other content here if needed.</p>
+  <section class="youtube-section">
+    <h2>📌 Visit My YouTube Channel</h2>
+    <p class="youtube-link">
+      <a href="https://youtube.com/@berrypawsasmr?si=wdpINgYE3ZJoyCWu" target="_blank">🌟 Watch More on YouTube</a>
+    </p>
   </section>
 
-  <!-- Feedback Section -->
-  <section id="feedback">
-    <h2>Feedback</h2>
-    <p>This is where you show or collect feedback.</p>
+  <section class="services-section" id="services">
+    <h2>💼 Services & Cost(Per minute)</h2>
+    <ul>
+      <li>Custom Animation: ₹1400</li>
+      <li>Infographics: ₹1200</li>
+      <li>Animation with Edits: ₹2000</li>
+      <li>Illustration: ₹800</li>
+    </ul>
   </section>
+
+  <section class="book-section">
+    <h2>📩 Book Animation</h2>
+    <p class="book-link">
+      <a href="mailto:bhartibhawna4488@gmail.com">📬 Click Here to Book</a>
+    </p>
+  </section>
+
+  <section class="feedback-section" id="feedback">
+    <h2>💬 Feedback</h2>
+    <form action="mailto:bhartibhawna4488@gmail.com" method="POST" enctype="text/plain">
+      <label>Your Name:<br><input type="text" name="name" required></label><br><br>
+      <label>Your Feedback:<br><textarea name="feedback" rows="4" required></textarea></label><br><br>
+      <button type="submit">Send Feedback</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Bhawna Creatives | Created with love and pastel pink vibes ✨</p>
+  </footer>
 
 </body>
 </html>
