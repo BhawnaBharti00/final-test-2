@@ -24,82 +24,35 @@
   overflow: hidden;
   z-index: 0;
 }
+.sparkle-container {
+  position: relative;
+  overflow: hidden;
+}
 
-.sparkle-container::before {
-  content: '';
+.sparkle {
   position: absolute;
   width: 6px;
   height: 6px;
   background: white;
   border-radius: 50%;
-  box-shadow:
-    10px 20px #fff,
-    30px 40px #fff,
-    50px 60px #fff,
-    70px 80px #fff,
-    90px 100px #fff,
-    110px 120px #fff,
-    130px 140px #fff,
-    150px 160px #fff,
-    170px 180px #fff,
-    190px 200px #fff,
-    210px 220px #fff,
-    230px 240px #fff,
-    250px 260px #fff,
-    270px 280px #fff,
-    290px 300px #fff,
-    310px 320px #fff,
-    330px 340px #fff,
-    350px 360px #fff,
-    370px 380px #fff,
-    390px 400px #fff,
-    410px 420px #fff,
-    430px 440px #fff,
-    450px 460px #fff,
-    470px 480px #fff,
-    490px 500px #fff,
-    510px 520px #fff,
-    530px 540px #fff,
-    550px 560px #fff,
-    570px 580px #fff,
-    590px 600px #fff,
-    610px 620px #fff,
-    630px 640px #fff,
-    650px 660px #fff;
-  animation: sparkleMove 12s linear infinite;
-  z-index: -1;
-  opacity: 0.4;
-  filter: blur(1.2px);
+  opacity: 0.5;
+  filter: blur(1px);
+  animation: floatSparkle 10s linear infinite;
 }
 
-@keyframes sparkleMove {
+@keyframes floatSparkle {
   0% {
     transform: translateY(0) scale(1);
     opacity: 0.6;
   }
   50% {
     transform: translateY(-20px) scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-60px) scale(0.9);
-    opacity: 0;
-  }
-}
-
-@keyframes sparkleMove {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
     opacity: 1;
   }
   100% {
     transform: translateY(-60px) scale(0.8);
     opacity: 0;
   }
-}
 
     html {
       scroll-behavior: smooth;
@@ -112,14 +65,25 @@
       color: #333;
       overflow-x: hidden;
     }
+    <script>
+  const sparkleContainer = document.querySelector('.sparkle-container');
 
+  for (let i = 0; i < 40; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.classList.add('sparkle');
+    sparkle.style.top = Math.random() * 100 + '%';
+    sparkle.style.left = Math.random() * 100 + '%';
+    sparkle.style.animationDelay = (Math.random() * 10) + 's';
+    sparkleContainer.appendChild(sparkle);
+  }
+</script>
+  <header class="sparkle-container">
     header {
       text-align: center;
       background: var(--lavender);
       padding: 1.5rem 1rem;
       position: relative;
     }
-
     .sparkle {
       position: absolute;
       top: 10px;
