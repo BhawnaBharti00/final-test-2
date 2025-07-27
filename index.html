@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bhawna Creatives – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -13,46 +13,6 @@
       --lavender: #e0bbff;
       --white: #fff;
     }
-    .sparkle-container {
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.sparkle-container {
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-.sparkle-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.5;
-  filter: blur(1px);
-  animation: floatSparkle 10s linear infinite;
-}
-
-@keyframes floatSparkle {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-20px) scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-60px) scale(0.8);
-    opacity: 0;
-  }
 
     html {
       scroll-behavior: smooth;
@@ -65,36 +25,35 @@
       color: #333;
       overflow-x: hidden;
     }
-    <script>
-  const sparkleContainer = document.querySelector('.sparkle-container');
 
-  for (let i = 0; i < 40; i++) {
-    const sparkle = document.createElement('div');
-    sparkle.classList.add('sparkle');
-    sparkle.style.top = Math.random() * 100 + '%';
-    sparkle.style.left = Math.random() * 100 + '%';
-    sparkle.style.animationDelay = (Math.random() * 10) + 's';
-    sparkleContainer.appendChild(sparkle);
-  }
-</script>
-  <header class="sparkle-container">
+    .sparkle-container {
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.5;
+      filter: blur(1px);
+      animation: floatSparkle 10s linear infinite;
+    }
+
+    @keyframes floatSparkle {
+      0% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
+      100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
+    }
+
     header {
       text-align: center;
       background: var(--lavender);
       padding: 1.5rem 1rem;
       position: relative;
-    }
-    .sparkle {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 1.4rem;
-      animation: sparkle-flicker 2s infinite ease-in-out;
-    }
-
-    @keyframes sparkle-flicker {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.3) rotate(15deg); }
     }
 
     header h1 {
@@ -124,8 +83,8 @@
 
     .nav-buttons {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 1rem;
       margin: 2rem auto;
       max-width: 600px;
@@ -140,11 +99,11 @@
       font-weight: bold;
       font-size: 1rem;
       transition: all 0.3s ease;
-      width: 48%;
       text-align: center;
       position: relative;
       animation: floaty 3s ease-in-out infinite;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      width: 70%;
     }
 
     .nav-buttons a:hover {
@@ -158,7 +117,7 @@
       50% { transform: translateY(-5px); }
     }
 
-    .video-section, .youtube-section, .about-section, .services-section, .book-section, .feedback-section {
+    section {
       max-width: 800px;
       margin: 2rem auto;
       padding: 1rem;
@@ -225,14 +184,11 @@
   </style>
 </head>
 <body>
-
-  <header>
-    <header class="sparkle-container">
-  <img src="b6.png" alt="Logo" class="logo-img">
-  <h1>🎨 Welcome to</h1>
-  <h1>Bhawna Creatives</h1>
-  <p>Bringing soft, cozy & soothing animation to life ✨</p>
-</header>
+  <header class="sparkle-container">
+    <img src="b6.png" alt="Logo" class="logo-img">
+    <h1>🎨 Welcome to</h1>
+    <h1>Bhawna Creatives</h1>
+    <p>Soft Animation & Illustration✨</p>
   </header>
 
   <div class="nav-buttons">
@@ -242,7 +198,7 @@
     <a href="#feedback">💬 Feedback</a>
   </div>
 
-  <section class="video-section">
+  <section>
     <h2>📺 Welcome</h2>
     <video controls>
       <source src="BB.mp4" type="video/mp4">
@@ -250,19 +206,19 @@
     </video>
   </section>
 
-  <section class="about-section">
+  <section>
     <h2>💡 About Me</h2>
     <p>Hi! I'm Bhawna, a self-taught creative learning to grow my animation and storytelling skills. Passionate about art, nature, and cozy vibes. Open to meaningful collaboration and creative work. 🌸</p>
   </section>
 
-  <section class="youtube-section">
+  <section>
     <h2>📌 Visit My YouTube Channel</h2>
     <p class="youtube-link">
       <a href="https://youtube.com/@berrypawsasmr?si=wdpINgYE3ZJoyCWu" target="_blank">🌟 Watch More on YouTube</a>
     </p>
   </section>
 
-  <section class="services-section" id="services">
+  <section id="services">
     <h2>💼 Services & Cost (Per minute)</h2>
     <ul>
       <li>Custom Animation: ₹1400</li>
@@ -272,14 +228,14 @@
     </ul>
   </section>
 
-  <section class="book-section">
+  <section>
     <h2>📩 Book Animation</h2>
     <p class="book-link">
       <a href="mailto:bhartibhawna4488@gmail.com">📬 Click Here to Book</a>
     </p>
   </section>
 
-  <section class="feedback-section" id="feedback">
+  <section id="feedback">
     <h2>💬 Feedback</h2>
     <form action="mailto:bhartibhawna4488@gmail.com" method="POST" enctype="text/plain">
       <label>Your Name:<br><input type="text" name="name" required></label><br><br>
@@ -292,5 +248,17 @@
     <p>© 2025 Bhawna Creatives</p>
   </footer>
 
+  <!-- ✨ Sparkle Script AFTER HTML elements -->
+  <script>
+    const sparkleContainer = document.querySelector('.sparkle-container');
+    for (let i = 0; i < 40; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.top = Math.random() * 100 + '%';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = (Math.random() * 10) + 's';
+      sparkleContainer.appendChild(sparkle);
+    }
+  </script>
 </body>
 </html>
