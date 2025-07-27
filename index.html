@@ -13,6 +13,44 @@
       --lavender: #e0bbff;
       --white: #fff;
     }
+    .sparkle-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sparkle-container::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    10px 20px #fff,
+    50px 80px #fff,
+    90px 30px #fff,
+    130px 60px #fff,
+    160px 20px #fff;
+  animation: sparkleMove 6s linear infinite;
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+@keyframes sparkleMove {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(0.8);
+    opacity: 0;
+  }
+}
 
     html {
       scroll-behavior: smooth;
@@ -176,11 +214,12 @@
 <body>
 
   <header>
-    <span class="sparkle">✨</span>
-    <img src="b6.png" alt="Logo" class="logo-img">
-    <h1>🎨 Welcome to</h1>
-    <h1>Bhawna Creatives</h1>
-    <p>Bringing soft, cozy & soothing animation to life ✨</p>
+    <header class="sparkle-container">
+  <img src="b6.png" alt="Logo" class="logo-img">
+  <h1>🎨 Welcome to</h1>
+  <h1>Bhawna Creatives</h1>
+  <p>Bringing soft, cozy & soothing animation to life ✨</p>
+</header>
   </header>
 
   <div class="nav-buttons">
