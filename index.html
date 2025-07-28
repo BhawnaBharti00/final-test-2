@@ -137,6 +137,19 @@
       border-radius: 1rem;
     }
 
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
     .youtube-link a, .book-link a {
       display: inline-block;
       background: var(--rose);
@@ -212,6 +225,27 @@
   </section>
 
   <section>
+    <h2>🌸 In Progress: Misho in the Flower Shop</h2>
+    <p>A cozy new ASMR episode currently in development. Misho, our gentle pup, explores a pastel flower shop filled with warmth, blossoms, and magic. This gentle animation blends soft movement, relaxing visuals, and warm storytelling aesthetics.</p>
+
+    <video controls>
+      <source src="p1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video controls>
+      <source src="p2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="image-gallery">
+      <img src="p1.png" alt="Preview 1">
+      <img src="p2.png" alt="Preview 2">
+      <img src="p3.png" alt="Preview 3">
+    </div>
+  </section>
+
+  <section>
     <h2>📌 Visit My YouTube Channel</h2>
     <p class="youtube-link">
       <a href="https://youtube.com/@berrypawsasmr?si=wdpINgYE3ZJoyCWu" target="_blank">🌟 Watch More on YouTube</a>
@@ -248,7 +282,6 @@
     <p>© 2025 Bhawna Creatives</p>
   </footer>
 
-  <!-- ✨ Sparkle Script AFTER HTML elements -->
   <script>
     const sparkleContainer = document.querySelector('.sparkle-container');
     for (let i = 0; i < 40; i++) {
