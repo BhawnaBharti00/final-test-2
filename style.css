@@ -1,59 +1,62 @@
-/* Layout & spacing */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
 section {
-  padding: 2rem;
+  padding: 40px 20px;
   text-align: center;
 }
+
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #444;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
 }
+
+/* Gallery */
 .gallery {
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 .gallery img {
   border-radius: 10px;
-  max-width: 300px;
-  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 /* CTA Button */
 .cta-btn {
-  display: inline-block;
-  background-color: #ff6f91; /* pastel pink but richer for contrast */
-  color: white;
-  padding: 1rem 2rem;
+  background: #ff4f81;
+  color: #fff;
+  padding: 14px 28px;
   font-size: 1.2rem;
   border-radius: 50px;
   text-decoration: none;
+  box-shadow: 0 6px 15px rgba(255,79,129,0.4);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 .cta-btn:hover {
-  background-color: #ff4f7b;
+  background: #ff2f68;
   transform: scale(1.05);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 /* Footer */
 footer {
-  padding: 1rem;
-  background-color: #f8f8f8;
+  background: #f4f4f4;
+  padding: 20px;
   text-align: center;
 }
 .social-icons {
-  margin-top: 0.5rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+  margin-top: 10px;
 }
 .social-icons a {
   color: #555;
+  margin: 0 10px;
   transition: color 0.3s ease;
 }
 .social-icons a:hover {
-  color: #ff6f91;
+  color: #ff4f81;
 }
