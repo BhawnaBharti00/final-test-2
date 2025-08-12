@@ -242,6 +242,49 @@
     .skills-lists li::before {
       content: "🌸 ";
     }
+
+    /* NEW: inline buttons under About/Skills (Animation + Illustration) */
+    .inline-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+    .inline-btns a {
+      background: var(--rose);
+      color: var(--hotpink);
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .inline-btns a:hover {
+      transform: translateY(-4px);
+    }
+
+    /* NEW: Book Now CTA (darker) */
+    .book-now-wrap {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .book-now {
+      display: inline-block;
+      background: #9b174d; /* darker CTA */
+      color: #fff;
+      padding: 0.95rem 2.4rem;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(155,23,77,0.25);
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+    .book-now:hover {
+      background: #7a1340;
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 <body>
@@ -339,6 +382,17 @@
         <li>Adaptability</li>
       </ul>
     </div>
+
+    <!-- NEW: Animation + Illustration buttons side by side (below About & Skills) -->
+    <div class="inline-btns" aria-hidden="false">
+      <a href="animations.html">🎬 Animations</a>
+      <a href="illustrations.html">🖌 Illustrations</a>
+    </div>
+
+    <!-- NEW: Book Now CTA below the two buttons -->
+    <div class="book-now-wrap">
+      <a class="book-now" href="mailto:bhartibhawna4488@gmail.com">📅 Book Now</a>
+    </div>
   </section>
 
     <section>
@@ -392,6 +446,7 @@
       <li>Animation with Edits: ₹2000</li>
       <li>Illustration: ₹800</li>
     </ul>
+    <!-- Buttons removed here as requested (none were present) -->
   </section>
 
   <section>
@@ -406,7 +461,7 @@
     <form action="mailto:bhartibhawna4488@gmail.com" method="POST" enctype="text/plain">
       <label>Your Name:<br><input type="text" name="name" required></label><br><br>
       <label>Your Feedback:<br><textarea name="feedback" rows="4" required></textarea></label><br><br>
-      <button type="submit">Send Feedback</button>
+      <!-- Submit button removed as requested; form fields remain -->
     </form>
   </section>
 
