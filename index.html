@@ -1,248 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bhawna Creatives</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --pink: #fff1f2;
-    --rose: #fbcfe8;
-    --hotpink: #db2777;
-    --lavender: #e0bbff;
-    --white: #fff;
-  }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bhawna Creatives</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Paste the full CSS from your second example here (colors, animations, typography, layout) */
+        :root {
+          --pink: #fff1f2;
+          --rose: #fbcfe8;
+          --hotpink: #db2777;
+          --lavender: #e0bbff;
+          --white: #fff;
+        }
 
-  html {
-    scroll-behavior: smooth;
-  }
+        html { scroll-behavior: smooth; }
 
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--pink);
-    color: #333;
-    overflow-x: hidden;
-  }
+        body {
+          margin: 0;
+          font-family: 'Inter', sans-serif;
+          background: var(--pink);
+          color: #333;
+          overflow-x: hidden;
+        }
 
-  .sparkle-container {
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
-  }
+        .sparkle-container {
+          position: relative;
+          overflow: hidden;
+          z-index: 0;
+        }
 
-  .sparkle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.5;
-    filter: blur(1px);
-    animation: floatSparkle 10s linear infinite;
-  }
+        .sparkle {
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          background: white;
+          border-radius: 50%;
+          opacity: 0.5;
+          filter: blur(1px);
+          animation: floatSparkle 10s linear infinite;
+        }
 
-  @keyframes floatSparkle {
-    0% { transform: translateY(0) scale(1); opacity: 0.6; }
-    50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
-    100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
-  }
+        @keyframes floatSparkle {
+          0% { transform: translateY(0) scale(1); opacity: 0.6; }
+          50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
+          100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
+        }
 
-  header {
-    text-align: center;
-    background: var(--lavender);
-    padding: 2rem 1rem;
-    position: relative;
-  }
+        header {
+          text-align: center;
+          background: var(--lavender);
+          padding: 1.5rem 1rem;
+          position: relative;
+        }
 
-  header h1 {
-    font-size: 2.2rem;
-    color: var(--hotpink);
-    margin: 0.3rem 0 0.2rem;
-  }
+        header h1 {
+          font-size: 1.8rem;
+          color: var(--hotpink);
+          margin: 0.3rem 0 0.2rem;
+        }
 
-  header p {
-    margin-top: 0.2rem;
-    font-weight: 600;
-  }
+        header p {
+          margin-top: 0.2rem;
+        }
 
-  .logo-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 20%;
-    border: 2px solid var(--hotpink);
-    box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
-    animation: logo-glow 3s ease-in-out infinite;
-    margin: 0 auto 1rem;
-    display: block;
-  }
+        .logo-img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 20%;
+          border: 2px solid var(--hotpink);
+          box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
+          animation: logo-glow 3s ease-in-out infinite;
+        }
 
-  @keyframes logo-glow {
-    0%, 100% { box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
-    50% { box-shadow: 0 0 20px rgba(219, 39, 119, 0.6); }
-  }
+        @keyframes logo-glow {
+          0%, 100% { box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
+          50% { box-shadow: 0 0 20px rgba(219, 39, 119, 0.6); }
+        }
 
-  .services-combined {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    max-width: 700px;
-    margin: 2rem auto;
-  }
+        .nav-buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          margin: 2rem auto;
+          max-width: 600px;
+        }
 
-  .service-box {
-    background: var(--white);
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    flex: 1;
-    text-align: center;
-  }
+        .nav-buttons a {
+          background: var(--rose);
+          color: var(--hotpink);
+          padding: 0.9rem 2.2rem;
+          border-radius: 999px;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          text-align: center;
+          position: relative;
+          animation: floaty 3s ease-in-out infinite;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+          width: 70%;
+        }
 
-  .service-box h3 {
-    color: var(--hotpink);
-    margin-bottom: 0.5rem;
-  }
+        .nav-buttons a:hover {
+          background: var(--hotpink);
+          color: white;
+          box-shadow: 0 0 12px rgba(219, 39, 119, 0.4);
+        }
 
-  .cta {
-    text-align: center;
-    margin: 3rem 1rem;
-  }
+        @keyframes floaty {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-5px); }
+        }
 
-  .cta h2 {
-    color: var(--hotpink);
-    margin-bottom: 1rem;
-  }
+        section {
+          max-width: 800px;
+          margin: 2rem auto;
+          padding: 1rem;
+          background: white;
+          border-radius: 1rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
-  .cta-button {
-    background: var(--rose);
-    color: var(--hotpink);
-    padding: 1rem 2.5rem;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    text-decoration: none;
-    box-shadow: 0 6px 18px rgba(219,39,119,0.18);
-    display: inline-block;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
+        h2 {
+          color: var(--hotpink);
+        }
 
-  .cta-button:hover {
-    background: var(--hotpink);
-    color: white;
-  }
+        iframe, video {
+          width: 100%;
+          height: 240px;
+          border: none;
+          border-radius: 1rem;
+        }
 
-  section {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: var(--white);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
+        .software-section {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1.5rem;
+          margin-top: 1.5rem;
+        }
+        .software-card {
+          background: var(--pink);
+          padding: 1rem;
+          border-radius: 0.8rem;
+          text-align: center;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .software-card img {
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+          margin-bottom: 0.5rem;
+        }
+        .progress-bar {
+          background: var(--rose);
+          border-radius: 999px;
+          overflow: hidden;
+          height: 8px;
+          margin-top: 0.5rem;
+        }
+        .progress {
+          background: var(--hotpink);
+          height: 100%;
+        }
 
-  h2 {
-    color: var(--hotpink);
-  }
+        .cta-button {
+          display: inline-block;
+          background: var(--hotpink);
+          color: white;
+          padding: 0.8rem 2rem;
+          border-radius: 999px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: background 0.3s;
+          margin-top: 1rem;
+        }
+        .cta-button:hover {
+          background: #b91c68;
+        }
 
-  video {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    margin-top: 1rem;
-  }
+        footer {
+          text-align: center;
+          background: var(--lavender);
+          padding: 2rem;
+          color: #666;
+        }
 
-  .contact p {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin: 0.3rem 0;
-  }
-
-  footer {
-    text-align: center;
-    background: var(--lavender);
-    padding: 2rem 1rem;
-    color: #666;
-    margin-top: 4rem;
-  }
-
-  .social-icons {
-    margin-top: 0.8rem;
-  }
-
-  .social-icons a {
-    margin: 0 1rem;
-    color: var(--hotpink);
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .social-icons a:hover {
-    color: var(--rose);
-  }
-
-  @media (max-width: 700px) {
-    .services-combined {
-      flex-direction: column;
-      gap: 1.2rem;
-      padding: 0 1rem;
-    }
-  }
-</style>
+    </style>
 </head>
 <body>
+    <header class="sparkle-container">
+        <img src="b6.png" alt="Logo" class="logo-img" />
+        <h1>Bhawna Creatives</h1>
+        <p>Animation & Illustration Specialist</p>
+    </header>
 
-<header class="sparkle-container">
-  <img src="your-logo.png" alt="Bhawna Creatives Logo" class="logo-img" />
-  <h1>Bhawna Creatives</h1>
-  <p>Animation & Illustration Specialist</p>
-</header>
+    <nav class="nav-buttons">
+        <a href="#about">About Me</a>
+        <a href="#services">Services</a>
+        <a href="#book-now">Book Now</a>
+        <a href="#welcome-video">Welcome Video</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<section class="about">
-  <h2>About Me</h2>
-  <p>Welcome! I’m Bhawna Bharti, a passionate animator and illustrator dedicated to bringing your ideas to life with creativity and precision.</p>
-</section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome! I’m Bhawna Bharti, a passionate animator and illustrator dedicated to bringing your ideas to life with creativity and precision.</p>
+    </section>
 
-<section class="services-combined" id="services">
-  <div class="service-box">
-    <h3>Animation</h3>
-    <p>High-quality animations tailored to your needs.</p>
-  </div>
-  <div class="service-box">
-    <h3>Illustration</h3>
-    <p>Creative illustrations to match your vision.</p>
-  </div>
-</section>
+    <section id="services" class="software-section">
+        <div class="software-card">
+            <img src="illustrator.svg" alt="Adobe Illustrator" />
+            <h3>Adobe Illustrator</h3>
+            <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+        </div>
+        <div class="software-card">
+            <img src="animate.svg" alt="Adobe Animate" />
+            <h3>Adobe Animate</h3>
+            <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+        </div>
+        <div class="software-card">
+            <img src="aftereffects.svg" alt="Adobe After Effects" />
+            <h3>After Effects</h3>
+            <div class="progress-bar"><div class="progress" style="width: 55%;"></div></div>
+        </div>
+    </section>
 
-<section class="cta" id="book-me">
-  <h2>Let’s Create Something Amazing!</h2>
-  <a href="#contact" class="cta-button">Book Now</a>
-</section>
+    <section id="book-now">
+        <h2>Book Your Edit</h2>
+        <a href="https://rzp.io/l/yourpaymentlink" class="cta-button" target="_blank" rel="noopener noreferrer">Pay Now</a>
+    </section>
 
-<section class="welcome-video">
-  <h2>Welcome Video</h2>
-  <video controls>
-    <source src="welcome.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</section>
+    <section id="welcome-video">
+        <h2>Welcome Video</h2>
+        <iframe src="https://www.youtube.com/embed/ntbGklxJ1l0" title="Welcome Video" allowfullscreen></iframe>
+    </section>
 
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
-  <p>Email: your@email.com</p>
-  <p>WhatsApp: +91-XXXXXXXXXX</p>
-</section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:bhawna@example.com">bhawna@example.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/yourphonenumber" target="_blank">Chat Now</a></p>
+        <p>Instagram: <a href="https://instagram.com/bhawna_creatives" target="_blank">@bhawna_creatives</a></p>
+    </section>
 
-<footer>
-  <p>&copy; 2025 Bhawna Creatives. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-    <a href="https://pinterest.com" target="_blank">Pinterest</a>
-  </div>
-</footer>
+    <footer>
+        &copy; 2025 Bhawna Creatives. All rights reserved.
+    </footer>
 
+    <script>
+        // Generate random sparkles around the header
+        const sparkleContainer = document.querySelector('.sparkle-container');
+        for(let i = 0; i < 15; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = (Math.random() * 10) + 's';
+            sparkleContainer.appendChild(sparkle);
+        }
+    </script>
 </body>
 </html>
