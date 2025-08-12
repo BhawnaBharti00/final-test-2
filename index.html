@@ -194,6 +194,54 @@
       padding: 2rem;
       color: #666;
     }
+
+    /* Extra styling for Skills section */
+    .software-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .software-card {
+      background: var(--pink);
+      padding: 1rem;
+      border-radius: 0.8rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .software-card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .progress-bar {
+      background: var(--rose);
+      border-radius: 999px;
+      overflow: hidden;
+      height: 8px;
+      margin-top: 0.5rem;
+    }
+    .progress {
+      background: var(--hotpink);
+      height: 100%;
+    }
+    .skills-lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skills-lists ul {
+      background: var(--pink);
+      padding: 1rem;
+      border-radius: 0.8rem;
+      list-style: none;
+      margin: 0;
+    }
+    .skills-lists li::before {
+      content: "🌸 ";
+    }
   </style>
 </head>
 <body>
@@ -212,16 +260,85 @@
   </div>
 
   <section>
-    <h2>📺 Welcome</h2>
-    <video controls>
-      <source src="BB.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>
-
-  <section>
     <h2>💡 About Me</h2>
-    <p>Hi! I'm Bhawna, a self-taught creative who produce short animations using Adobe Animate, Adobe Illustrator and Adobe After Effects. I believe in learning through working on real animation and storytelling projects to improve my skills. I'm Passionate about art, nature, and cozy vibes. Open to meaningful collaboration and creative work. 🌸</p>
+    <p>Hi! I'm Bhawna, a self-taught creative who produces short animations using Adobe Animate, Adobe Illustrator and Adobe After Effects. I believe in learning through real animation and storytelling projects. Passionate about art, nature, and cozy vibes. Open to meaningful collaboration and creative work. 🌸</p>
+    
+    <h3>Main Software</h3>
+    <div class="software-section">
+      <div class="software-card">
+        <img src="s1.png" alt="Adobe Animate">
+        <p>Adobe Animate</p>
+        <div class="progress-bar"><div class="progress" style="width:90%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s2.png" alt="Adobe Illustrator">
+        <p>Adobe Illustrator</p>
+        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s3.png" alt="Adobe After Effects">
+        <p>After Effects</p>
+        <div class="progress-bar"><div class="progress" style="width:40%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s4.png" alt="DaVinci Resolve">
+        <p>DaVinci Resolve</p>
+        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+      </div>
+    </div>
+
+    <h3>Secondary Software</h3>
+    <div class="software-section">
+      <div class="software-card">
+        <img src="s5.png" alt="Premiere Pro">
+        <p>Premiere Pro</p>
+        <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s6.png" alt="Adobe Photoshop">
+        <p>Photoshop</p>
+        <div class="progress-bar"><div class="progress" style="width:60%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s7.png" alt="Figma">
+        <p>Figma</p>
+        <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s8.png" alt="Canva">
+        <p>Canva</p>
+        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+      </div>
+    </div>
+
+    <h3>Organisational Software</h3>
+    <div class="software-section">
+      <div class="software-card"><img src="s9.png" alt="Google Workspace"><p>Google Workspace</p></div>
+      <div class="software-card"><img src="s10.png" alt="MS Word"><p>MS Word</p></div>
+      <div class="software-card"><img src="s11.png" alt="MS Excel"><p>MS Excel</p></div>
+      <div class="software-card"><img src="s12.png" alt="MS PowerPoint"><p>MS PowerPoint</p></div>
+    </div>
+
+    <div class="skills-lists">
+      <ul>
+        <h4>Skills</h4>
+        <li>Animation</li>
+        <li>Vector Art</li>
+        <li>Motion Graphics</li>
+        <li>Editing</li>
+        <li>Brand Development</li>
+        <li>Creative Design Work</li>
+      </ul>
+      <ul>
+        <h4>Soft Skills</h4>
+        <li>Design Understanding</li>
+        <li>User Psychology</li>
+        <li>Research</li>
+        <li>Storytelling</li>
+        <li>Attention to Detail</li>
+        <li>Adaptability</li>
+      </ul>
+    </div>
   </section>
 
   <section>
@@ -230,17 +347,14 @@
 
     <video controls>
       <source src="p1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
 
     <video controls>
       <source src="p2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
 
     <video controls>
       <source src="p4.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
 
     <div class="image-gallery">
