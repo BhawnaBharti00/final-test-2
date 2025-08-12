@@ -3,525 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bhawna Creatives – Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Simple UI</title>
   <style>
-    /* ========== ORIGINAL CSS (kept exactly as you provided) ========== */
-    :root {
-      --pink: #fff1f2;
-      --rose: #fbcfe8;
-      --hotpink: #db2777;
-      --lavender: #e0bbff;
-      --white: #fff;
+    /* Reset & basic styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--pink);
+      background: #f0f2f5;
       color: #333;
-      overflow-x: hidden;
-    }
-
-    .sparkle-container {
-      position: relative;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.5;
-      filter: blur(1px);
-      animation: floatSparkle 10s linear infinite;
-    }
-
-    @keyframes floatSparkle {
-      0% { transform: translateY(0) scale(1); opacity: 0.6; }
-      50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
-      100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
-    }
-
-    header {
-      text-align: center;
-      background: var(--lavender);
-      padding: 1.5rem 1rem;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 1.8rem;
-      color: var(--hotpink);
-      margin: 0.3rem 0 0.2rem;
-    }
-
-    header p {
-      margin-top: 0.2rem;
-    }
-
-    .logo-img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 20%;
-      border: 2px solid var(--hotpink);
-      box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
-      animation: logo-glow 3s ease-in-out infinite;
-    }
-
-    @keyframes logo-glow {
-      0%, 100% { box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
-      50% { box-shadow: 0 0 20px rgba(219, 39, 119, 0.6); }
-    }
-
-    .nav-buttons {
+      padding: 20px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin: 2rem auto;
-      max-width: 600px;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
     }
-
-    .nav-buttons a {
-      background: var(--rose);
-      color: var(--hotpink);
-      padding: 0.9rem 2.2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      text-align: center;
-      position: relative;
-      animation: floaty 3s ease-in-out infinite;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      width: 70%;
-    }
-
-    .nav-buttons a:hover {
-      background: var(--hotpink);
-      color: white;
-      box-shadow: 0 0 12px rgba(219, 39, 119, 0.4);
-    }
-
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
-    }
-
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+    .container {
       background: white;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 350px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 25px;
     }
-
-    h2 {
-      color: var(--hotpink);
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #444;
     }
-
-    iframe, video {
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      color: #555;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
       width: 100%;
-      height: 240px;
-      border: none;
-      border-radius: 1rem;
+      padding: 10px 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+      resize: vertical;
     }
-
-    .image-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
     }
-
-    .image-gallery img {
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    textarea {
+      min-height: 80px;
     }
-
-    .youtube-link a, .book-link a {
-      display: inline-block;
-      background: var(--rose);
-      padding: 0.8rem 1.6rem;
-      color: var(--hotpink);
-      font-weight: bold;
-      border-radius: 999px;
-      text-decoration: none;
-      margin-top: 1rem;
-      animation: shimmer 3s infinite;
-    }
-
-    .youtube-link a:hover, .book-link a:hover {
-      background: var(--hotpink);
-      color: white;
-    }
-
-    @keyframes shimmer {
-      0% { box-shadow: 0 0 0px rgba(255,255,255,0); }
-      50% { box-shadow: 0 0 10px rgba(255,255,255,0.6); }
-      100% { box-shadow: 0 0 0px rgba(255,255,255,0); }
-    }
-
     button {
-      padding: 0.6rem 1.2rem;
-      background: var(--hotpink);
-      border: none;
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
       color: white;
-      font-weight: bold;
-      border-radius: 999px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color 0.3s ease;
     }
-
     button:hover {
-      background: #b91c68;
+      background-color: #0056b3;
     }
-
-    footer {
+    /* Optional small print */
+    .footer-text {
+      font-size: 12px;
+      color: #888;
+      margin-top: 15px;
       text-align: center;
-      background: var(--lavender);
-      padding: 2rem;
-      color: #666;
     }
-
-    .software-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .software-card {
-      background: var(--pink);
-      padding: 1rem;
-      border-radius: 0.8rem;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .software-card img {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-      margin-bottom: 0.5rem;
-    }
-    .progress-bar {
-      background: var(--rose);
-      border-radius: 999px;
-      overflow: hidden;
-      height: 8px;
-      margin-top: 0.5rem;
-    }
-    .progress {
-      background: var(--hotpink);
-      height: 100%;
-    }
-    .skills-lists {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .skills-lists ul {
-      background: var(--pink);
-      padding: 1rem;
-      border-radius: 0.8rem;
-      list-style: none;
-      margin: 0;
-    }
-    .skills-lists li::before {
-      content: "🌸 ";
-    }
-    /* ========== END ORIGINAL CSS ========== */
-  </style>
-
-  <!-- ======= Small safe UI overrides (only these) ======= -->
-  <style>
-    /* Make the Book CTA more visible without touching other styles */
-    .main-cta {
-      display: inline-block;
-      background: linear-gradient(135deg, #ff6f9c 0%, var(--hotpink) 100%);
-      color: #fff;
-      padding: 0.9rem 1.8rem;
-      border-radius: 999px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(219,39,119,0.18);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .main-cta:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(219,39,119,0.22); }
-
-    /* Footer social icons */
-    .footer-social { display:flex; gap:14px; justify-content:center; margin-top:8px; }
-    .footer-social a svg { width:26px; height:26px; fill: #444; transition: fill .18s ease; }
-    .footer-social a:hover svg { fill: var(--hotpink); }
-
-    /* Small spacing tweak so sections breathe a bit more */
-    section { margin-top: 2.2rem; margin-bottom: 2.2rem; }
   </style>
 </head>
 <body>
-  <header class="sparkle-container">
-    <img src="b6.png" alt="Logo" class="logo-img">
-    <h1>🎨 Welcome to</h1>
-    <h1>Bhawna Creatives</h1>
-    <p>Animation, Illustration & Motion Edits✨</p>
-  </header>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
 
-  <div class="nav-buttons">
-    <a href="animations.html">🎬 Animations</a>
-    <a href="illustrations.html">💌 Illustrations</a>
-    <a href="#services">💼 Services</a>
-    <a href="#book-me">🚀 Book Me</a>
-  </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
-  <!-- ===== About (unchanged) ===== -->
-  <section>
-    <h2>💡 About Me</h2>
-    <p>Hi, I’m Bhawna — a self-driven artist helping startups and small businesses craft creative brand identities and artistic campaigns that boost reach. I create animations, vector art, and visual stories, blending human psychology with design principles to build strong brand recognition. I’m always open to meaningful collaborations and creative projects.🤝</p>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
 
-    <h3>Main Software</h3>
-    <div class="software-section">
-      <div class="software-card">
-        <img src="s1.png" alt="Adobe Animate">
-        <p>Adobe Animate</p>
-        <div class="progress-bar"><div class="progress" style="width:90%"></div></div>
-      </div>
-      <div class="software-card">
-        <img src="s2.png" alt="Adobe Illustrator">
-        <p>Adobe Illustrator</p>
-        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
-      </div>
-      <div class="software-card">
-        <img src="s3.png" alt="Adobe After Effects">
-        <p>After Effects</p>
-        <div class="progress-bar"><div class="progress" style="width:40%"></div></div>
-      </div>
-      <div class="software-card">
-        <img src="s4.png" alt="DaVinci Resolve">
-        <p>DaVinci Resolve</p>
-        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
-      </div>
-    </div>
-
-    <h3>Secondary Software</h3>
-    <div class="software-section">
-      <div class="software-card">
-        <img src="s5.png" alt="Premiere Pro">
-        <p>Premiere Pro</p>
-        <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
-      </div>
-      <div class="software-card">
-        <img src="s6.png" alt="Adobe Photoshop">
-        <p>Photoshop</p>
-        <div class="progress-bar"><div class="progress" style="width:60%"></div></div>
-      </div>
-      <div class="software-card">
-        <img src="s7.png" alt="Figma">
-        <p>Figma</p>
-        <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
-      </div>
-      <div class="software-card">
-        <img src="s8.png" alt="Canva">
-        <p>Canva</p>
-        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
-      </div>
-    </div>
-
-    <h3>Organisational Software</h3>
-    <div class="software-section">
-      <div class="software-card"><img src="s9.png" alt="Google Workspace"><p>Google Workspace</p></div>
-      <div class="software-card"><img src="s10.png" alt="MS Word"><p>MS Word</p></div>
-      <div class="software-card"><img src="s11.png" alt="MS Excel"><p>MS Excel</p></div>
-      <div class="software-card"><img src="s12.png" alt="MS PowerPoint"><p>MS PowerPoint</p></div>
-    </div>
-
-    <div class="skills-lists">
-      <ul>
-        <h4>Skills</h4>
-        <li>Animation</li>
-        <li>Vector Art</li>
-        <li>Motion Graphics</li>
-        <li>Editing</li>
-        <li>Brand Development</li>
-        <li>Creative Design Work</li>
-      </ul>
-      <ul>
-        <h4>Soft Skills</h4>
-        <li>Design Understanding</li>
-        <li>User Psychology</li>
-        <li>Research</li>
-        <li>Storytelling</li>
-        <li>Attention to Detail</li>
-        <li>Adaptability</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== Animations & Illustrations (moved here) ===== -->
-  <section>
-    <h2>🎨 Animations & Illustrations</h2>
-
-    <!-- Kept your In Progress content exactly but under this heading -->
-    <h3>🌸 In Progress: Misho in the Flower Shop</h3>
-    <p>A cozy ASMR episode currently in development. Misho, our cute pup, explores a flower shop filled with warmth, blossoms, and magic. This gentle animation blends soft movement, relaxing visuals, and warm storytelling aesthetics.</p>
-
-    <video controls>
-      <source src="p1.mp4" type="video/mp4">
-    </video>
-
-    <video controls>
-      <source src="p2.mp4" type="video/mp4">
-    </video>
-
-    <video controls>
-      <source src="p4.mp4" type="video/mp4">
-    </video>
-
-    <div class="image-gallery">
-      <img src="p1.png" alt="Preview 1">
-      <img src="p2.png" alt="Preview 2">
-      <img src="p3.png" alt="Preview 3">
-    </div>
-  </section>
-
-  <!-- ===== Stronger visible Book CTA (placed right after animations) ===== -->
-  <section id="book-me">
-    <h2>🚀 Ready to Bring Your Ideas to Life?</h2>
-    <p style="font-size:1.1rem; margin-bottom:1.2rem;">
-      Let’s create something beautiful together — whether it’s animation, illustration, or motion graphics, I’m here to make your vision shine. ✨
-    </p>
-    <p style="text-align:center;">
-      <!-- use class main-cta (overrides added above) -->
-      <a class="main-cta" href="mailto:bhartibhawna4488@gmail.com?subject=Project%20Booking%20Request" target="_blank" rel="noopener">📨 Book Your Project Now</a>
-    </p>
-    <p style="font-size:0.9rem; text-align:center; color:#888; margin-top:0.8rem;">
-      Quick response guaranteed — we can start discussing your project today.
-    </p>
-  </section>
-
-  <!-- ===== Welcome video (kept after CTA per your request) ===== -->
-  <section>
-    <h2>📺 Welcome</h2>
-    <video controls>
-      <source src="BB.mp4" type="video/mp4">
-      <!-- kept your fallback copy -->
-      Your browser does not support the video tag.
-    </video>
-  </section>
-
-  <!-- ===== Featured on YouTube (unchanged) ===== -->
-  <section>
-    <h2>📺 Featured on YouTube</h2>
-    <iframe src="https://www.youtube.com/embed/uQDgqX0Rkuo?si=K2BDfDOKrNNm0mu_" allowfullscreen></iframe>
-  </section>
-
-  <section>
-    <h2>📍 Visit My YouTube Channel</h2>
-    <p class="youtube-link">
-      <a href="https://youtube.com/@berrypawsasmr?si=wdpINgYE3ZJoyCWu" target="_blank" rel="noopener">🌟 Watch More on YouTube</a>
-    </p>
-  </section>
-
-  <!-- ===== Services (unchanged) ===== -->
-  <section id="services">
-    <h2>💼 Services & Cost (Per minute)</h2>
-    <ul>
-      <li>Custom Animation: ₹1400</li>
-      <li>Infographics: ₹1200</li>
-      <li>Animation with Edits: ₹2000</li>
-      <li>Illustration: ₹800</li>
-    </ul>
-  </section>
-
-  <!-- ===== Feedback (unchanged) ===== -->
-  <section id="feedback">
-    <h2>💬 Feedback</h2>
-    <form id="feedback-form" style="margin-bottom:1rem;">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #ccc;"><br><br>
-      <label for="comment">Comment:</label><br>
-      <textarea id="comment" name="comment" rows="4" required style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #ccc;"></textarea><br><br>
-      <button type="submit">Post Comment</button>
+      <button type="submit">Send</button>
     </form>
-    <div id="comments-list" style="background:var(--pink);padding:1rem;border-radius:0.8rem;box-shadow:0 2px 6px rgba(0,0,0,0.05);">
-      <p style="color:#666;">No comments yet. Be the first to share your thoughts!</p>
-    </div>
-  </section>
-
-  <!-- ===== Footer (complete & social icons added) ===== -->
-  <footer>
-    <p>© Bhawna Creatives</p>
-
-    <div class="footer-social">
-      <!-- LinkedIn (mock link) -->
-      <a href="https://linkedin.com/in/mock-link" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.16h.05c.53-1 1.84-2.16 3.8-2.16 4.06 0 4.8 2.67 4.8 6.13V24h-4v-8.36c0-1.99-.03-4.56-2.78-4.56-2.78 0-3.2 2.17-3.2 4.41V24h-4V8z"/></svg>
-      </a>
-
-      <!-- Pinterest (mock link) -->
-      <a href="https://pinterest.com/mock-link" target="_blank" rel="noopener" aria-label="Pinterest">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 4.99 3.05 9.26 7.39 11.03-.1-.94-.19-2.39.04-3.42.21-.92 1.38-5.86 1.38-5.86s-.35-.71-.35-1.76c0-1.65.96-2.89 2.16-2.89 1.02 0 1.51.77 1.51 1.7 0 1.03-.66 2.57-1 4-.28 1.17.6 2.12 1.77 2.12 2.12 0 3.74-2.24 3.74-5.47 0-2.86-2.05-4.86-4.98-4.86-3.4 0-5.39 2.55-5.39 5.18 0 1.03.4 2.13.9 2.73.1.12.11.23.08.35-.09.38-.29 1.17-.33 1.34-.05.22-.17.27-.4.16-1.49-.69-2.42-2.86-2.42-4.6 0-3.74 2.72-7.17 7.85-7.17 4.12 0 7.33 2.94 7.33 6.87 0 4.09-2.58 7.38-6.17 7.38-1.21 0-2.35-.63-2.74-1.37l-.75 2.86c-.27 1.04-1.01 2.35-1.5 3.15C9.29 23.8 10.61 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>
-      </a>
-    </div>
-  </footer>
-
-  <script>
-    // Light, non-invasive JS: powers the feedback form locally (no servers).
-    (function(){
-      const form = document.getElementById('feedback-form');
-      if (!form) return;
-      function escapeHtml (str) {
-        return String(str)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-      }
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const comment = document.getElementById('comment').value.trim();
-        if (!name || !comment) {
-          alert('Please enter both your name and a comment.');
-          return;
-        }
-        const commentsList = document.getElementById('comments-list');
-        // remove placeholder text if present
-        const placeholder = commentsList.querySelector('p');
-        if (placeholder && placeholder.textContent.trim().startsWith('No comments yet')) {
-          placeholder.remove();
-        }
-        const card = document.createElement('div');
-        card.style.background = 'var(--white)';
-        card.style.padding = '0.8rem';
-        card.style.borderRadius = '0.6rem';
-        card.style.marginBottom = '0.6rem';
-        card.style.boxShadow = '0 2px 6px rgba(0,0,0,0.04)';
-        const nameEl = document.createElement('p');
-        nameEl.style.margin = '0 0 0.4rem 0';
-        nameEl.innerHTML = '<strong>' + escapeHtml(name) + '</strong>';
-        const commentEl = document.createElement('p');
-        commentEl.style.margin = '0';
-        commentEl.textContent = comment;
-        card.appendChild(nameEl);
-        card.appendChild(commentEl);
-        commentsList.prepend(card);
-        form.reset();
-      });
-    })();
-  </script>
-
+    <div class="footer-text">We’ll get back to you soon!</div>
+  </div>
 </body>
 </html>
