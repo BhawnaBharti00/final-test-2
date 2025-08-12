@@ -1,266 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bhawna Creatives</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* Paste the full CSS from your second example here (colors, animations, typography, layout) */
-        :root {
-          --pink: #fff1f2;
-          --rose: #fbcfe8;
-          --hotpink: #db2777;
-          --lavender: #e0bbff;
-          --white: #fff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bhawna Creatives – Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #fff1f2;
+      --rose: #fbcfe8;
+      --hotpink: #db2777;
+      --lavender: #e0bbff;
+      --white: #fff;
+    }
 
-        html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-          margin: 0;
-          font-family: 'Inter', sans-serif;
-          background: var(--pink);
-          color: #333;
-          overflow-x: hidden;
-        }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--pink);
+      color: #333;
+      overflow-x: hidden;
+    }
 
-        .sparkle-container {
-          position: relative;
-          overflow: hidden;
-          z-index: 0;
-        }
+    .sparkle-container {
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
 
-        .sparkle {
-          position: absolute;
-          width: 6px;
-          height: 6px;
-          background: white;
-          border-radius: 50%;
-          opacity: 0.5;
-          filter: blur(1px);
-          animation: floatSparkle 10s linear infinite;
-        }
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.5;
+      filter: blur(1px);
+      animation: floatSparkle 10s linear infinite;
+    }
 
-        @keyframes floatSparkle {
-          0% { transform: translateY(0) scale(1); opacity: 0.6; }
-          50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
-          100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
-        }
+    @keyframes floatSparkle {
+      0% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
+      100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
+    }
 
-        header {
-          text-align: center;
-          background: var(--lavender);
-          padding: 1.5rem 1rem;
-          position: relative;
-        }
+    header {
+      text-align: center;
+      background: var(--lavender);
+      padding: 1.5rem 1rem;
+      position: relative;
+    }
 
-        header h1 {
-          font-size: 1.8rem;
-          color: var(--hotpink);
-          margin: 0.3rem 0 0.2rem;
-        }
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--hotpink);
+      margin: 0.3rem 0 0.2rem;
+    }
 
-        header p {
-          margin-top: 0.2rem;
-        }
+    header p {
+      margin-top: 0.2rem;
+    }
 
-        .logo-img {
-          width: 80px;
-          height: 80px;
-          object-fit: cover;
-          border-radius: 20%;
-          border: 2px solid var(--hotpink);
-          box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
-          animation: logo-glow 3s ease-in-out infinite;
-        }
+    .logo-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 20%;
+      border: 2px solid var(--hotpink);
+      box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
+      animation: logo-glow 3s ease-in-out infinite;
+    }
 
-        @keyframes logo-glow {
-          0%, 100% { box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
-          50% { box-shadow: 0 0 20px rgba(219, 39, 119, 0.6); }
-        }
+    @keyframes logo-glow {
+      0%, 100% { box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
+      50% { box-shadow: 0 0 20px rgba(219, 39, 119, 0.6); }
+    }
 
-        .nav-buttons {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1rem;
-          margin: 2rem auto;
-          max-width: 600px;
-        }
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
 
-        .nav-buttons a {
-          background: var(--rose);
-          color: var(--hotpink);
-          padding: 0.9rem 2.2rem;
-          border-radius: 999px;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 1rem;
-          transition: all 0.3s ease;
-          text-align: center;
-          position: relative;
-          animation: floaty 3s ease-in-out infinite;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-          width: 70%;
-        }
+    .nav-buttons a {
+      background: var(--rose);
+      color: var(--hotpink);
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-align: center;
+      position: relative;
+      animation: floaty 3s ease-in-out infinite;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      width: 70%;
+    }
 
-        .nav-buttons a:hover {
-          background: var(--hotpink);
-          color: white;
-          box-shadow: 0 0 12px rgba(219, 39, 119, 0.4);
-        }
+    .nav-buttons a:hover {
+      background: var(--hotpink);
+      color: white;
+      box-shadow: 0 0 12px rgba(219, 39, 119, 0.4);
+    }
 
-        @keyframes floaty {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-5px); }
-        }
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
 
-        section {
-          max-width: 800px;
-          margin: 2rem auto;
-          padding: 1rem;
-          background: white;
-          border-radius: 1rem;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-        h2 {
-          color: var(--hotpink);
-        }
+    h2 {
+      color: var(--hotpink);
+    }
 
-        iframe, video {
-          width: 100%;
-          height: 240px;
-          border: none;
-          border-radius: 1rem;
-        }
+    iframe, video {
+      width: 100%;
+      height: 240px;
+      border: none;
+      border-radius: 1rem;
+    }
 
-        .software-section {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.5rem;
-          margin-top: 1.5rem;
-        }
-        .software-card {
-          background: var(--pink);
-          padding: 1rem;
-          border-radius: 0.8rem;
-          text-align: center;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-        .software-card img {
-          width: 50px;
-          height: 50px;
-          object-fit: contain;
-          margin-bottom: 0.5rem;
-        }
-        .progress-bar {
-          background: var(--rose);
-          border-radius: 999px;
-          overflow: hidden;
-          height: 8px;
-          margin-top: 0.5rem;
-        }
-        .progress {
-          background: var(--hotpink);
-          height: 100%;
-        }
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-        .cta-button {
-          display: inline-block;
-          background: var(--hotpink);
-          color: white;
-          padding: 0.8rem 2rem;
-          border-radius: 999px;
-          font-weight: bold;
-          text-decoration: none;
-          transition: background 0.3s;
-          margin-top: 1rem;
-        }
-        .cta-button:hover {
-          background: #b91c68;
-        }
+    .image-gallery img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
 
-        footer {
-          text-align: center;
-          background: var(--lavender);
-          padding: 2rem;
-          color: #666;
-        }
+    .youtube-link a, .book-link a {
+      display: inline-block;
+      background: var(--rose);
+      padding: 0.8rem 1.6rem;
+      color: var(--hotpink);
+      font-weight: bold;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: 1rem;
+      animation: shimmer 3s infinite;
+    }
 
-    </style>
+    .youtube-link a:hover, .book-link a:hover {
+      background: var(--hotpink);
+      color: white;
+    }
+
+    @keyframes shimmer {
+      0% { box-shadow: 0 0 0px rgba(255,255,255,0); }
+      50% { box-shadow: 0 0 10px rgba(255,255,255,0.6); }
+      100% { box-shadow: 0 0 0px rgba(255,255,255,0); }
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      background: var(--hotpink);
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #b91c68;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--lavender);
+      padding: 2rem;
+      color: #666;
+    }
+
+    /* Extra styling for Skills section */
+    .software-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .software-card {
+      background: var(--pink);
+      padding: 1rem;
+      border-radius: 0.8rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .software-card img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .progress-bar {
+      background: var(--rose);
+      border-radius: 999px;
+      overflow: hidden;
+      height: 8px;
+      margin-top: 0.5rem;
+    }
+    .progress {
+      background: var(--hotpink);
+      height: 100%;
+    }
+    .skills-lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skills-lists ul {
+      background: var(--pink);
+      padding: 1rem;
+      border-radius: 0.8rem;
+      list-style: none;
+      margin: 0;
+    }
+    .skills-lists li::before {
+      content: "🌸 ";
+    }
+  </style>
 </head>
 <body>
-    <header class="sparkle-container">
-        <img src="b6.png" alt="Logo" class="logo-img" />
-        <h1>Bhawna Creatives</h1>
-        <p>Animation & Illustration Specialist</p>
-    </header>
+  <header class="sparkle-container">
+    <img src="b6.png" alt="Logo" class="logo-img" />
+    <h1>🎨 Welcome to</h1>
+    <h1>Bhawna Creatives</h1>
+    <p>Animation, Illustration & Motion Edits✨</p>
+  </header>
 
-    <nav class="nav-buttons">
-        <a href="#about">About Me</a>
-        <a href="#services">Services</a>
-        <a href="#book-now">Book Now</a>
-        <a href="#welcome-video">Welcome Video</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <div class="nav-buttons">
+    <a href="animations.html">🎬 Animations</a>
+    <a href="illustrations.html">🖌 Illustrations</a>
+    <a href="#services">💼 Services</a>
+    <a href="#feedback">📝 Feedback</a>
+  </div>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome! I’m Bhawna Bharti, a passionate animator and illustrator dedicated to bringing your ideas to life with creativity and precision.</p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Bhawna Bharti — a passionate creator and animator exploring beautiful visual stories and creative projects.🤝</p>
+  </section>
 
-    <section id="services" class="software-section">
-        <div class="software-card">
-            <img src="illustrator.svg" alt="Adobe Illustrator" />
-            <h3>Adobe Illustrator</h3>
-            <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-        </div>
-        <div class="software-card">
-            <img src="animate.svg" alt="Adobe Animate" />
-            <h3>Adobe Animate</h3>
-            <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-        </div>
-        <div class="software-card">
-            <img src="aftereffects.svg" alt="Adobe After Effects" />
-            <h3>After Effects</h3>
-            <div class="progress-bar"><div class="progress" style="width: 55%;"></div></div>
-        </div>
-    </section>
+  <section id="featured-works">
+    <h2>Featured Animation</h2>
+    <iframe src="https://www.youtube.com/embed/ltAJNhTKMmw" title="Featured Animation" allowfullscreen></iframe>
+  </section>
 
-    <section id="book-now">
-        <h2>Book Your Edit</h2>
-        <a href="https://rzp.io/l/yourpaymentlink" class="cta-button" target="_blank" rel="noopener noreferrer">Pay Now</a>
-    </section>
+  <section id="youtube-edits">
+    <h2>YouTube Edits</h2>
+    <div class="youtube-link"><a href="https://youtube.com/@bhawanacreatives" target="_blank" rel="noopener noreferrer">Visit YouTube Channel</a></div>
+  </section>
 
-    <section id="welcome-video">
-        <h2>Welcome Video</h2>
-        <iframe src="https://www.youtube.com/embed/ntbGklxJ1l0" title="Welcome Video" allowfullscreen></iframe>
-    </section>
+  <section id="services">
+    <h2>Services I Offer</h2>
+    <ul>
+      <li>Animation & Motion Graphics</li>
+      <li>Illustration & Vector Art</li>
+      <li>Wedding & Event Video Editing</li>
+      <li>Custom Animation Commissions</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:bhawna@example.com">bhawna@example.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/yourphonenumber" target="_blank">Chat Now</a></p>
-        <p>Instagram: <a href="https://instagram.com/bhawna_creatives" target="_blank">@bhawna_creatives</a></p>
-    </section>
+  <section id="skills">
+    <h2>Tools I Use</h2>
+    <div class="software-section">
+      <div class="software-card">
+        <img src="adobe-illustrator-logo.png" alt="Adobe Illustrator" />
+        <p>Adobe Illustrator</p>
+        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="adobe-aftereffects-logo.png" alt="Adobe After Effects" />
+        <p>Adobe After Effects</p>
+        <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="adobe-animate-logo.png" alt="Adobe Animate" />
+        <p>Adobe Animate</p>
+        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="blender-logo.png" alt="Blender" />
+        <p>Blender</p>
+        <div class="progress-bar"><div class="progress" style="width: 30%;"></div></div>
+      </div>
+    </div>
+    <div class="skills-lists">
+      <ul>
+        <li>Vector Art</li>
+        <li>Character Design</li>
+        <li>Rigging</li>
+        <li>2D Animation</li>
+      </ul>
+      <ul>
+        <li>Motion Graphics</li>
+        <li>Video Editing</li>
+        <li>Storyboarding</li>
+        <li>Sound Design</li>
+      </ul>
+    </div>
+  </section>
 
-    <footer>
-        &copy; 2025 Bhawna Creatives. All rights reserved.
-    </footer>
+  <section id="book">
+    <h2>Book Your Edit</h2>
+    <p>Get in touch to book a custom animation or video edit:</p>
+    <button onclick="window.open('https://razorpay.com', '_blank')">Book Now</button>
+  </section>
 
-    <script>
-        // Generate random sparkles around the header
-        const sparkleContainer = document.querySelector('.sparkle-container');
-        for(let i = 0; i < 15; i++) {
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle');
-            sparkle.style.top = Math.random() * 100 + '%';
-            sparkle.style.left = Math.random() * 100 + '%';
-            sparkle.style.animationDelay = (Math.random() * 10) + 's';
-            sparkleContainer.appendChild(sparkle);
-        }
-    </script>
+  <section id="feedback">
+    <h2>Feedback & Contact</h2>
+    <p>Email: <a href="mailto:bhawan@example.com">bhawan@example.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">+91 98765 43210</a></p>
+    <p>Instagram: <a href="https://instagram.com/bhawan.creatives" target="_blank" rel="noopener noreferrer">@bhawan.creatives</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Bhawna Bharti — Bhawna Creatives</p>
+  </footer>
+
+  <script>
+    // Add sparkles dynamically inside header
+    const container = document.querySelector('.sparkle-container');
+    for(let i = 0; i < 20; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = ${Math.random() * 100}%;
+      sparkle.style.top = ${Math.random() * 100}%;
+      sparkle.style.animationDelay = ${Math.random() * 10}s;
+      container.appendChild(sparkle);
+    }
+  </script>
 </body>
 </html>
