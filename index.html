@@ -1,107 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simple UI</title>
-  <style>
-    /* Reset & basic styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bhawna Creatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --pink: #fff1f2;
+    --rose: #fbcfe8;
+    --hotpink: #db2777;
+    --lavender: #e0bbff;
+    --white: #fff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--pink);
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  .sparkle-container {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(1px);
+    animation: floatSparkle 10s linear infinite;
+  }
+
+  @keyframes floatSparkle {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
+    100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
+  }
+
+  header {
+    text-align: center;
+    background: var(--lavender);
+    padding: 2rem 1rem;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    color: var(--hotpink);
+    margin: 0.3rem 0 0.2rem;
+  }
+
+  header p {
+    margin-top: 0.2rem;
+    font-weight: 600;
+  }
+
+  .logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20%;
+    border: 2px solid var(--hotpink);
+    box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
+    animation: logo-glow 3s ease-in-out infinite;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+
+  @keyframes logo-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(219, 39, 119, 0.6); }
+  }
+
+  .services-combined {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 700px;
+    margin: 2rem auto;
+  }
+
+  .service-box {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex: 1;
+    text-align: center;
+  }
+
+  .service-box h3 {
+    color: var(--hotpink);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta {
+    text-align: center;
+    margin: 3rem 1rem;
+  }
+
+  .cta h2 {
+    color: var(--hotpink);
+    margin-bottom: 1rem;
+  }
+
+  .cta-button {
+    background: var(--rose);
+    color: var(--hotpink);
+    padding: 1rem 2.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(219,39,119,0.18);
+    display: inline-block;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--hotpink);
+    color: white;
+  }
+
+  section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: var(--hotpink);
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+
+  .contact p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+  }
+
+  footer {
+    text-align: center;
+    background: var(--lavender);
+    padding: 2rem 1rem;
+    color: #666;
+    margin-top: 4rem;
+  }
+
+  .social-icons {
+    margin-top: 0.8rem;
+  }
+
+  .social-icons a {
+    margin: 0 1rem;
+    color: var(--hotpink);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: var(--rose);
+  }
+
+  @media (max-width: 700px) {
+    .services-combined {
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 0 1rem;
     }
-    body {
-      background: #f0f2f5;
-      color: #333;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-    }
-    .container {
-      background: white;
-      width: 350px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 25px;
-    }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #444;
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-      margin-top: 15px;
-      color: #555;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1.5px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      transition: border-color 0.3s ease;
-      resize: vertical;
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-      border-color: #007bff;
-      outline: none;
-    }
-    textarea {
-      min-height: 80px;
-    }
-    button {
-      margin-top: 25px;
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      color: white;
-      background-color: #007bff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    /* Optional small print */
-    .footer-text {
-      font-size: 12px;
-      color: #888;
-      margin-top: 15px;
-      text-align: center;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Contact Us</h1>
-    <form>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name" required />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+<header class="sparkle-container">
+  <img src="your-logo.png" alt="Bhawna Creatives Logo" class="logo-img" />
+  <h1>Bhawna Creatives</h1>
+  <p>Animation & Illustration Specialist</p>
+</header>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+<section class="about">
+  <h2>About Me</h2>
+  <p>Welcome! I’m Bhawna Bharti, a passionate animator and illustrator dedicated to bringing your ideas to life with creativity and precision.</p>
+</section>
 
-      <button type="submit">Send</button>
-    </form>
-    <div class="footer-text">We’ll get back to you soon!</div>
+<section class="services-combined" id="services">
+  <div class="service-box">
+    <h3>Animation</h3>
+    <p>High-quality animations tailored to your needs.</p>
   </div>
+  <div class="service-box">
+    <h3>Illustration</h3>
+    <p>Creative illustrations to match your vision.</p>
+  </div>
+</section>
+
+<section class="cta" id="book-me">
+  <h2>Let’s Create Something Amazing!</h2>
+  <a href="#contact" class="cta-button">Book Now</a>
+</section>
+
+<section class="welcome-video">
+  <h2>Welcome Video</h2>
+  <video controls>
+    <source src="welcome.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>Email: your@email.com</p>
+  <p>WhatsApp: +91-XXXXXXXXXX</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Bhawna Creatives. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://pinterest.com" target="_blank">Pinterest</a>
+  </div>
+</footer>
+
 </body>
 </html>
