@@ -163,90 +163,62 @@ footer {
   padding: 2rem;
   color: #666;
 }
-.software-container {
+.software-group {
+  margin-bottom: 2rem;
+}
+
+.software-section {
   display: flex;
-  flex-wrap: wrap;           /* Wrap cards to next line if not enough space */
-  gap: 12px;                 /* Space between cards */
-  justify-content: flex-start; /* Align cards starting from left */
-  padding: 8px;              /* Optional padding around container */
-  max-width: 600px;          /* Optional: limit container width for grouping */
-  margin: 0 auto;            /* Center container horizontally */
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .software-card {
-  width: 100px;              /* Slightly smaller width */
-  padding: 10px;             /* Adjusted padding */
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 150px;
   text-align: center;
-  transition: transform 0.3s ease;
-  background: #fff;
-  margin: 0;                 /* No margin since gap is set on container */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;           /* Optional: pointer cursor on hover */
-}
-
-.software-card img {
-  width: 50px;               /* Smaller logo size */
-  height: 50px;
-  border-radius: 8px;
-  object-fit: contain;
-  margin-bottom: 6px;
-}
-
-.software-card p {
-  font-size: 0.8rem;         /* Smaller font */
-  margin-bottom: 6px;
 }
 
 .progress-bar {
-  height: 5px;               /* Slightly smaller progress bar */
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #eee;
-  width: 100%;
-}
-
-
-}
-
-.progress-bar {
-  height: 6px;             /* Smaller progress bar height */
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #eee;
-  width: 100%;
-}
-}
-
-.progress-bar {
-  background: var(--rose);
-  border-radius: 999px;
-  overflow: hidden;
+  background: #eee;
+  border-radius: 4px;
   height: 8px;
-  margin-top: 0.5rem;
+  margin-top: 5px;
+  overflow: hidden;
 }
 
-.progress {
-  background: var(--hotpink);
+.progress-bar .progress {
   height: 100%;
+  background-color: #f06292; /* Pink color */
+  transition: width 0.5s ease;
 }
 
-.skills-lists {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
+/* Optionally different pink shades if you want */
+.main-software .progress-bar .progress {
+  background-color: #e91e63;
 }
 
-.skills-lists ul {
-  background: var(--pink);
-  padding: 1rem;
-  border-radius: 0.8rem;
-  list-style: none;
-  margin: 0;
+.secondary-software .progress-bar .progress {
+  background-color: #f48fb1;
+}
+
+.organizational-software .software-card p {
+  margin-top: 8px;
+}
+
+/* Skills section layout */
+.skills-section {
+  display: flex;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.skills-list h4 {
+  margin-bottom: 0.5rem;
+}
+
+.skills-list ul {
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 .skills-lists li::before {
