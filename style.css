@@ -314,3 +314,18 @@ footer {
     height: 30px;
   }
 }
+
+/* Smaller size for LinkedIn, Behance, and Pinterest icons in footer */
+.social-icons a {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.social-icons a svg {
+  width: 20px;
+  height: 20px;
+}
