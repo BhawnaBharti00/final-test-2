@@ -183,10 +183,11 @@
     <form id="feedbackForm" class="feedback-form" onsubmit="handleFeedbackSubmit(event);">
       <label>Your Name:<br><input type="text" name="name" id="fb-name" required></label>
       <label>Your Feedback:<br><textarea name="feedback" id="fb-feedback" rows="4" required></textarea></label>
-      <div class="feedback-actions">
-        <button type="submit">Send Feedback</button>
-        <button type="button" id="fb-reset" onclick="document.getElementById('feedbackForm').reset();">Reset</button>
-      </div>
+     <div class="feedback-form-container">
+  <input id="fb-name" type="text" placeholder="Your Name" />
+  <textarea id="fb-feedback" placeholder="Your feedback"></textarea>
+  <button type="submit">Send</button>
+</div>
       <p id="fb-status" style="text-align:center; font-size:0.95rem; color:#555; margin-top:6px; display:none;"></p>
     </form>
     <p style="font-size:0.9rem; color:#666; text-align:center; margin-top:0.8rem;">Or email me directly at <a href="mailto:bhartibhawna4488@gmail.com">bhartibhawna4488@gmail.com</a></p>
