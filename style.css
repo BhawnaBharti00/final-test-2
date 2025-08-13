@@ -163,39 +163,53 @@ footer {
   padding: 2rem;
   color: #666;
 }
-
-/* Extra styling for Skills section */
-.software-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+.software-container {
+  display: flex;
+  flex-wrap: wrap;           /* Wrap cards to next line if not enough space */
+  gap: 12px;                 /* Space between cards */
+  justify-content: flex-start; /* Align cards starting from left */
+  padding: 8px;              /* Optional padding around container */
+  max-width: 600px;          /* Optional: limit container width for grouping */
+  margin: 0 auto;            /* Center container horizontally */
 }
+
 .software-card {
-  width: 120px;            /* Smaller width (adjust as needed) */
-  padding: 12px;           /* Smaller padding */
-  border-radius: 12px;     /* Rounded corners */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Optional: subtle shadow */
-  text-align: center;      /* Center content */
+  width: 100px;              /* Slightly smaller width */
+  padding: 10px;             /* Adjusted padding */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
   transition: transform 0.3s ease;
-  background: #fff;        /* Optional: background color for card */
-  margin: 8px;             /* Space between cards */
+  background: #fff;
+  margin: 0;                 /* No margin since gap is set on container */
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;           /* Optional: pointer cursor on hover */
 }
 
 .software-card img {
-  width: 60px;             /* Smaller logo size */
-  height: 60px;
-  border-radius: 8px;      /* Rounded corners on logo */
+  width: 50px;               /* Smaller logo size */
+  height: 50px;
+  border-radius: 8px;
   object-fit: contain;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .software-card p {
-  font-size: 0.85rem;      /* Smaller font */
-  margin-bottom: 8px;
+  font-size: 0.8rem;         /* Smaller font */
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 5px;               /* Slightly smaller progress bar */
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #eee;
+  width: 100%;
+}
+
+
 }
 
 .progress-bar {
