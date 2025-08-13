@@ -329,3 +329,27 @@ footer {
   width: 20px;
   height: 20px;
 }
+
+/* Style the name input box */
+#fb-name {
+  width: 300px;        /* sets the width */
+  height: 35px;        /* sets the height */
+  font-size: 16px;     /* text size inside input */
+  padding: 6px 10px;   /* space inside the box: 6px top & bottom, 10px left & right */
+  border: 1px solid #ccc;  /* light grey border */
+  border-radius: 5px;      /* rounded corners */
+  box-sizing: border-box;  /* includes padding and border in width */
+}
+
+/* Style the feedback textarea */
+#fb-feedback {
+  width: 300px;         /* same width as input */
+  height: 120px;        /* taller height for feedback */
+  font-size: 16px;      /* readable text size */
+  padding: 8px 10px;    /* space inside the box */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;     /* user can resize only vertically */
+  font-family: Arial, sans-serif; /* clean font */
+}
