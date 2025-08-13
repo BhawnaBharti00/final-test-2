@@ -1,3 +1,134 @@
+/* Top hero layout */
+.top-hero{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 26px;
+  padding-top: 36px;
+  background: linear-gradient(180deg, #fff 0%, #fffafc 100%);
+  /* subtle bottom border to separate from rest */
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* LEFT: software icons column */
+.left-tools{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  width:140px;          /* narrow column like your sketch */
+  align-items:flex-start;
+}
+
+/* a small grid of icons */
+.tools{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(32px, 1fr));
+  gap:8px;
+}
+.tool{
+  height:40px;
+  min-width:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 14px rgba(50,20,60,0.02);
+  font-size: 13px;
+  font-weight:600;
+}
+.tool.shaded{
+  background: linear-gradient(135deg,#ffdbe9,#ffe9f4); /* shaded like your sketch */
+  border-color: rgba(160,40,90,0.12);
+}
+
+/* CENTER: long pill */
+.center-pill{
+  flex: 1 1 auto;       /* pill takes remaining space */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.pill{
+  display:inline-block;
+  padding: 12px 110px;   /* long pill like the sketch */
+  text-decoration:none;
+  border-radius:999px;
+  background: #ffdce6;   /* pastel pink */
+  color: #3b0b2d;
+  font-weight:700;
+  letter-spacing:0.6px;
+  box-shadow: 0 8px 28px rgba(200,40,100,0.08);
+}
+
+/* RIGHT: brand block with logo */
+.right-brand{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  min-width:220px;
+  justify-content:flex-end;
+}
+.brand-text{
+  text-align:right;
+}
+.welcome-line{
+  font-size:13px;
+  color:#5e5a63;
+  margin-bottom:2px;
+}
+.brand-name{
+  margin:0;
+  font-size:20px;
+  letter-spacing:0.2px;
+  color:#2b0a2a;
+}
+.sub-line{
+  font-size:12px;
+  color:#6b606a;
+  margin-top:6px;
+}
+
+.tiny-badges{
+  margin-top:8px;
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+}
+.badge{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.06);
+  box-shadow:0 6px 12px rgba(0,0,0,0.03);
+}
+
+/* logo square — replace with your <img> if available */
+.logo-square{
+  width:72px;
+  height:72px;
+  border-radius:12px;
+  background: linear-gradient(135deg,#fff 0%, #ffeef6 100%);
+  border: 2px solid rgba(160,40,90,0.08);
+  box-shadow: 0 18px 30px rgba(160,40,90,0.06);
+}
+
+/* responsiveness: stack for small screens */
+@media (max-width: 780px){
+  .top-hero{
+    flex-direction: column;
+    align-items: stretch;
+    gap:14px;
+    padding:18px;
+  }
+  .left-tools{ width:100%; order:1; }
+  .center-pill{ order:2; justify-content:flex-start; padding-left:6px; }
+  .pill{ padding-left:20px; padding-right:20px; }
+  .right-brand{ order:3; justify-content:space-between; }
+  .brand-text{text-align:left;}
+}
 :root {
   --pink: #fff1f2;
   --rose: #fbcfe8;
