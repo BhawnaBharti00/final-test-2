@@ -1,365 +1,270 @@
-:root {
-  --pink: #fff1f2;
-  --rose: #fbcfe8;
-  --hotpink: #db2777;
-  --lavender: #e0bbff;
-  --white: #fff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bhawna Creatives – Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="sparkle-container">
 
-html {
-  scroll-behavior: smooth;
-}
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--pink);
-  color: #333;
-  overflow-x: hidden;
-}
+    <div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+<div class="sparkle"></div>
+    
+    <img src="b6.png" alt="Logo" class="logo-img">
+    <h1>🎨 Welcome to</h1>
+    <h1>Bhawna Creatives</h1>
+    <p>Animation, Illustration & Motion Edits✨</p>
+  </header>
 
-header {
-  text-align: center;
-  background: var(--lavender);
-  padding: 1.5rem 1rem;
-  position: relative;
-}
+  <section>
+    <h2>💡 About Me</h2>
+    <p>Hi, I’m Bhawna — a self-driven artist helping startups and small businesses craft creative brand identities and artistic campaigns that boost reach. I create animations, vector art, and visual stories, blending human psychology with design principles to build strong brand recognition. I’m always open to meaningful collaborations and creative projects.🤝</p>
 
-header h1 {
-  font-size: 1.8rem;
-  color: var(--hotpink);
-  margin: 0.3rem 0 0.2rem;
-}
+    <h3>Main Software</h3>
+    <div class="software-section">
+      <div class="software-card">
+        <img src="s1.png" alt="Adobe Animate">
+        <p>Adobe Animate</p>
+        <div class="progress-bar"><div class="progress" style="width:90%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s2.png" alt="Adobe Illustrator">
+        <p>Adobe Illustrator</p>
+        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s3.png" alt="Adobe After Effects">
+        <p>After Effects</p>
+        <div class="progress-bar"><div class="progress" style="width:40%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s4.png" alt="DaVinci Resolve">
+        <p>DaVinci Resolve</p>
+        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+      </div>
+    </div>
 
-header p {
-  margin-top: 0.2rem;
-}
+    <h3>Secondary Software</h3>
+    <div class="software-section">
+      <div class="software-card">
+        <img src="s5.png" alt="Premiere Pro">
+        <p>Premiere Pro</p>
+        <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s6.png" alt="Adobe Photoshop">
+        <p>Photoshop</p>
+        <div class="progress-bar"><div class="progress" style="width:60%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s7.png" alt="Figma">
+        <p>Figma</p>
+        <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s8.png" alt="Canva">
+        <p>Canva</p>
+        <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+      </div>
+    </div>
 
-.logo-img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 20%;
-  border: 2px solid var(--hotpink);
-  box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
-  animation: logo-glow 3s ease-in-out infinite;
-}
+    <h3>Organisational Software</h3>
+    <div class="software-section">
+      <div class="software-card"><img src="s9.png" alt="Google Workspace"><p>Google Workspace</p></div>
+      <div class="software-card"><img src="s10.png" alt="MS Word"><p>MS Word</p></div>
+      <div class="software-card"><img src="s11.png" alt="MS Excel"><p>MS Excel</p></div>
+      <div class="software-card"><img src="s12.png" alt="MS PowerPoint"><p>MS PowerPoint</p></div>
+    </div>
 
-@keyframes logo-glow {
-  0%, 100% { box-shadow: 0 0 10px rgba(219, 39, 119, 0.2); }
-  50% { box-shadow: 0 0 20px rgba(219, 39, 119, 0.6); }
-}
+    <div class="skills-lists">
+      <ul>
+        <h4>Skills</h4>
+        <li>Animation</li>
+        <li>Vector Art</li>
+        <li>Motion Graphics</li>
+        <li>Editing</li>
+        <li>Brand Development</li>
+        <li>Creative Design Work</li>
+      </ul>
+      <ul>
+        <h4>Soft Skills</h4>
+        <li>Design Understanding</li>
+        <li>User Psychology</li>
+        <li>Research</li>
+        <li>Storytelling</li>
+        <li>Attention to Detail</li>
+        <li>Adaptability</li>
+        </ul>
+    </div>
 
-.nav-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin: 2rem auto;
-  max-width: 600px;
-}
+    <!-- NEW: Animation + Illustration buttons side by side (below About & Skills) -->
+    <div class="inline-btns" aria-hidden="false">
+      <a href="animations.html">🎬 Animations</a>
+      <a href="illustrations.html">🖌 Illustrations</a>
+    </div>
 
-.nav-buttons a {
-  background: var(--rose);
-  color: var(--hotpink);
-  padding: 0.9rem 2.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  text-align: center;
-  position: relative;
-  animation: floaty 3s ease-in-out infinite;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  width: 70%;
-}
+    <!-- NEW: Book Now CTA below the two buttons -->
+    <div class="book-now-wrap">
+      <a class="book-now" href="mailto:bhartibhawna4488@gmail.com">📅 Book Now</a>
+    </div>
+  </section>
 
-.nav-buttons a:hover {
-  background: var(--hotpink);
-  color: white;
-  box-shadow: 0 0 12px rgba(219, 39, 119, 0.4);
-}
+  <section>
+    <h2>📺 Welcome</h2>
+    <video controls>
+      <source src="BB.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
 
-@keyframes floaty {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}
+  <section>
+    <h2>🌸 In Progress: Misho in the Flower Shop</h2>
+    <p>A cozy ASMR episode currently in development. Misho, our cute pup, explores a flower shop filled with warmth, blossoms, and magic. This gentle animation blends soft movement, relaxing visuals, and warm storytelling aesthetics.</p>
 
-section {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+    <video controls>
+      <source src="p1.mp4" type="video/mp4">
+    </video>
 
-h2 { color: var(--hotpink); }
+    <video controls>
+      <source src="p2.mp4" type="video/mp4">
+    </video>
 
-iframe, video {
-  width: 100%;
-  height: 240px;
-  border: none;
-  border-radius: 1rem;
-}
+    <video controls>
+      <source src="p4.mp4" type="video/mp4">
+    </video>
 
-.image-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+    <div class="image-gallery">
+      <img src="p1.png" alt="Preview 1">
+      <img src="p2.png" alt="Preview 2">
+      <img src="p3.png" alt="Preview 3">
+    </div>
+  </section>
 
-.image-gallery img {
-  width: 100%;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
+  <section>
+    <h2>📺 Featured on YouTube</h2>
+    <iframe src="https://www.youtube.com/embed/uQDgqX0Rkuo?si=K2BDfDOKrNNm0mu_" allowfullscreen></iframe>
+  </section>
 
-.youtube-link a,
-.book-link a {
-  display: inline-block;
-  background: var(--rose);
-  padding: 0.8rem 1.6rem;
-  color: var(--hotpink);
-  font-weight: bold;
-  border-radius: 999px;
-  text-decoration: none;
-  margin-top: 1rem;
-  animation: shimmer 3s infinite;
-}
+  <section>
+    <h2>📌 Visit My YouTube Channel</h2>
+    <p class="youtube-link">
+      <a href="https://youtube.com/@berrypawsasmr?si=wdpINgYE3ZJoyCWu" target="_blank">🌟 Watch More on YouTube</a>
+    </p>
+  </section>
 
-.youtube-link a:hover,
-.book-link a:hover {
-  background: var(--hotpink);
-  color: white;
-}
+  <section id="services">
+    <h2>💼 Services & Cost (Per minute)</h2>
+    <ul>
+      <li>Custom Animation: ₹1400</li>
+      <li>Infographics: ₹1200</li>
+      <li>Animation with Edits: ₹2000</li>
+      <li>Illustration: ₹800</li>
+    </ul>
+  </section>
 
-@keyframes shimmer {
-  0% { box-shadow: 0 0 0px rgba(255,255,255,0); }
-  50% { box-shadow: 0 0 10px rgba(255,255,255,0.6); }
-  100% { box-shadow: 0 0 0px rgba(255,255,255,0); }
-}
+  <section>
+    <h2>📩 Book Animation</h2>
+    <p class="book-link">
+      <a href="mailto:bhartibhawna4488@gmail.com">📬 Click Here to Book</a>
+    </p>
+  </section>
 
-button {
-  padding: 0.6rem 1.2rem;
-  background: var(--hotpink);
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+  <section id="feedback">
+    <h2>💬 Feedback</h2>
+    <!-- Active feedback form: JS will open a mailto: with the filled content -->
+    <form id="feedbackForm" class="feedback-form" onsubmit="handleFeedbackSubmit(event);">
+      
+     <div class="feedback-form-container">
+  <input id="fb-name" type="text" placeholder="Your Name" />
+  <textarea id="fb-feedback" placeholder="Your feedback"></textarea>
+  <button type="submit">Send</button>
+</div>
+      <p id="fb-status" style="text-align:center; font-size:0.95rem; color:#555; margin-top:6px; display:none;"></p>
+    </form>
+    <p style="font-size:0.9rem; color:#666; text-align:center; margin-top:0.8rem;">Or email me directly at <a href="mailto:bhartibhawna4488@gmail.com">bhartibhawna4488@gmail.com</a></p>
+  </section>
 
-button:hover {
-  background: #b91c68;
-}
+  <footer>
+   
+   <div class="social-icons" aria-hidden="false">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank" aria-label="LinkedIn">
+    <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="24" height="24" rx="4" fill="#FFFFFF" />
+      <path d="M6.94 8.94H4.34V19.6H6.94V8.94ZM5.64 7.46C6.48 7.46 7.14 6.8 7.14 5.96C7.14 5.12 6.48 4.46 5.64 4.46C4.8 4.46 4.14 5.12 4.14 5.96C4.14 6.8 4.8 7.46 5.64 7.46Z" fill="#0A66C2"/>
+      <path d="M10.2 8.94H12.7V10.2H12.76C13.24 9.4 14.38 8.54 16.04 8.54C19.04 8.54 19.6 10.66 19.6 13.46V19.6H17V14.06C17 12.58 16.98 10.66 14.86 10.66C12.7 10.66 12.4 12.28 12.4 13.94V19.6H10.2V8.94Z" fill="#0A66C2"/>
+    </svg>
+  </a>
 
-footer {
-  text-align: center;
-  background: var(--lavender);
-  padding: 2rem;
-  color: #666;
-}
-.software-group {
-  margin-bottom: 2rem;
-}
+  <!-- Behance -->
+  <a href="https://www.behance.net/bhawnabharti48/editor" target="_blank" aria-label="Behance">
+    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="24" height="24" rx="4" fill="#FFFFFF" />
+      <text x="12" y="16" font-size="10" font-weight="700" text-anchor="middle" fill="#1769FF" font-family="Inter, Arial, sans-serif">Bē</text>
+    </svg>
+  </a>
 
-.software-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+  <!-- Pinterest -->
+  <a href="https://pin.it/7BvtTQsCY" target="_blank" aria-label="Pinterest">
+    <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="24" height="24" rx="4" fill="#FFFFFF" />
+      <path d="M12 4.5C8.96 4.5 6.5 6.96 6.5 9.9c0 2.46.7 3.68 1.26 4.22.1-.16.26-.92.31-1.16.05-.14-.03-.26-.14-.34-.41-.28-1.06-1.07-1.06-2.57 0-3.65 2.28-5.8 5.06-5.8 2.49 0 3.99 1.59 3.99 3.66 0 2.4-1.32 4.39-3.14 4.39-.6 0-.96-.42-.96-.89 0-.86.52-1.74.52-2.48 0-.91-.5-1.64-1.5-1.64-1.24 0-2.23 1.04-2.23 2.44 0 .89.3 1.48.3 2.06 0 .22-.24.88-.36 1.18-.12.31-.4.69-.62.93C9.7 17.93 10.83 18.5 12 18.5c3.04 0 5.5-2.46 5.5-5.5S15.04 4.5 12 4.5z" fill="#E60023"/>
+    </svg>
+  </a>
+</div> 
 
-.software-card {
-  width: 150px;
-  text-align: center;
-}
+    <div class="footer-small">© 2025 Bhawna Creatives — All rights reserved.</div>
+    <div style="margin-top:8px; font-size:0.85rem; color:#777;">Built &amp; designed by Bhawna Creatives</div>
+  </footer>
 
-.progress-bar {
-  background: #eee;
-  border-radius: 4px;
-  height: 8px;
-  margin-top: 5px;
-  overflow: hidden;
-}
+  <script>
+    // Sparkles in header (existing behavior)
+    const sparkleContainer = document.querySelector('.sparkle-container');
+    for (let i = 0; i < 40; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.top = Math.random() * 100 + '%';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = (Math.random() * 10) + 's';
+      sparkleContainer.appendChild(sparkle);
+    }
 
-.progress-bar .progress {
-  height: 100%;
-  background-color: #f06292; /* Pink color */
-  transition: width 0.5s ease;
-}
+    // Feedback form: construct mailto link with input values and open mail client
+    function handleFeedbackSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fb-name').value.trim();
+      const feedback = document.getElementById('fb-feedback').value.trim();
+      const statusEl = document.getElementById('fb-status');
 
-/* Optionally different pink shades if you want */
-.main-software .progress-bar .progress {
-  background-color: #e91e63;
-}
+      if (!name || !feedback) {
+        statusEl.style.display = 'block';
+        statusEl.textContent = 'Please enter your name and feedback.';
+        return;
+      }
 
-.secondary-software .progress-bar .progress {
-  background-color: #f48fb1;
-}
+      const subject = encodeURIComponent('Feedback from ' + name + ' – Bhawna Creatives Website');
+      const body = encodeURIComponent('Name: ' + name + '\n\nFeedback:\n' + feedback + '\n\n(Submitted from website)');
+      const mailto = 'mailto:bhartibhawna4488@gmail.com?subject=' + subject + '&body=' + body;
 
-.organizational-software .software-card p {
-  margin-top: 8px;
-}
+      // Try to open default mail client
+      window.location.href = mailto;
 
-/* Skills section layout */
-.skills-section {
-  display: flex;
-  gap: 4rem;
-  margin-top: 2rem;
-}
+      // show a
+ friendly message (some browsers will not open mail client programmatically)
+      statusEl.style.display = 'block';
+      statusEl.textContent = 'If your mail client did not open, please email bhartibhawna4488@gmail.com directly or copy your feedback.';
 
-.skills-list h4 {
-  margin-bottom: 0.5rem;
-}
-
-.skills-list ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.skills-lists li::before {
-  content: " 📌 ";
-}
-
-/* Inline buttons under About/Skills */
-.inline-btns {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.6rem;
-}
-
-.inline-btns a {
-  background: var(--rose);
-  color: var(--hotpink);
-  padding: 0.9rem 1.6rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.18s ease, background 0.18s ease;
-}
-
-.inline-btns a:hover {
-  transform: translateY(-4px);
-}
-
-/* Book Now CTA */
-.book-now-wrap {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.book-now-wrap a {
-  background: var(--hotpink);
-  color: white;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(219,39,119,0.4);
-  display: inline-block;
-  transition: box-shadow 0.3s ease;
-}
-
-.book-now-wrap a:hover {
-  box-shadow: 0 6px 16px rgba(219,39,119,0.7);
-}
-
-/* ----------- SVG Social Icons Fix ----------- */
-.social-icon {
-  width: 40px;
-  height: 40px;
-  vertical-align: middle;
-  fill: var(--hotpink); /* optional color */
-}
-
-/* Responsive smaller icons on mobile */
-@media (max-width: 600px) {
-  .social-icon {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-/* Smaller size for LinkedIn, Behance, and Pinterest icons in footer */
-.social-icons a {
-  width: 30px;
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 8px;
-}
-
-.social-icons a svg {
-  width: 20px;
-  height: 20px;
-}
-/* Style the name input box */
-#fb-name {
-  width: 100%;           /* fill container */
-  max-width: 100%;       /* max width is container width */
-  height: 35px;
-  font-size: 16px;
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  display: block;
-  margin-bottom: 1rem;   /* space below input */
-}
-
-/* Style the feedback textarea */
-#fb-feedback {
-  width: 100%;
-  max-width: 100%;
-  height: 120px;
-  font-size: 16px;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  resize: vertical;      /* allow vertical resize only */
-  font-family: Arial, sans-serif;
-  display: block;
-  margin-bottom: 1rem;   /* space below textarea */
-}
-
-/* Style the submit button */
-button[type="submit"] {
-  padding: 0.7rem 1.5rem;
-  background: var(--hotpink);
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background 0.3s;
-  display: block;
-  width: 100%;
-  max-width: 150px;
-  margin: 0 auto;
-}
-
-button[type="submit"]:hover {
-  background: #b91c68;
-}
-
-/* Responsive tweaks */
-@media (max-width: 400px) {
-  .feedback-form-container {
-    width: 95%;
-    padding: 0.8rem;
-  }
-
-  button[type="submit"] {
-    max-width: 100%;
-  }
-}
+      // Optionally reset form after a short delay
+      setTimeout(() => document.getElementById('feedbackForm').reset(), 700);
+    }
+  </script>
+</body>
+</html>
