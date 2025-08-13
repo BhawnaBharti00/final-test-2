@@ -270,7 +270,7 @@
         <li>Storytelling</li>
         <li>Attention to Detail</li>
         <li>Adaptability</li>
-      </ul>
+        </ul>
     </div>
 
     <!-- NEW: Animation + Illustration buttons side by side (below About & Skills) -->
@@ -370,11 +370,22 @@
           <path d="M10.2 8.94H12.7V10.2H12.76C13.24 9.4 14.38 8.54 16.04 8.54C19.04 8.54 19.6 10.66 19.6 13.46V19.6H17V14.06C17 12.58 16.98 10.66 14.86 10.66C12.7 10.66 12.4 12.28 12.4 13.94V19.6H10.2V8.94Z" fill="#0A66C2"/>
         </svg>
       </a>
-      <!-- Pinterest (placeholder URL) -->
+
+      <!-- Behance (new) -->
+      <a href="https://www.behance.net/yourprofile" target="_blank" aria-label="Behance">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="24" height="24" rx="4" fill="#FFFFFF" />
+          <!-- Simple "Bē" mark using text so it matches the icon row (font fallback will be used) -->
+          <text x="12" y="16" font-size="10" font-weight="700" text-anchor="middle" fill="#1769FF" font-family="Inter, Arial, sans-serif">Bē</text>
+        </svg>
+      </a>
+
+      <!-- Pinterest (placeholder URL) - icon updated -->
       <a href="https://www.pinterest.com/yourprofile" target="_blank" aria-label="Pinterest">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="24" height="24" rx="4" fill="#FFFFFF" />
-          <path d="M12 4.5C8.96 4.5 6.5 6.96 6.5 9.9C6.5 11.46 7.2 12.68 7.76 13.22C7.86 13.06 8.02 12.3 8.07 12.06C8.11 11.9 8.03 11.78 7.92 11.62C7.64 11.17 7.1 10.06 7.1 8.8C7.1 6.15 9.38 4 12.16 4C14.65 4 16.16 5.59 16.16 7.66C16.16 10.06 14.84 12.05 13.02 12.05C12.42 12.05 12.06 11.63 12.06 11.16C12.06 10.07 12.92 9.22 12.92 7.98C12.92 6.6 11.96 5.66 10.76 5.66C9.16 5.66 8.38 7.06 8.38 8.5C8.38 9.48 8.95 10.4 9.5 10.4C9.79 10.4 9.95 10.03 9.95 9.68C9.95 8.86 9.65 8.12 9.65 7.16C9.65 6.1 10.33 5.5 11.3 5.5C12.76 5.5 13.7 6.78 13.7 8.12C13.7 10.26 12.24 12.6 10.62 12.6C9.36 12.6 8.7 11.6 8.7 10.64C8.7 9.5 9.28 8.64 9.28 8.64C9.28 8.64 8.4 8.18 8.4 6.86C8.4 5.08 10.02 3.5 12 3.5C14.76 3.5 16.84 5.84 16.84 8.5C16.84 11.2 15.28 13.34 13.56 13.34C12.52 13.34 12.08 12.78 12.08 12.1C12.08 11.16 12.68 10.74 13.14 10.74C13.9 10.74 14.2 11.52 14.2 12.24C14.2 13.84 12.98 15.22 11.04 15.22C8.42 15.22 6.5 12.96 6.5 9.9C6.5 6.96 8.96 4.5 12 4.5Z" fill="#E60023"/>
+          <!-- simplified pinterest-like mark -->
+          <path d="M12 4.5C8.96 4.5 6.5 6.96 6.5 9.9c0 2.46.7 3.68 1.26 4.22.1-.16.26-.92.31-1.16.05-.14-.03-.26-.14-.34-.41-.28-1.06-1.07-1.06-2.57 0-3.65 2.28-5.8 5.06-5.8 2.49 0 3.99 1.59 3.99 3.66 0 2.4-1.32 4.39-3.14 4.39-.6 0-.96-.42-.96-.89 0-.86.52-1.74.52-2.48 0-.91-.5-1.64-1.5-1.64-1.24 0-2.23 1.04-2.23 2.44 0 .89.3 1.48.3 2.06 0 .22-.24.88-.36 1.18-.12.31-.4.69-.62.93C9.7 17.93 10.83 18.5 12 18.5c3.04 0 5.5-2.46 5.5-5.5S15.04 4.5 12 4.5z" fill="#E60023"/>
         </svg>
       </a>
     </div>
@@ -416,7 +427,8 @@
       // Try to open default mail client
       window.location.href = mailto;
 
-      // show a friendly message (some browsers will not open mail client programmatically)
+      // show a
+ friendly message (some browsers will not open mail client programmatically)
       statusEl.style.display = 'block';
       statusEl.textContent = 'If your mail client did not open, please email bhartibhawna4488@gmail.com directly or copy your feedback.';
 
