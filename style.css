@@ -18,39 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Sparkle container */
-.sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.5;
-  filter: blur(1px);
-  animation: floatSparkle 10s linear infinite;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-/* Sparkles positions and animation delays */
-.sparkle:nth-child(1) { top: 20px; left: 30px; animation-delay: 0s; }
-.sparkle:nth-child(2) { top: 50px; left: 70px; animation-delay: 3s; }
-.sparkle:nth-child(3) { top: 10px; left: 110px; animation-delay: 6s; }
-.sparkle:nth-child(4) { top: 40px; left: 140px; animation-delay: 2s; }
-.sparkle:nth-child(5) { top: 15px; left: 170px; animation-delay: 5s; }
-
-@keyframes floatSparkle {
-  0%   { transform: translateY(0) scale(1); opacity: 0.6; }
-  50%  { transform: translateY(-20px) scale(1.05); opacity: 1; }
-  100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
-}
-
-.sparkle-container {
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-
 header {
   text-align: center;
   background: var(--lavender);
