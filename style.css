@@ -116,6 +116,8 @@ body {
 }
 .software-card img {
   width: 50px;
+  height: 50px;
+  object-fit: contain;
   margin-bottom: 0.5rem;
 }
 .progress-bar {
