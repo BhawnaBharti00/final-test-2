@@ -110,11 +110,6 @@ body {
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.2s ease;
-   font-size: 1.2rem;
-  font-weight: 200;
-  background: linear-gradient(to right, #ff7eb9, #8a77ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .software-card:hover {
   transform: translateY(-5px);
