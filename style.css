@@ -178,7 +178,7 @@ video, iframe {
   justify-content: center;
 }
 .image-gallery img {
-  width: 150px;
+  width: 700px;
   border-radius: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
