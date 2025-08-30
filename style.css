@@ -160,7 +160,7 @@ body {
 /* ===== Video & Gallery ===== */
 video, iframe {
   width: 100%;
-  max-width: 700px;
+  max-width: 400px;
   border-radius: 1rem;
   margin: 1rem auto;
   display: block;
@@ -168,7 +168,7 @@ video, iframe {
 }
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem;
 }
 .image-gallery {
@@ -178,7 +178,7 @@ video, iframe {
   justify-content: center;
 }
 .image-gallery img {
-  width: 700px;
+  width: 400px;
   border-radius: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
