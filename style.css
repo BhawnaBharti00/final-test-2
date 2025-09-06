@@ -6,35 +6,37 @@
 }
 body {
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  line-height: 1.8;
   background: linear-gradient(135deg, #ffeaf4, #f0eaff);
   color: #333;
   overflow-x: hidden;
 }
 
 /* ===== Containers ===== */
+section {
+  margin-bottom: 4rem;
+}
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 /* ===== Hero Section ===== */
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
   position: relative;
   overflow: hidden;
 }
 .logo-img {
- width: 120px;
+  width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 20%;
-  border: 2px solid var(--hotpink);
+  border: 2px solid #ff7eb9;
   box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
-  animation: logo-glow 3s ease-in-out infinite;
   animation: float 3s ease-in-out infinite;
 }
 .hero h1 {
@@ -43,6 +45,7 @@ body {
   background: linear-gradient(to right, #ff7eb9, #8a77ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-top: 1rem;
 }
 .hero .subtitle {
   font-size: 1.2rem;
@@ -60,6 +63,13 @@ body {
 }
 
 /* ===== Buttons ===== */
+.nav-buttons, .inline-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
 .btn-primary, .btn-secondary {
   display: inline-block;
   padding: 0.8rem 1.5rem;
@@ -81,7 +91,6 @@ body {
   background: #fff;
   border: 2px solid #8a77ff;
   color: #8a77ff;
-  margin: 0.5rem;
 }
 .btn-secondary:hover {
   background: #f4f1ff;
@@ -168,7 +177,7 @@ video, iframe {
 }
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
 }
 .image-gallery {
@@ -190,6 +199,7 @@ video, iframe {
   gap: 0.8rem;
 }
 .feedback input, .feedback textarea {
+  width: 100%;
   padding: 0.8rem;
   border: 2px solid #ddd;
   border-radius: 0.8rem;
@@ -235,4 +245,5 @@ video, iframe {
   .hero h1 { font-size: 2rem; }
   .skills-lists { flex-direction: column; align-items: center; }
   .software-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .image-gallery img { width: 100%; }
 }
