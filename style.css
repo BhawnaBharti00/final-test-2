@@ -14,12 +14,12 @@ body {
 }
 
 body.dark {
-  background-color: #D3D3D3;
-  color: #A9A9A9;
+  background-color: #ffffff;
+  color: #f0f0f0;
 }
 
 body.dark a {
-  color: #f0f0f0;
+  color: #000000;
 }
 
 /* ===== Containers ===== */
@@ -126,12 +126,12 @@ body.dark .hero {
 
 body.dark .btn-primary {
   background-color: #444;
-  color: #f0f0f0;
+  color: #000000;
 }
 
 body.dark .btn-secondary {
   background-color: #444;
-  color: #f0f0f0;
+  color: #000000;
 }
 
 body.dark .btn-primary:hover,
