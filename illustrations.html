@@ -3,63 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Illustrations | Bhawna Creatives</title>
+  <title>Certificates | Bhawna Creatives</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* RESET & BASE */
+    :root {
+      --pink-light: #fdf2f8;
+      --pink-medium: #fbcfe8;
+      --pink-dark: #db2777;
+      --pink-hover: #be185d;
+      --text-dark: #333;
+      --text-muted: #555;
+      --white: #fff;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #333;
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
+      background: var(--pink-light);
+      color: var(--text-dark);
+      transition: background 0.3s, color 0.3s;
     }
 
+    /* DARK MODE VARIABLES & OVERRIDES */
     .dark {
-      background-color: #121212;
-      color: #f0f0f0;
+      --pink-light: #1e1e1e;
+      --pink-medium: #2a2a3a;
+      --pink-dark: #ccc;
+      --pink-hover: #eee;
+      --text-dark: #f0f0f0;
+      --text-muted: #aaa;
+      --white: #2a2a2a;
+    }
+    .dark body {
+      background: var(--pink-light);
+      color: var(--text-dark);
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-    }
-
-    h1, h2 {
-      margin: 0.5rem 0;
-    }
-
-    p {
-      margin: 0.5rem 0 1rem;
-    }
-
-    a {
-      text-decoration: none;
-      color: #555;
-      font-weight: 600;
-    }
-
-    /* HEADER WITH GRADIENT */
     header {
+      background: linear-gradient(135deg, var(--pink-medium), #e9d5ff);
       text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, #ffc0cb, #dda0dd);
-      color: white;
+      padding: 2.5rem 1rem;
+      border-bottom: 4px solid var(--pink-dark);
+      transition: background 0.3s, border-color 0.3s;
     }
-
+    .dark header {
+      background: linear-gradient(135deg, var(--pink-medium), #3b3b4a);
+      border-bottom-color: var(--pink-dark);
+    }
     header h1 {
       font-size: 2.5rem;
+      color: var(--pink-dark);
+      margin-bottom: 0.5rem;
     }
-
+    .dark header h1 {
+      color: var(--text-dark);
+    }
     header p {
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-muted);
     }
 
-    /* NAVIGATION */
+   /* NAVIGATION */
     nav {
       display: flex;
       justify-content: center;
@@ -84,68 +87,153 @@
       color: #f0f0f0;
     }
 
-    /* INTRO */
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
     .intro {
+      max-width: 750px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      background: #fce7f3;
+      padding: 2rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark .intro {
+      background: #2a2a2a;
+      color: var(--text-muted);
+      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+    }
+
+    .certificate-card {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 0 1rem;
-      text-align: center;
-      font-size: 1.1rem;
+      background: var(--white);
+      border-radius: 1.2rem;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s, color 0.3s;
     }
-
-    /* CARD STYLING */
-    .certificate-card {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
     .dark .certificate-card {
-      background-color: #1e1e1e;
+      background: #1e1e1e;
+      color: var(--text-dark);
       box-shadow: 0 4px 12px rgba(255,255,255,0.05);
     }
+    .certificate-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+    .certificate-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .certificate-card h2 {
+      color: var(--pink-dark);
+      margin: 0.5rem 0;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .dark .certificate-card h2 {
+      color: var(--text-dark);
+    }
+    .certificate-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
-    /* CTA BOX */
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      background: var(--pink-dark);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    .download-btn:hover {
+      background: var(--pink-hover);
+    }
+    .dark .download-btn {
+      background: #444;
+    }
+    .dark .download-btn:hover {
+      background: #666;
+    }
+
     .cta-box {
-      max-width: 600px;
-      margin: 3rem auto;
+      background: #fce7f3;
       padding: 2rem;
-      background-color: #f0f0ff;
-      border-radius: 12px;
-      text-align: center;
+      margin-top: 3rem;
+      border-radius: 1.2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: background 0.3s, color 0.3s;
     }
-
     .dark .cta-box {
-      background-color: #2a2a3a;
+      background: #2a2a2a;
+      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+      color: var(--text-dark);
     }
-
+    .cta-box h2 {
+      color: var(--pink-dark);
+      margin-bottom: 1rem;
+    }
+    .dark .cta-box h2 {
+      color: var(--text-dark);
+    }
     .cta-box a {
       display: inline-block;
       margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #dda0dd;
-      color: white;
-      border-radius: 8px;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      background: var(--pink-dark);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    .cta-box a:hover {
+      background: var(--pink-hover);
+    }
+    .dark .cta-box a {
+      background: #444;
+    }
+    .dark .cta-box a:hover {
+      background: #666;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: #fafafa;
+      background: #ffe4e6;
+      color: #666;
       font-size: 0.9rem;
+      margin-top: 3rem;
+      transition: background 0.3s, color 0.3s;
     }
-
     .dark footer {
-      background-color: #1e1e1e;
+      background: #1e1e1e;
       color: #ccc;
     }
+    footer a {
+      color: var(--pink-dark);
+      text-decoration: underline;
+    }
+    .dark footer a {
+      color: var(--text-muted);
+    }
 
-    /* DARK MODE TOGGLE */
     .dark-mode-toggle {
       position: fixed;
       bottom: 20px;
@@ -158,77 +246,56 @@
       cursor: pointer;
       font-size: 1rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+    .dark .dark-mode-toggle {
+      background-color: #ddd;
+      color: #333;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .certificate-card, .cta-box {
-        margin: 1rem;
-        padding: 1rem;
-      }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .certificate-card { padding: 1.5rem; }
+      .cta-box { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
-    <div>
-     <img src="b6.png" alt="Bhawna Creatives Logo" class="logo-img" /> 
-    <h1>🖌 Illustrations</h1>
-    <p>Pastel dreams, cozy characters, and whimsical storytelling</p>
-    </div>
+    <h1>📜 My Certifications</h1>
+    <p>Achievements that reflect my growth and dedication</p>
   </header>
 
-  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="animations.html">🎬 Animations</a>
-    <a href="certificates.html">📜 Certificates</a>
-    <a href="projectsi.html">📂 Upcoming Project</a>
+    <a href="illustrations.html">🖌 Illustrations</a>
   </nav>
 
-  <!-- INTRO -->
   <section>
     <div class="intro">
-      I love crafting soft, story-rich illustrations that evoke warmth and wonder. 
-      From dreamy characters to cottagecore scenes, each piece is a little world of its own.
-    </div>
-
-    <!-- FEATURED PROJECT -->
-    <div class="certificate-card">
-      <img src="b4.png" alt="Magic Market Mornings">
-      <h2>🌸 Magic Market Mornings</h2>
-      <p>A whimsical pastel series capturing the charm of cottage life. 
-      Cozy corners, animated characters, and gentle storytelling come together in this ongoing project.</p>
-    </div>
-
-    <!-- GALLERY -->
-    <div class="certificate-card">
-      <img src="b1.png" alt="Illustration 1">
-      <h2>🍓 Berry Paws</h2>
-      <p>Character design for ASMR channel mascot. Soft textures and playful expressions bring Berry to life.</p>
+      Each certificate marks a milestone in my creative and professional journey.  
+      Here, I showcase my achievements, skills, and continued learning spirit.
     </div>
 
     <div class="certificate-card">
-      <img src="b5.png" alt="Illustration 2">
-      <h2>🌿 Botanical Whispers</h2>
-      <p>Inspired by your botany roots—this series blends flora with fantasy, creating serene visual poems.</p>
+      <img src="hp-life-certificate.png" alt="HP LIFE Certificate">
+      <h2>🎓 HP LIFE Foundation Certificate</h2>
+      <p><strong>HP LIFE online course</strong> Design Thinking — I learned how to define problems, create problem statements, and use customer feedback to build meaningful solutions.</p>
+      <a href="hp-life-certificate.png" download="HP_LIFE_Certificate_BhawnaBharti.png" class="download-btn">⬇ Download Certificate</a>
     </div>
 
-    <!-- CTA BOX -->
-    <div class="cta-box">
-      <h2>🤝 Let’s Create Together</h2>
-      <a href="mailto:bhartibhawna4488@gmail.com">📬 Contact me</a>
-     
+    <div class="certificate-card">
+      <img src="uvp-certificate.png" alt="UVP HP LIFE Certificate">
+      <h2>🌟 UVP HP LIFE Certificate</h2>
+      <p>Successfully completed the <strong>HP LIFE program under UVP initiative</strong>, focusing on entrepreneurship, business, and digital skills to empower creative professionals.</p>
+      <a href="uvp-certificate.png" download="UVP_HP_LIFE_Certificate.png" class="download-btn">⬇ Download Certificate</a>
     </div>
+
+  
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>📧 bhartibhawna4488@gmail.com | 
       <p><a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a> | <a href="https://pin.it/7BvtTQsCY" target="_blank"> Pinterest</a> | <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank"> LinkedIn</a></p>
@@ -236,10 +303,7 @@
     <p>© 2025 Bhawna Creatives</p>
   </footer>
 
-  <!-- DARK MODE TOGGLE -->
   <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-
-  <!-- DARK MODE SCRIPT -->
   <script>
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
