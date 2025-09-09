@@ -247,3 +247,46 @@ video, iframe {
   .software-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
   .image-gallery img { width: 100%; }
 }
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f3f3f3;
+}
+
+.dark-mode header,
+.dark-mode .nav-buttons,
+.dark-mode .inline-btns,
+.dark-mode .container,
+.dark-mode footer {
+  background-color: #2a2a2a;
+  color: #f3f3f3;
+}
+
+.dark-mode a {
+  color: #ff90c2;
+}
+
+.dark-mode .btn-primary,
+.dark-mode .btn-secondary {
+  background-color: #ff90c2;
+  color: #1a1a1a;
+}
+
+.dark-mode .progress-bar {
+  background-color: #444;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: #ff90c2;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
