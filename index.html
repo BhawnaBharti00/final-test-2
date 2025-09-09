@@ -6,65 +6,17 @@
   <title>Bhawna Creatives – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Dark Mode Styles */
-    body.dark-mode {
-      background-color: #1a1a1a;
-      color: #f5f5f5;
-    }
-
-    body.dark-mode .subtitle,
-    body.dark-mode p,
-    body.dark-mode h2,
-    body.dark-mode h1 {
-      color: #e0e0e0;
-    }
-
-    body.dark-mode .btn-primary,
-    body.dark-mode .btn-secondary {
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #555;
-    }
-
-    body.dark-mode .footer {
-      background-color: #2a2a2a;
-      color: #ccc;
-    }
-
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 0.6rem 1rem;
-      border-radius: 999px;
-      background: #db2777;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      z-index: 999;
-    }
-
-    .dark-mode-toggle:hover {
-      background: #be185d;
-    }
-  </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="hero sparkle-container">
     <div class="sparkle"></div>
     <img src="b6.png" alt="Logo" class="logo-img">
+    <h1 class="fade-in">🎨 Welcome to</h1>
     <h1 class="fade-in delay">Bhawna Creatives</h1>
     <p class="subtitle">✨ Animation | Illustration | Motion Edits ✨</p>
     <div class="nav-buttons">
       <a href="#book-link" class="btn-primary">💌 Book Animation</a>
-    </div>
-    <div class="inline-btns container">
-      <a href="animations.html" class="btn-secondary">🎬 Animations</a>
-      <a href="illustrations.html" class="btn-secondary">🖌 Illustrations</a>
-      <a href="certificates.html" class="btn-secondary">📜 Certificates</a>
     </div>
   </header>
 
@@ -72,29 +24,121 @@
   <section class="about container">
     <h2>💡 About Me</h2>
     <p>
-      Hi! I’m <strong>Bhawna Bharti</strong>, a self-driven artist helping startups and small businesses in
-      developing creative brand identity and artistic campaigns that boost brand reach. 
-      I create animations, vector art and motion edits, blending psychology 
-      with design principles to build strong brand identity. <span>🤝</span>
+      Hi! I’m <strong>Bhawna</strong>, a self-driven artist helping startups and small businesses 
+      craft creative brand identities and artistic campaigns that boost reach. 
+      I create animations, vector art, and visual stories, blending psychology 
+      with design to build strong brand recognition. <span>🤝</span>
     </p>
   </section>
 
   <!-- SOFTWARE SKILLS -->
-  <!-- (Your existing software skills section remains unchanged) -->
+  <section class="skills container">
+    <h2>⚙ Main Software</h2>
+    <div class="software-grid">
+      <div class="software-card">
+        <img src="s1.png" alt="Adobe Animate"><p>Adobe Animate</p>
+        <div class="progress-bar"><div class="progress w-90"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s2.png" alt="Adobe Illustrator"><p>Illustrator</p>
+        <div class="progress-bar"><div class="progress w-70"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s3.png" alt="After Effects"><p>After Effects</p>
+        <div class="progress-bar"><div class="progress w-40"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s4.png" alt="DaVinci Resolve"><p>DaVinci Resolve</p>
+        <div class="progress-bar"><div class="progress w-70"></div></div>
+      </div>
+    </div>
+
+    <h2>⚙ Secondary Software</h2>
+    <div class="software-grid">
+      <div class="software-card"><img src="s5.png"><p>Premiere Pro</p><div class="progress-bar"><div class="progress w-40"></div></div></div>
+      <div class="software-card"><img src="s6.png"><p>Photoshop</p><div class="progress-bar"><div class="progress w-20"></div></div></div>
+      <div class="software-card"><img src="s7.png"><p>Figma</p><div class="progress-bar"><div class="progress w-40"></div></div></div>
+      <div class="software-card"><img src="s8.png"><p>Canva</p><div class="progress-bar"><div class="progress w-80"></div></div></div>
+    </div>
+
+    <h2>⚙ Organisational Tools</h2>
+    <div class="software-grid">
+      <div class="software-card"><img src="s9.png"><p>Google Workspace</p></div>
+      <div class="software-card"><img src="s10.png"><p>MS Word</p></div>
+      <div class="software-card"><img src="s11.png"><p>MS Excel</p></div>
+      <div class="software-card"><img src="s12.png"><p>MS PowerPoint</p></div>
+    </div>
+  </section>
+
+  <!-- SKILLS LIST -->
+  <section class="skills-lists container">
+    <div>
+      <h3>👩🏻‍💻 Artistic Skills</h3>
+      <ul>
+        <li>Animation</li><li>Vector Art</li><li>Motion Graphics</li>
+        <li>Editing</li><li>Brand Development</li><li>Creative Design</li>
+      </ul>
+    </div>
+    <div>
+      <h3>👩🏻‍💻 Soft Skills</h3>
+      <ul>
+        <li>Design Understanding</li><li>User Psychology</li><li>Research</li>
+        <li>Storytelling</li><li>Attention to Detail</li><li>Adaptability</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- CTA BUTTONS -->
+  <div class="inline-btns container">
+    <a href="animations.html" class="btn-secondary">🎬 Animations</a>
+    <a href="illustrations.html" class="btn-secondary">🖌 Illustrations</a>
+  </div>
   <div class="book-now-wrap container">
     <a class="btn-primary" href="mailto:bhartibhawna4488@gmail.com">📅 Book Now</a>
   </div>
 
   <!-- PROJECTS -->
-  <!-- (Your existing projects and YouTube sections remain unchanged) -->
+  <section class="projects container">
+    <h2>📺 Welcome</h2>
+    <video controls><source src="BB.mp4" type="video/mp4"></video>
+  </section>
+
+  <section class="projects container">
+    <h2>🌸 In Progress: Misho in the Flower Shop</h2>
+    <p>A cozy ASMR episode in development. Misho, our cute pup, explores a flower shop filled with warmth, blossoms, and magic.</p>
+    <div class="video-grid">
+      <video controls><source src="p1.mp4"></video>
+      <video controls><source src="p2.mp4"></video>
+      <video controls><source src="p4.mp4"></video>
+    </div>
+    <div class="image-gallery">
+      <img src="p1.png"><img src="p2.png"><img src="p3.png">
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section class="youtube container">
+    <h2>📺 Featured on YouTube</h2>
+    <iframe src="https://www.youtube.com/embed/piMhxxVwJ50?si=lI4Q2UHYnsLpCb-V" allowfullscreen></iframe>
+    <p class="youtube-link"><a href="https://youtube.com/@berrypawsasmr" target="_blank">🌟 Watch More on YouTube</a></p>
+  </section>
 
   <!-- SERVICES -->
-  <!-- (Your services section remains unchanged) -->
+  <section id="services" class="services container">
+    <h2>💼 Services & Cost (per min)</h2>
+    <ul>
+      <li>Custom Animation: ₹1400</li>
+      <li>Infographics: ₹1200</li>
+      <li>Animation + Edits: ₹2000</li>
+      <li>Illustration: ₹800</li>
+    </ul>
+  </section>
 
   <!-- BOOK -->
-  <!-- (Your booking section remains unchanged) -->
+  <section id="book-link" class="book container">
+    <h2>📩 Book Animation</h2>
+    <a href="mailto:bhartibhawna4488@gmail.com" class="btn-primary">📬 Click Here to Book</a>
+  </section>
 
   <!-- FEEDBACK -->
   <section id="feedback" class="feedback container">
@@ -143,19 +187,11 @@
         return;
       }
       const subject = encodeURIComponent('Feedback from ' + name);
-      const body = encodeURIComponent('Name: ' + name + '\n\nFeedback:\n' + feedback);
+      const body = encodeURIComponent('Name: ' + name + '\\n\\nFeedback:\\n' + feedback);
       window.location.href = 'mailto:bhartibhawna4488@gmail.com?subject=' + subject + '&body=' + body;
       statusEl.textContent = 'If mail client didn’t open, please copy feedback and send manually.';
       setTimeout(() => document.getElementById('feedbackForm').reset(), 700);
     }
-
-    // Dark mode toggle
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
   </script>
-
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-
 </body>
 </html>
