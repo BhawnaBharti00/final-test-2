@@ -34,7 +34,7 @@ section {
 }
 
 body.dark .hero {
-  background: linear-gradient(135deg, #2c003e, #4b0082);
+  background: linear-gradient(135deg, #ffb6c1, #dda0dd); /* pink to purple */
   color: #f0f0f0;
 }
 
