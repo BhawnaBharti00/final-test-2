@@ -26,14 +26,18 @@ section {
 }
 
 /* ===== Hero Section ===== */
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  background: linear-gradient(to right, #ff7eb9, #8a77ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 1rem;
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
 }
+
+body.dark .hero {
+  background: linear-gradient(135deg, #2c003e, #4b0082);
+  color: #f0f0f0;
+}
+
 .logo-img {
   width: 120px;
   height: 120px;
@@ -56,8 +60,9 @@ section {
 .hero .subtitle {
   font-size: 1.2rem;
   margin: 1rem 0;
-  color: #ddd;
+  color: #555;
 }
+
 
 /* Multiple sparkles (bubbles) */
 .sparkle {
