@@ -11,10 +11,25 @@ body {
   background: linear-gradient(135deg, #ffeaf4, #f0eaff);
   color: #333;
   overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body.dark {
   background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* ===== Typography Fixes for Dark Mode ===== */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark li,
+body.dark span,
+body.dark label {
   color: #f0f0f0;
 }
 
@@ -40,6 +55,7 @@ section {
   padding: 5rem 1rem;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #ffeaf4, #f0eaff);
 }
 
 body.dark .hero {
@@ -66,20 +82,20 @@ body.dark .hero {
   margin-top: 1rem;
 }
 
+body.dark .hero h1 {
+  background: linear-gradient(to right, #ffb6c1, #dda0dd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .hero .subtitle {
   font-size: 1.2rem;
   margin: 1rem 0;
   color: #555;
 }
 
-.sparkle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 4s infinite;
+body.dark .subtitle {
+  color: #ccc;
 }
 
 /* ===== Buttons ===== */
@@ -193,12 +209,6 @@ body.dark .about p {
   background: linear-gradient(to right, #ff7eb9, #8a77ff);
 }
 
-.w-90 { width: 90%; }
-.w-80 { width: 80%; }
-.w-70 { width: 70%; }
-.w-40 { width: 40%; }
-.w-20 { width: 20%; }
-
 body.dark .software-card {
   background-color: #333;
   color: #eee;
@@ -206,6 +216,10 @@ body.dark .software-card {
 
 body.dark .progress-bar {
   background-color: #555;
+}
+
+body.dark .progress {
+  background: linear-gradient(to right, #bb86fc, #8a77ff);
 }
 
 /* ===== Skills Lists ===== */
@@ -319,11 +333,6 @@ body.dark .footer {
   color: #ccc;
 }
 
-.credit {
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-}
-
 /* ===== Animations ===== */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -332,42 +341,4 @@ body.dark .footer {
 
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .skills-lists {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .software-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-
-  .image-gallery img {
-    width: 100%;
-  }
-}
-
-/* DARK MODE TOGGLE BUTTON */
-.dark-mode-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
+  50% { opacity: 1; transform: scale(1.
