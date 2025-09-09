@@ -19,7 +19,7 @@ body.dark {
 }
 
 body.dark a {
-  color: #000000;
+  color: #90caf9;
 }
 
 /* ===== Containers ===== */
@@ -130,7 +130,7 @@ body.dark .btn-primary {
 }
 
 body.dark .btn-secondary {
-  background-color: #808080;
+  background-color: #444;
   color: #fff;
 }
 
@@ -148,7 +148,7 @@ body.dark .btn-secondary:hover {
 }
 
 body.dark .about p {
-  color: #ddd;
+  color: #121212;
 }
 
 /* ===== Software Skills Grid ===== */
@@ -200,12 +200,12 @@ body.dark .about p {
 .w-20 { width: 20%; }
 
 body.dark .software-card {
-  background-color: #333;
-  color: #eee;
+  background-color: #dcdcdc;
+  color: #d3d3d3;
 }
 
 body.dark .progress-bar {
-  background-color: #555;
+  background-color: #1c1c1c;
 }
 
 /* ===== Skills Lists ===== */
