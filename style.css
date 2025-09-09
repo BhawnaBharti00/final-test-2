@@ -14,8 +14,8 @@ body {
 }
 
 body.dark {
-  background-color: #181818;
-  color: #f0f0f0;
+  background-color: #121212; /* ✅ Updated dark background */
+  color: #fff;               /* ✅ Updated text color */
 }
 
 body.dark a {
@@ -44,7 +44,7 @@ section {
 
 body.dark .hero {
   background: linear-gradient(135deg, #2c003e, #4b0082);
-  color: #f0f0f0;
+  color: #fff;
 }
 
 .logo-img {
@@ -148,7 +148,7 @@ body.dark .btn-secondary:hover {
 }
 
 body.dark .about p {
-  color: #ddd;
+  color: #fff; /* ✅ Updated text color */
 }
 
 /* ===== Software Skills Grid ===== */
@@ -160,7 +160,7 @@ body.dark .about p {
 }
 
 .software-card {
-  background: #fff;
+  background: #fff; /* ✅ Retained light background */
   padding: 1rem;
   border-radius: 1rem;
   text-align: center;
@@ -199,11 +199,6 @@ body.dark .about p {
 .w-40 { width: 40%; }
 .w-20 { width: 20%; }
 
-body.dark .software-card {
-  background-color: #333;
-  color: #eee;
-}
-
 body.dark .progress-bar {
   background-color: #555;
 }
@@ -231,7 +226,7 @@ body.dark .progress-bar {
 
 body.dark .skills-lists li {
   background-color: #444;
-  color: #f0f0f0;
+  color: #fff; /* ✅ Updated text color */
 }
 
 /* ===== Video & Gallery ===== */
@@ -287,7 +282,7 @@ body.dark .image-gallery img {
 body.dark .feedback input,
 body.dark .feedback textarea {
   background-color: #222;
-  color: #fff;
+  color: #fff; /* ✅ Updated text color */
   border: 1px solid #555;
 }
 
@@ -347,26 +342,4 @@ body.dark .footer {
   }
 
   .software-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-
-  .image-gallery img {
-    width: 100%;
-  }
-}
-
-/* DARK MODE TOGGLE BUTTON */
-.dark-mode-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
+    grid-template-columns: repeat(auto-fit, min
