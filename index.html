@@ -5,110 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bhawna Creatives – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #fdfdfd;
-      color: #333;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .dark {
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 2.5rem 1rem;
-      background: linear-gradient(135deg, #ffb6c1, #dda0dd);
-      color: white;
-    }
-
-    .dark .hero {
-      background: linear-gradient(135deg, #2c003e, #4b0082);
-      color: #f0f0f0;
-    }
-
-    .btn-secondary, .btn-primary {
-      text-decoration: none;
-      background-color: #333;
-      color: #fff;
-      padding: 0.6rem 1.5rem;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: background-color 0.3s;
-      display: inline-block;
-      margin: 0.5rem;
-    }
-
-    .btn-secondary:hover, .btn-primary:hover {
-      background-color: #555;
-    }
-
-    .dark .btn-secondary, .dark .btn-primary {
-      background-color: #444;
-      color: #fff;
-    }
-
-    .dark .btn-secondary:hover, .dark .btn-primary:hover {
-      background-color: #666;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #eee;
-      font-size: 0.9rem;
-    }
-
-    .dark .footer {
-      background-color: #1e1e1e;
-      color: #ccc;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .dark input, .dark textarea {
-      background-color: #222;
-      color: #fff;
-      border: 1px solid #555;
-    }
-
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <!-- HEADER -->
-  <header class="hero">
-    <img src="b6.png" alt="Logo" class="logo-img" />
-    <h1>Bhawna Creatives</h1>
+  <header class="hero sparkle-container">
+    <div class="sparkle"></div>
+    <img src="b6.png" alt="Logo" class="logo-img">
+    <h1 class="fade-in delay">Bhawna Creatives</h1>
     <p class="subtitle">✨ Animation | Illustration | Motion Edits ✨</p>
     <div class="inline-btns container">
       <a href="animations.html" class="btn-secondary">🎬 Animations</a>
@@ -117,10 +21,126 @@
     </div>
   </header>
 
-  <!-- ABOUT -->
+  <!-- ABOUT ME -->
   <section class="about container">
     <h2>💡 About Me</h2>
-    <p>Hi! I’m <strong>Bhawna Bharti</strong>, a self-driven artist helping startups and small businesses craft creative brand identities and artistic campaigns to boost reach. I create animations, vector art, and visual stories, blending psychology with design to build strong brand recognition. <strong>Let's Work Together</strong> 🤝</p>
+    <p>
+      Hi! I’m <strong>Bhawna Bharti</strong>, a self-driven artist helping startups and small businesses craft creative brand identities and artistic campaigns to boost reach. I create animations, vector art, and visual stories, blending psychology with design to build strong brand recognition. <strong>Let's Work Togeter </strong>🤝
+    </p>
+  </section>
+
+  <!-- SOFTWARE SKILLS -->
+  <section class="skills container">
+    <h2>⚙ Software & Tools</h2>
+    <div class="software-grid">
+      <div class="software-card">
+        <img src="s1.png" alt="Adobe Animate">
+        <p>Adobe Animate</p>
+        <div class="progress-bar"><div class="progress w-90"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s2.png" alt="Illustrator">
+        <p>Illustrator</p>
+        <div class="progress-bar"><div class="progress w-70"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s3.png" alt="After Effects">
+        <p>After Effects</p>
+        <div class="progress-bar"><div class="progress w-40"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s4.png" alt="DaVinci Resolve">
+        <p>DaVinci Resolve</p>
+        <div class="progress-bar"><div class="progress w-70"></div></div>
+      </div>
+    </div>
+  </section>
+
+      <h2>⚙ Secondary Software</h2>
+    <div class="software-grid">
+      <div class="software-card"><img src="s5.png"><p>Premiere Pro</p><div class="progress-bar"><div class="progress w-40"></div></div></div>
+      <div class="software-card"><img src="s6.png"><p>Photoshop</p><div class="progress-bar"><div class="progress w-20"></div></div></div>
+      <div class="software-card"><img src="s7.png"><p>Figma</p><div class="progress-bar"><div class="progress w-40"></div></div></div>
+      <div class="software-card"><img src="s8.png"><p>Canva</p><div class="progress-bar"><div class="progress w-80"></div></div></div>
+    </div>
+
+    <h2>⚙ Organisational Tools</h2>
+    <div class="software-grid">
+      <div class="software-card"><img src="s9.png"><p>Google Workspace</p></div>
+      <div class="software-card"><img src="s10.png"><p>MS Word</p></div>
+      <div class="software-card"><img src="s11.png"><p>MS Excel</p></div>
+      <div class="software-card"><img src="s12.png"><p>MS PowerPoint</p></div>
+    </div>
+
+
+  <!-- ARTISTIC & SOFT SKILLS -->
+  <section class="skills container">
+    <h2>👩🏻‍💻 Artistic Skills</h2>
+    <ul>
+      <li>Animation</li>
+      <li>Vector Art</li>
+      <li>Motion Graphics</li>
+      <li>Editing</li>
+      <li>Brand Development</li>
+      <li>Creative Design</li>
+    </ul>
+
+    <h2>🌱 Soft Skills</h2>
+    <ul>
+      <li>Design Understanding</li>
+      <li>User Psychology</li>
+      <li>Research</li>
+      <li>Storytelling</li>
+      <li>Attention to Detail</li>
+      <li>Adaptability</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects container">
+    <h2>📺 Welcome</h2>
+    <video controls><source src="BB.mp4" type="video/mp4"></video>
+  </section>
+
+  <section class="projects container">
+    <h2>🌸 In Progress: Misho in the Flower Shop</h2>
+    <p>A cozy ASMR episode in development. Misho, our cute pup, explores a flower shop filled with warmth, blossoms, and magic.</p>
+    <div class="video-grid">
+      <video controls><source src="p1.mp4" type="video/mp4"></video>
+      <video controls><source src="p2.mp4" type="video/mp4"></video>
+      <video controls><source src="p4.mp4" type="video/mp4"></video>
+    </div>
+    <div class="image-gallery">
+      <img src="p1.png" alt="Misho frame 1">
+      <img src="p2.png" alt="Misho frame 2">
+      <img src="p3.png" alt="Misho frame 3">
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section class="youtube container">
+    <h2>📺 Featured on YouTube</h2>
+    <iframe src="https://www.youtube.com/embed/piMhxxVwJ50?si=lI4Q2UHYnsLpCb-V" allowfullscreen></iframe>
+    <p class="youtube-link">
+      <a href="https://youtube.com/@berrypawsasmr" target="_blank">📽 Watch More on YouTube</a>
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services container">
+    <h2>💼 Services & Cost (per min)</h2>
+    <ul>
+      <li>📍Custom Animation: ₹1400</li>
+      <li>📍Infographics: ₹1200</li>
+      <li>📍Animation + Edits: ₹2000</li>
+      <li>📍Illustration: ₹800</li>
+    </ul>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book-link" class="book container">
+    <h2>📩 Book Animation</h2>
+    <a href="mailto:bhartibhawna4488@gmail.com" class="btn-primary">📬 Click Here to Book</a>
   </section>
 
   <!-- FEEDBACK -->
@@ -137,24 +157,26 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 Bhawna Creatives — All rights reserved.</p>
-    <p>Built & designed by Bhawna Creatives</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank">LinkedIn</a>
+      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
+      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a>
+    </div>
+    <div class="footer-small">© 2025 Bhawna Creatives — All rights reserved.</div>
+    <div class="credit">Built & designed by Bhawna Creatives</div>
   </footer>
 
-  <!-- DARK MODE TOGGLE -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-
-  <!-- JAVASCRIPT -->
+  <!-- JS -->
   <script>
-    // Dark Mode
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', mode);
+    // Sparkle Animation
+    const sparkleContainer = document.querySelector('.sparkle-container');
+    for (let i = 0; i < 30; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.top = Math.random() * 100 + '%';
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = (Math.random() * 10) + 's';
+      sparkleContainer.appendChild(sparkle);
     }
 
     // Feedback Mailto
@@ -171,6 +193,20 @@
       const body = encodeURIComponent('Name: ' + name + '\n\nFeedback:\n' + feedback);
       window.location.href = 'mailto:bhartibhawna4488@gmail.com?subject=' + subject + '&body=' + body;
       statusEl.textContent = 'Redirecting to mail app...';
+    }
+  </script>
+    <!-- DARK MODE TOGGLE -->
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <!-- DARK MODE SCRIPT -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
     }
   </script>
 </body>
