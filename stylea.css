@@ -1,0 +1,96 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    color: #fff;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    background: #222;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.parallax-section {
+    position: relative;
+    height: 500px;
+    background: url('b7.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.parallax-content {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    text-align: center;
+    border-radius: 12px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.video-gallery {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.video-gallery .videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.video-gallery video {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-gallery video:hover {
+    transform: scale(1.05);
+}
+
+.upcoming {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.upcoming img {
+    max-width: 90%;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer a {
+    color: #89f7fe;
+    text-decoration: none;
+}
