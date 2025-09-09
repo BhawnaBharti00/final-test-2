@@ -14,8 +14,8 @@ body {
 }
 
 body.dark {
-  background-color: #121212; /* ✅ Updated dark background */
-  color: #fff;               /* ✅ Updated text color */
+  background-color: #121212;
+  color: #f0f0f0;
 }
 
 body.dark a {
@@ -44,7 +44,7 @@ section {
 
 body.dark .hero {
   background: linear-gradient(135deg, #2c003e, #4b0082);
-  color: #fff;
+  color: #f0f0f0;
 }
 
 .logo-img {
@@ -148,7 +148,7 @@ body.dark .btn-secondary:hover {
 }
 
 body.dark .about p {
-  color: #fff; /* ✅ Updated text color */
+  color: #ddd;
 }
 
 /* ===== Software Skills Grid ===== */
@@ -160,7 +160,7 @@ body.dark .about p {
 }
 
 .software-card {
-  background: #fff; /* ✅ Retained light background */
+  background: #fff;
   padding: 1rem;
   border-radius: 1rem;
   text-align: center;
@@ -199,6 +199,11 @@ body.dark .about p {
 .w-40 { width: 40%; }
 .w-20 { width: 20%; }
 
+body.dark .software-card {
+  background-color: #333;
+  color: #eee;
+}
+
 body.dark .progress-bar {
   background-color: #555;
 }
@@ -226,7 +231,7 @@ body.dark .progress-bar {
 
 body.dark .skills-lists li {
   background-color: #444;
-  color: #fff; /* ✅ Updated text color */
+  color: #f0f0f0;
 }
 
 /* ===== Video & Gallery ===== */
@@ -282,7 +287,7 @@ body.dark .image-gallery img {
 body.dark .feedback input,
 body.dark .feedback textarea {
   background-color: #222;
-  color: #fff; /* ✅ Updated text color */
+  color: #fff;
   border: 1px solid #555;
 }
 
@@ -342,4 +347,41 @@ body.dark .footer {
   }
 
   .software-grid {
-    grid-template-columns: repeat(auto-fit, min
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .image-gallery img {
+    width: 100%;
+  }
+}
+
+/* DARK MODE TOGGLE BUTTON */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* DARK MODE TOGGLE BUTTON */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
