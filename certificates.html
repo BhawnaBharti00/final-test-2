@@ -62,31 +62,29 @@
       color: var(--text-muted);
     }
 
+   /* NAVIGATION */
     nav {
-      text-align: center;
-      background: var(--pink-medium);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
       padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: background 0.3s;
+      background-color: #f9f9f9;
     }
-    .dark nav {
-      background: #1a1a1a;
-    }
+
     nav a {
-      margin: 0 1rem;
-      color: var(--pink-dark);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s ease;
+      padding: 0.5rem 1rem;
+      background-color: #eee;
+      border-radius: 8px;
     }
+
+    .dark nav {
+      background-color: #1a1a1a;
+    }
+
     .dark nav a {
-      color: var(--text-muted);
-    }
-    nav a:hover {
-      color: var(--pink-hover);
-    }
-    .dark nav a:hover {
-      color: var(--pink-hover);
+      background-color: #333;
+      color: #f0f0f0;
     }
 
     section {
