@@ -33,9 +33,9 @@ section {
   overflow: hidden;
 }
 
-body.dark .hero {
+body .hero {
   background: linear-gradient(135deg, #ffb6c1, #dda0dd); /* pink to purple */
-  color: #f0f0f0;
+  color: #white;
 }
 
 .logo-img {
