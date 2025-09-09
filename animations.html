@@ -41,13 +41,31 @@
       margin-bottom: 1.5rem;
     }
 
-    .nav-buttons {
+     /* NAVIGATION */
+    nav {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
       flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
     }
+
+    nav a {
+      padding: 0.5rem 1rem;
+      background-color: #eee;
+      border-radius: 8px;
+    }
+
+    .dark nav {
+      background-color: #1a1a1a;
+    }
+
+    .dark nav a {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+
 
     .btn-secondary {
       text-decoration: none;
