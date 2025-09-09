@@ -3,211 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Illustration Showcase | Bhawna Creatives</title>
+  <title>Illustrations | Bhawna Creatives</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --pink-light: #fdf2f8;
-      --pink-medium: #fbcfe8;
-      --pink-dark: #db2777;
-      --pink-hover: #be185d;
-      --white: #fff;
-      --text-dark: #333;
-      --text-muted: #555;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--pink-light);
-      color: var(--text-dark);
-    }
-
-    header {
-      background: #ffe4e6;
-      text-align: center;
-      padding: 2.5rem 1rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--pink-dark);
-      margin-bottom: 0.5rem;
-    }
-
-    nav {
-      text-align: center;
-      background: var(--pink-medium);
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: var(--pink-dark);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: var(--pink-hover);
-    }
-
-    section {
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    .intro {
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      background: #fce7f3;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .grid-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      max-width: 900px;
-      margin: 2rem auto;
-    }
-
-    .grid-gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .grid-gallery img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
-
-    .cta-box {
-      background: #fce7f3;
-      padding: 2rem;
-      margin-top: 3rem;
-      border-radius: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .cta-box h2 {
-      color: var(--pink-dark);
-      margin-bottom: 1rem;
-    }
-
-    .cta-box a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      background: var(--pink-dark);
-      color: var(--white);
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.2s ease;
-    }
-
-    .cta-box a:hover {
-      background: var(--pink-hover);
-    }
-
-    .blog-text {
-      margin-top: 4rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      background: #fff0f6;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .blog-text h2 {
-      color: var(--pink-dark);
-      margin-bottom: 1rem;
-    }
-
-    .blog-text p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #ffe4e6;
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
-
-    footer a {
-      color: var(--pink-dark);
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .intro, .cta-box, .blog-text {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>🎨 Illustration Gallery</h1>
+    <h1>🖌 My Illustrations</h1>
+    <p>Pastel dreams, cozy characters, and whimsical storytelling</p>
   </header>
 
+  <!-- NAVIGATION -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="projectsi.html">Upcoming Projects</a>
+    <a href="index.html">🏠 Home</a>
+    <a href="animations.html">🎬 Animations</a>
+    <a href="illustrations.html">🖌 Illustrations</a>
+    <a href="certificates.html">📜 Certificates</a>
   </nav>
 
+  <!-- INTRO -->
   <section>
     <div class="intro">
-      Hi! I’m growing creatively through pastel illustrations, dreamy characters, and cozy digital designs.
+      I love crafting soft, story-rich illustrations that evoke warmth and wonder. 
+      From dreamy characters to cottagecore scenes, each piece is a little world of its own.
     </div>
 
-    <div class="grid-gallery">
-      <img src="p1.png" alt="Pastel Illustration 1">
-      <img src="p2.png" alt="Pastel Illustration 2">
-      <img src="p3.png" alt="Pastel Illustration 3">
-      <img src="b5.png" alt="Illustration 1">
-      <img src="b4.png" alt="Illustration 2">
-      <img src="b3.png" alt="Illustration 3">
-      <img src="b1.png" alt="Illustration 4">
+    <!-- FEATURED PROJECT -->
+    <div class="certificate-card">
+      <img src="b4.png" alt="Magic Market Mornings">
+      <h2>🌸 Magic Market Mornings</h2>
+      <p>A whimsical pastel series capturing the charm of cottage life. 
+      Cozy corners, animated characters, and gentle storytelling come together in this ongoing project.</p>
     </div>
 
+    <!-- GALLERY -->
+    <div class="certificate-card">
+      <img src="b1.png" alt="Illustration 1">
+      <h2>🍓 Berry Paws</h2>
+      <p>Character design for ASMR channel mascot. Soft textures and playful expressions bring Berry to life.</p>
+    </div>
+
+    <div class="certificate-card">
+      <img src="b5.png" alt="Illustration 2">
+      <h2>🌿 Botanical Whispers</h2>
+      <p>Inspired by your botany roots—this series blends flora with fantasy, creating serene visual poems.</p>
+    </div>
+
+    <!-- CTA BOX -->
     <div class="cta-box">
-      <h2>🤝 Collaborate with Me</h2>
+      <h2>🤝 Let’s Create Together</h2>
+      <a href="mailto:bhartibhawna4488@gmail.com">📬 Commission Illustration</a>
       <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
       <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a>
-      <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank">LinkedIn</a>
-    </div>
-
-    <div class="blog-text">
-      <h2>🌸 Upcoming Illustration Project</h2>
-      <p><strong>"Magic Market Mornings"</strong> – A whimsical pastel storybook series showing the peaceful charm of cottage life. Packed with soft details, cozy corners, and animated little characters.</p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>📧 bhartibhawna4488@gmail.com | 
       <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
@@ -217,3 +70,4 @@
 
 </body>
 </html>
+
