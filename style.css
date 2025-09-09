@@ -385,3 +385,19 @@ a {
     color: #9b59b6;
   }
 }
+
+/* ===== Dark Mode Toggle Button ===== */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
