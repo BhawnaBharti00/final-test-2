@@ -8,7 +8,7 @@
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.8;
-  background: #f5f5f5; /* Light gray background for eye comfort */
+  background: #f5f5f5; /* Changed to light gray for eye comfort */
   color: #333;
   overflow-x: hidden;
 }
@@ -31,7 +31,7 @@ section {
   padding: 5rem 1rem;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Blue-purple gradient */
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue-purple gradient for dark mode */
   color: #fff;
 }
 
@@ -60,7 +60,7 @@ section {
   color: #ddd;
 }
 
-/* Multiple sparkles */
+/* Multiple sparkles (bubbles) */
 .sparkle {
   position: absolute;
   width: 6px;
@@ -71,12 +71,11 @@ section {
   animation: twinkle 4s infinite;
 }
 
-.sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-.sparkle:nth-child(2) { top: 30%; left: 80%; animation-delay: 1s; }
-.sparkle:nth-child(3) { top: 50%; left: 40%; animation-delay: 2s; }
-.sparkle:nth-child(4) { top: 70%; left: 60%; animation-delay: 3s; }
-.sparkle:nth-child(5) { top: 20%; left: 50%; animation-delay: 2.5s; }
-.sparkle:nth-child(6) { top: 80%; left: 30%; animation-delay: 1.5s; }
+.sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.sparkle:nth-child(2) { top: 40%; left: 25%; animation-delay: 1s; }
+.sparkle:nth-child(3) { top: 60%; left: 50%; animation-delay: 2s; }
+.sparkle:nth-child(4) { top: 30%; left: 70%; animation-delay: 1.5s; }
+.sparkle:nth-child(5) { top: 50%; left: 85%; animation-delay: 0.7s; }
 
 /* ===== Buttons ===== */
 .nav-buttons,
@@ -99,7 +98,7 @@ section {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  background: linear-gradient(135deg, #ff7eb9, #8a77ff);
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -167,7 +166,7 @@ section {
 .progress {
   height: 100%;
   border-radius: 1rem;
-  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  background: linear-gradient(to right, #ff7eb9, #8a77ff);
 }
 
 .w-90 { width: 90%; }
@@ -249,7 +248,7 @@ iframe {
 
 /* ===== Footer ===== */
 .footer {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Same gradient as hero */
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue-purple gradient for dark mode */
   color: white;
   padding: 2rem 1rem;
   text-align: center;
@@ -313,7 +312,7 @@ body.dark a {
 }
 
 body.dark .hero {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: #ffb6c1;
 }
 
@@ -358,7 +357,7 @@ body.dark .feedback textarea {
 }
 
 body.dark .footer {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: #ffb6c1;
 }
 
