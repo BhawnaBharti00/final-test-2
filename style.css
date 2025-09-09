@@ -28,40 +28,32 @@ section {
 /* ===== Hero Section ===== */
 .hero {
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 4rem 1rem;
   position: relative;
-  ove background: linear-gradient(135deg, #ffb6c1, #dda0dd); /* pink to purple */
-  color: #white;rflow: hidden;
-  
+  overflow: hidden;
 }
-
 .logo-img {
-  width: 120px;
+ width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 20%;
-  border: 2px solid #ff7eb9;
+  border: 2px solid var(--hotpink);
   box-shadow: 0 0 12px rgba(219, 39, 119, 0.3);
+  animation: logo-glow 3s ease-in-out infinite;
   animation: float 3s ease-in-out infinite;
 }
-
 .hero h1 {
   font-size: 2.8rem;
   font-weight: 800;
   background: linear-gradient(to right, #ff7eb9, #8a77ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-top: 1rem;
 }
-
 .hero .subtitle {
   font-size: 1.2rem;
   margin: 1rem 0;
   color: #555;
 }
-
-
-/* Multiple sparkles (bubbles) */
 .sparkle {
   position: absolute;
   width: 6px;
@@ -71,6 +63,7 @@ section {
   opacity: 0.8;
   animation: twinkle 4s infinite;
 }
+
 
 .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
 .sparkle:nth-child(2) { top: 40%; left: 25%; animation-delay: 1s; }
