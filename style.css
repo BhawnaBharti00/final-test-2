@@ -26,15 +26,14 @@ section {
 }
 
 /* ===== Hero Section ===== */
-.hero {
-  text-align: center;
-  padding: 5rem 1rem;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue-purple gradient for dark mode */
-  color: #fff;
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #ff7eb9, #8a77ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 1rem;
 }
-
 .logo-img {
   width: 120px;
   height: 120px;
@@ -363,6 +362,15 @@ body.dark .footer {
 
 body.dark .footer a {
   color: #ffb6c1;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue-purple gradient for dark mode */
+  color: #fff;
 }
 
 /* ===== Dark Mode Toggle Button ===== */
