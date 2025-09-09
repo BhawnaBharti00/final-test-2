@@ -4,213 +4,350 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🎬 Animations | Bhawna Creatives</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #fdfdfd;
-      color: #333;
-      transition: background-color 0.3s, color 0.3s;
+    /* 1. CSS Variables */
+    :root {
+      --spacing: 1rem;
+      --radius: 8px;
+      --accent: #dda0dd;
+      --text: #333;
+      --bg: #fdfdfd;
+      --header-bg: #fff;
+      --nav-bg: #f9f9f9;
+      --footer-bg: #eee;
+      --transition: 0.3s ease;
     }
 
+    /* Dark mode overrides */
     .dark {
-      background-color: #121212;
-      color: #f0f0f0;
+      --bg: #121212;
+      --text: #f0f0f0;
+      --header-bg: #1e1e1e;
+      --nav-bg: #1a1a1a;
+      --footer-bg: #1e1e1e;
     }
 
+    /* 2. Global Reset & Body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color var(--transition), color var(--transition);
+    }
+    img, video {
+      display: block;
+      max-width: 100%;
+      border-radius: var(--radius);
+    }
+
+    /* 3. Sticky Header + Nav */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--header-bg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 100;
+      transition: background var(--transition);
+    }
+    .site-header .logo img {
+      max-height: 40px;
+    }
+    .menu-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      display: block;
+    }
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      transition: transform var(--transition);
+      position: relative;
+    }
+    .hamburger::before {
+      top: -6px;
+    }
+    .hamburger::after {
+      top: 4px;
+    }
+
+    nav.site-nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 200px;
+      background: var(--nav-bg);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform var(--transition);
+    }
+    nav.site-nav.open {
+      transform: scaleY(1);
+    }
+    nav.site-nav ul {
+      list-style: none;
+    }
+    nav.site-nav li + li {
+      border-top: 1px solid #ccc;
+    }
+    nav.site-nav a {
+      display: block;
+      padding: var(--spacing);
+      color: var(--text);
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    nav.site-nav a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Desktop nav */
+    @media (min-width: 600px) {
+      .menu-toggle {
+        display: none;
+      }
+      nav.site-nav {
+        all: unset;
+      }
+      nav.site-nav ul {
+        display: flex;
+        gap: var(--spacing);
+      }
+      nav.site-nav li + li {
+        border: none;
+      }
+    }
+
+    /* 4. Hero */
     .hero {
       text-align: center;
-      padding: 2.5rem 1rem;
-      background: linear-gradient(135deg, #ffb6c1, #dda0dd); /* pink to purple */
+      padding: calc(var(--spacing) * 2) var(--spacing);
+      background: linear-gradient(135deg, #ffb6c1, var(--accent));
       color: white;
     }
-
-    .logo-img {
-      max-width: 100px;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
-    }
-
-    .subtitle {
+    .hero .subtitle {
+      margin-top: 0.5rem;
       font-size: 1.2rem;
-      margin-bottom: 1.5rem;
     }
 
-     /* NAVIGATION */
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
-      background-color: #f9f9f9;
-    }
-
-    nav a {
-      padding: 0.5rem 1rem;
-      background-color: #eee;
-      border-radius: 8px;
-    }
-
-    .dark nav {
-      background-color: #1a1a1a;
-    }
-
-    .dark nav a {
-      background-color: #333;
-      color: #f0f0f0;
-    }
-
-
-    .btn-secondary {
-      text-decoration: none;
-      background-color: #333;
-      color: #fff;
-      padding: 0.6rem 1.5rem;
-      border-radius: 999px; /* elliptical shape */
-      font-weight: 600;
-      transition: background-color 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .btn-secondary:hover {
-      background-color: #555;
-    }
-
+    /* 5. Video Grid */
     .container {
-      padding: 2rem 1rem;
       max-width: 1000px;
-      margin: auto;
+      margin: var(--spacing) auto;
+      padding: 0 var(--spacing);
     }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .video-wrapper {
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--spacing);
     }
-
-    video {
-      width: 100%;
-      border-radius: 8px;
+    .video-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .video-card:hover,
+    .video-card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .video-card__info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .video-card:hover .video-card__info {
+      opacity: 1;
     }
 
-    .explore-links a {
-      display: block;
-      margin: 0.5rem auto;
+    /* 6. Upcoming Section */
+    .upcoming {
       text-align: center;
-      font-weight: 600;
-      color: #0077cc;
+      margin-top: calc(var(--spacing) * 2);
+    }
+    .upcoming img {
+      margin-top: var(--spacing);
+      max-width: 600px;
+    }
+
+    /* 7. Footer */
+    .site-footer {
+      background: var(--footer-bg);
+      text-align: center;
+      padding: var(--spacing);
+      margin-top: var(--spacing);
+    }
+    .site-footer a {
+      color: var(--accent);
       text-decoration: none;
     }
-
-    .explore-links a:hover {
+    .site-footer a:hover {
       text-decoration: underline;
     }
 
-    .upcoming img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      display: block;
-      margin: 1rem auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #eee;
-      font-size: 0.9rem;
-    }
-
-    .dark-mode-toggle {
+    /* 8. Dark-Mode Toggle */
+    #theme-toggle {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
+      bottom: var(--spacing);
+      right: var(--spacing);
+      background: var(--text);
+      color: var(--bg);
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem;
       border-radius: 999px;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.2rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .dark .footer {
-      background-color: #1e1e1e;
+      transition: background var(--transition), color var(--transition);
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="hero">
-    <h1>🎬 Animations</h1>
-    <p class="subtitle">✨ Peaceful motion, cozy edits, and visual storytelling ✨</p>
-    <div class="nav-buttons">
-      <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="illustrations.html">🖌 Illustrations</a>
-    <a href="certificates.html">📜 Certificates</a>
-    <a href="projectsa.html">📂 Upcoming Project</a>
-  </nav>
-
-    </div>
+  <!-- HEADER + NAV -->
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="logo.png" alt="Bhawna Creatives Logo" />
+    </a>
+    <button
+      class="menu-toggle"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      onclick="toggleMenu()"
+    >
+      <span class="hamburger"></span>
+    </button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="illustrations.html">🖌 Illustrations</a></li>
+        <li><a href="certificates.html">📜 Certificates</a></li>
+        <li><a href="projectsa.html">📂 Upcoming Project</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- FEATURED ANIMATIONS -->
-  <section class="container">
-    <h2>🎞 Featured Animations</h2>
-    <div class="video-wrapper">
-      <video controls><source src="b2.mp4" type="video/mp4"></video>
-      <video controls><source src="p1.mp4" type="video/mp4"></video>
-      <video controls><source src="p2.mp4" type="video/mp4"></video>
-      <video controls><source src="p4.mp4" type="video/mp4"></video>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">🎬 Animations</h1>
+      <p class="subtitle">✨ Peaceful motion, cozy edits, and visual storytelling ✨</p>
+    </section>
 
+    <!-- FEATURED ANIMATIONS -->
+    <section class="container" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">🎞 Featured Animations</h2>
+      <div class="video-grid">
+        <!-- Video Card 1 -->
+        <article class="video-card" tabindex="0">
+          <video
+            class="video-card__media"
+            poster="p1.png"
+            controls
+            preload="none"
+            loading="lazy"
+          >
+            <source src="p1.webm" type="video/webm" />
+            <source src="p1.mp4" type="video/mp4" />
+            Your browser does not support video playback.
+          </video>
+          <div class="video-card__info">
+            <h3>Cozy Cat Loop</h3>
+            <time datetime="PT0M45S">0:45</time>
+          </div>
+        </article>
+        <!-- Repeat similarly for b2.mp4/p2.mp4/p4.mp4 -->
+      </div>
+    </section>
 
-
-  <!-- UPCOMING PROJECT -->
-  <section class="upcoming container">
-    <h2>🌸 Upcoming Animation</h2>
-    <p>Coming soon: <strong>“Cat ASMR: Purring in Peace”</strong> — a cozy visual experience with soft lighting, gentle sounds, and feline charm. 🐾</p>
-    <img src="b7.png" alt="Cat ASMR Preview" />
-  </section>
+    <!-- UPCOMING PROJECT -->
+    <section class="upcoming container" aria-labelledby="upcoming-heading">
+      <h2 id="upcoming-heading">🌸 Upcoming Animation</h2>
+      <p>
+        Coming soon: <strong>“Cat ASMR: Purring in Peace”</strong> — a cozy visual
+        experience with soft lighting, gentle sounds, and feline charm. 🐾
+      </p>
+      <img
+        src="b7.png"
+        alt="Cozy cat ASMR animation teaser"
+        loading="lazy"
+      />
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>📧 bhartibhawna4488@gmail.com </p>
-    <p><a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a> | <a href="https://pin.it/7BvtTQsCY" target="_blank"> Pinterest</a> | <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank"> LinkedIn</a></p>
+  <footer class="site-footer">
+    <p>
+      📧 <a href="mailto:bhartibhawna4488@gmail.com">bhartibhawna4488@gmail.com</a>
+    </p>
+    <p class="social-links">
+      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a> |
+      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a> |
+      <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank">LinkedIn</a>
+    </p>
     <p>© 2025 Bhawna Creatives</p>
   </footer>
 
-  <!-- DARK MODE TOGGLE -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  <!-- DARK-MODE TOGGLE -->
+  <button
+    id="theme-toggle"
+    aria-label="Toggle dark mode"
+    aria-pressed="false"
+    onclick="toggleDarkMode()"
+  >🌙</button>
 
-  <!-- DARK MODE SCRIPT -->
   <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
+    // Menu toggle
+    function toggleMenu() {
+      const nav = document.querySelector('nav.site-nav');
+      const btn = document.querySelector('.menu-toggle');
+      const expanded = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', expanded);
     }
+
+    // Dark-mode toggle with preference fallback
+    const themeBtn = document.getElementById('theme-toggle');
+    const storedTheme = localStorage.getItem('theme');
+    if (
+      storedTheme === 'dark' ||
+      (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.body.classList.add('dark');
+      themeBtn.setAttribute('aria-pressed', 'true');
+    }
+
     function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', mode);
+      const isDark = document.body.classList.toggle('dark');
+      themeBtn.setAttribute('aria-pressed', isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
   </script>
 </body>
