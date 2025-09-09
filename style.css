@@ -30,12 +30,9 @@ section {
   text-align: center;
   padding: 5rem 1rem;
   position: relative;
-  overflow: hidden;
-}
-
-body .hero {
-  background: linear-gradient(135deg, #ffb6c1, #dda0dd); /* pink to purple */
-  color: #white;
+  ove background: linear-gradient(135deg, #ffb6c1, #dda0dd); /* pink to purple */
+  color: #white;rflow: hidden;
+  
 }
 
 .logo-img {
