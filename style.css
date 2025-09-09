@@ -11,6 +11,15 @@ body {
   color: #333;
   overflow-x: hidden;
 }
+.dark {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+ .dark .hero {
+      background: linear-gradient(135deg, #2c003e, #4b0082);
+      color: #f0f0f0;
+    }
 
 /* ===== Containers ===== */
 section {
@@ -96,6 +105,15 @@ section {
   background: #f4f1ff;
   transform: translateY(-2px);
 }
+  .dark .btn-secondary, .dark .btn-primary {
+      background-color: #444;
+      color: #fff;
+    }
+
+    .dark .btn-secondary:hover, .dark .btn-primary:hover {
+      background-color: #666;
+    }
+
 
 /* ===== About Section ===== */
 .about p {
@@ -225,6 +243,12 @@ video, iframe {
 .footer a:hover {
   text-decoration: underline;
 }
+
+ .dark .footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+    }
+
 .credit {
   font-size: 0.85rem;
   margin-top: 0.5rem;
@@ -249,42 +273,6 @@ video, iframe {
 }
 /* Dark mode styles */
 /* DARK MODE STYLES */
-body.dark {
-  background-color: #121212;
-  color: #f0f0f0;
-}
-
-body.dark .hero {
-  background: linear-gradient(135deg, #2c003e, #4b0082); /* dark purple gradient */
-  color: #f0f0f0;
-}
-
-body.dark .btn-secondary,
-body.dark .btn-primary {
-  background-color: #333;
-  color: #fff;
-}
-
-body.dark .btn-secondary:hover,
-body.dark .btn-primary:hover {
-  background-color: #555;
-}
-
-body.dark .footer {
-  background-color: #1e1e1e;
-  color: #ccc;
-}
-
-body.dark .software-card,
-body.dark .progress-bar {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  border-color: #444;
-}
-
-body.dark .progress {
-  background-color: #bb86fc;
-}
 
 body.dark input,
 body.dark textarea {
