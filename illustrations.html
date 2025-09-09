@@ -13,6 +13,12 @@
       background-color: #fff;
       color: #333;
       line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark {
+      background-color: #121212;
+      color: #f0f0f0;
     }
 
     img {
@@ -69,6 +75,15 @@
       border-radius: 8px;
     }
 
+    .dark nav {
+      background-color: #1a1a1a;
+    }
+
+    .dark nav a {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+
     /* INTRO */
     .intro {
       max-width: 800px;
@@ -89,6 +104,11 @@
       text-align: center;
     }
 
+    .dark .certificate-card {
+      background-color: #1e1e1e;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+    }
+
     /* CTA BOX */
     .cta-box {
       max-width: 600px;
@@ -97,6 +117,10 @@
       background-color: #f0f0ff;
       border-radius: 12px;
       text-align: center;
+    }
+
+    .dark .cta-box {
+      background-color: #2a2a3a;
     }
 
     .cta-box a {
@@ -116,6 +140,26 @@
       font-size: 0.9rem;
     }
 
+    .dark footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+    }
+
+    /* DARK MODE TOGGLE */
+    .dark-mode-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       header h1 {
@@ -133,7 +177,7 @@
 
   <!-- HEADER -->
   <header>
-    <h1>🖌 My Illustrations</h1>
+    <h1>🖌 Illustrations</h1>
     <p>Pastel dreams, cozy characters, and whimsical storytelling</p>
   </header>
 
@@ -176,9 +220,8 @@
     <!-- CTA BOX -->
     <div class="cta-box">
       <h2>🤝 Let’s Create Together</h2>
-      <a href="mailto:bhartibhawna4488@gmail.com">📬 Commission Illustration</a>
-      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
-      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a>
+      <a href="mailto:bhartibhawna4488@gmail.com">📬 Contact me</a>
+     
     </div>
   </section>
 
@@ -190,5 +233,19 @@
     <p>© 2025 Bhawna Creatives</p>
   </footer>
 
+  <!-- DARK MODE TOGGLE -->
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+  <!-- DARK MODE SCRIPT -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    }
+  </script>
 </body>
 </html>
