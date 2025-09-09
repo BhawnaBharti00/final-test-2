@@ -21,12 +21,6 @@
       font-family: 'Inter', sans-serif;
       background: var(--pink-light);
       color: var(--text-dark);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .dark {
-      background-color: #121212;
-      color: #f0f0f0;
     }
 
     header {
@@ -52,7 +46,6 @@
       background: var(--pink-medium);
       padding: 1rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: background-color 0.3s;
     }
 
     nav a {
@@ -65,14 +58,6 @@
 
     nav a:hover {
       color: var(--pink-hover);
-    }
-
-    .dark nav {
-      background: #1a1a1a;
-    }
-
-    .dark nav a {
-      color: #f0f0f0;
     }
 
     section {
@@ -89,12 +74,6 @@
       padding: 2rem;
       border-radius: 1.2rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .dark .intro {
-      background: #2a2a3a;
-      color: #ccc;
     }
 
     .certificate-card {
@@ -104,17 +83,12 @@
       border-radius: 1.2rem;
       padding: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .certificate-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    }
-
-    .dark .certificate-card {
-      background: #1e1e1e;
-      box-shadow: 0 4px 12px rgba(255,255,255,0.08);
     }
 
     .certificate-card img {
@@ -161,11 +135,6 @@
       margin-left: auto;
       margin-right: auto;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: background-color 0.3s;
-    }
-
-    .dark .cta-box {
-      background: #2a2a3a;
     }
 
     .cta-box h2 {
@@ -196,26 +165,11 @@
       color: #666;
       font-size: 0.9rem;
       margin-top: 3rem;
-      transition: background-color 0.3s, color 0.3s;
     }
 
-    .dark footer {
-      background: #1e1e1e;
-      color: #ccc;
-    }
-
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    footer a {
+      color: var(--pink-dark);
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
@@ -280,19 +234,5 @@
     <p>© 2025 Bhawna Creatives</p>
   </footer>
 
-  <!-- DARK MODE TOGGLE -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-
-  <!-- DARK MODE SCRIPT -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', mode);
-    }
-  </script>
 </body>
 </html>
