@@ -12,7 +12,8 @@
   <header class="hero sparkle-container">
     <div class="sparkle"></div>
     <img src="b6.png" alt="Logo" class="logo-img">
-    <h1>Bhawna Creatives</h1>
+    <h1 class="fade-in">🎨 Welcome to</h1>
+    <h1 class="fade-in delay">Bhawna Creatives</h1>
     <p class="subtitle">✨ Animation | Illustration | Motion Edits ✨</p>
     <div class="nav-buttons">
       <a href="#book-link" class="btn-primary">💌 Book Animation</a>
@@ -34,29 +35,29 @@
 
   <!-- SOFTWARE SKILLS -->
   <section class="skills container">
-    <h2>⚙ Main Software</h2>
-    <ul>
-      <li>Adobe Animate</li>
-      <li>Illustrator</li>
-      <li>After Effects</li>
-      <li>DaVinci Resolve</li>
-    </ul>
-
-    <h2>⚙ Secondary Software</h2>
-    <ul>
-      <li>Premiere Pro</li>
-      <li>Photoshop</li>
-      <li>Figma</li>
-      <li>Canva</li>
-    </ul>
-
-    <h2>⚙ Organisational Tools</h2>
-    <ul>
-      <li>Google Workspace</li>
-      <li>MS Word</li>
-      <li>MS Excel</li>
-      <li>MS PowerPoint</li>
-    </ul>
+    <h2>⚙ Software & Tools</h2>
+    <div class="software-grid">
+      <div class="software-card">
+        <img src="s1.png" alt="Adobe Animate">
+        <p>Adobe Animate</p>
+        <div class="progress-bar"><div class="progress w-90"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s2.png" alt="Illustrator">
+        <p>Illustrator</p>
+        <div class="progress-bar"><div class="progress w-70"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s3.png" alt="After Effects">
+        <p>After Effects</p>
+        <div class="progress-bar"><div class="progress w-40"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s4.png" alt="DaVinci Resolve">
+        <p>DaVinci Resolve</p>
+        <div class="progress-bar"><div class="progress w-70"></div></div>
+      </div>
+    </div>
   </section>
 
   <!-- ARTISTIC & SOFT SKILLS -->
@@ -71,7 +72,7 @@
       <li>Creative Design</li>
     </ul>
 
-    <h2>👩🏻‍💻 Soft Skills</h2>
+    <h2>🌱 Soft Skills</h2>
     <ul>
       <li>Design Understanding</li>
       <li>User Psychology</li>
@@ -133,8 +134,8 @@
   <section id="feedback" class="feedback container">
     <h2>💬 Feedback</h2>
     <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)">
-      <input id="fb-name" type="text" placeholder="Your Name" />
-      <textarea id="fb-feedback" placeholder="Your feedback"></textarea>
+      <input id="fb-name" type="text" placeholder="Your Name" required />
+      <textarea id="fb-feedback" placeholder="Your feedback" required></textarea>
       <button type="submit" class="btn-secondary">Send</button>
       <p id="fb-status" class="status-msg"></p>
     </form>
@@ -154,7 +155,7 @@
 
   <!-- JS -->
   <script>
-    // Sparkle animation
+    // Sparkle Animation
     const sparkleContainer = document.querySelector('.sparkle-container');
     for (let i = 0; i < 30; i++) {
       const sparkle = document.createElement('div');
@@ -165,7 +166,7 @@
       sparkleContainer.appendChild(sparkle);
     }
 
-    // Feedback mailto
+    // Feedback Mailto
     function handleFeedbackSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('fb-name').value.trim();
@@ -178,4 +179,8 @@
       const subject = encodeURIComponent('Feedback from ' + name);
       const body = encodeURIComponent('Name: ' + name + '\n\nFeedback:\n' + feedback);
       window.location.href = 'mailto:bhartibhawna4488@gmail.com?subject=' + subject + '&body=' + body;
-      statusEl
+      statusEl.textContent = 'Redirecting to mail app...';
+    }
+  </script>
+</body>
+</html>
