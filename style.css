@@ -14,12 +14,12 @@ body {
 }
 
 body.dark {
-  background-color: #121212;
-  color: #f0f0f0;
+  background-color: #D3D3D3;
+  color: #A9A9A9;
 }
 
 body.dark a {
-  color: #90caf9;
+  color: #000000;
 }
 
 /* ===== Containers ===== */
