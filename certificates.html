@@ -6,74 +6,126 @@
   <title>Certificates | Bhawna Creatives</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --pink-light: #fdf2f8;
+      --pink-medium: #fbcfe8;
+      --pink-dark: #db2777;
+      --pink-hover: #be185d;
+      --text-dark: #333;
+      --text-muted: #555;
+      --white: #fff;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fdf2f8;
-      color: #333;
+      background: var(--pink-light);
+      color: var(--text-dark);
     }
+
     header {
-      background: linear-gradient(135deg, #fbcfe8, #e9d5ff);
+      background: linear-gradient(135deg, var(--pink-medium), #e9d5ff);
       text-align: center;
       padding: 2.5rem 1rem;
-      border-bottom: 4px solid #ec4899;
+      border-bottom: 4px solid var(--pink-dark);
     }
+
     header h1 {
-      font-size: 2.3rem;
-      color: #db2777;
+      font-size: 2.5rem;
+      color: var(--pink-dark);
+      margin-bottom: 0.5rem;
     }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
     nav {
       text-align: center;
-      background: #fbcfe8;
+      background: var(--pink-medium);
       padding: 1rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
+
     nav a {
       margin: 0 1rem;
-      color: #ec4899;
+      color: var(--pink-dark);
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.2s ease;
     }
+
+    nav a:hover {
+      color: var(--pink-hover);
+    }
+
     section {
       padding: 3rem 1rem;
       text-align: center;
     }
+
     .intro {
       max-width: 750px;
       margin: 0 auto 2rem auto;
       font-size: 1.1rem;
-      color: #444;
+      color: var(--text-muted);
       background: #fce7f3;
       padding: 2rem;
       border-radius: 1.2rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
+
     .certificate-card {
       max-width: 800px;
       margin: 2rem auto;
-      background: #fff;
+      background: var(--white);
       border-radius: 1.2rem;
       padding: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
+
     .certificate-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
+
     .certificate-card img {
       width: 100%;
+      height: auto;
       border-radius: 0.8rem;
       margin-bottom: 1rem;
     }
+
     .certificate-card h2 {
-      color: #db2777;
+      color: var(--pink-dark);
       margin: 0.5rem 0;
+      font-size: 1.5rem;
     }
+
     .certificate-card p {
       font-size: 1rem;
-      color: #555;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      background: var(--pink-dark);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background: var(--pink-hover);
+    }
+
     .cta-box {
       background: #fce7f3;
       padding: 2rem;
@@ -84,24 +136,28 @@
       margin-right: auto;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
+
     .cta-box h2 {
-      color: #db2777;
+      color: var(--pink-dark);
       margin-bottom: 1rem;
     }
+
     .cta-box a {
       display: inline-block;
       margin: 0.5rem;
       padding: 0.6rem 1.4rem;
       border-radius: 999px;
-      background: #db2777;
-      color: white;
+      background: var(--pink-dark);
+      color: var(--white);
       text-decoration: none;
       font-weight: bold;
       transition: background 0.2s ease;
     }
+
     .cta-box a:hover {
-      background: #be185d;
+      background: var(--pink-hover);
     }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -110,9 +166,22 @@
       font-size: 0.9rem;
       margin-top: 3rem;
     }
+
     footer a {
-      color: #db2777;
+      color: var(--pink-dark);
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .certificate-card {
+        padding: 1.5rem;
+      }
+      .cta-box {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -136,34 +205,20 @@
       Here, I showcase my achievements, skills, and continued learning spirit.
     </div>
 
-    <!-- Certificate Card -->
-    
-<div class="certificate-card">
-  <img src="hp-life-certificate.png" alt="HP LIFE Certificate">
-  
-  <h2>🎓 HP LIFE Foundation Certificate </h2>
-  
-  <p> <strong>HP LIFE online course</strong> Design Thinking by completing this course, I have learned new skills including how to use the design thinking process effectively, how to define a problem and create a problem statement, and how to use customer feedback to create solutions to solve problems.
-  </p>
+    <div class="certificate-card">
+      <img src="hp-life-certificate.png" alt="HP LIFE Certificate">
+      <h2>🎓 HP LIFE Foundation Certificate</h2>
+      <p><strong>HP LIFE online course</strong> Design Thinking — I learned how to define problems, create problem statements, and use customer feedback to build meaningful solutions.</p>
+      <a href="hp-life-certificate.png" download="HP_LIFE_Certificate_BhawnaBharti.png" class="download-btn">⬇ Download Certificate</a>
+    </div>
 
-  <!-- Download Button -->
-  <a href="hp-life-certificate.png" download="HP_LIFE_Certificate_BhawnaBharti.png" class="download-btn">⬇ Download Certificate</a>
-</div>
-    
- <div class="certificate-card">
+    <div class="certificate-card">
       <img src="uvp-certificate.png" alt="UVP HP LIFE Certificate">
       <h2>🌟 UVP HP LIFE Certificate</h2>
-      <p>
-        Awarded for successfully completing the <strong>HP LIFE program under UVP initiative</strong>, 
-        focusing on entrepreneurship, business, and digital skills that empower 
-        creative professionals to grow with confidence.
-      </p>
-      <!-- Download Button -->
-  <a href="uvp-certificate.png" download="UVP_HP_LIFE_Certificate.png" class="download-btn">⬇ Download Certificate</a>
-
+      <p>Successfully completed the <strong>HP LIFE program under UVP initiative</strong>, focusing on entrepreneurship, business, and digital skills to empower creative professionals.</p>
+      <a href="uvp-certificate.png" download="UVP_HP_LIFE_Certificate.png" class="download-btn">⬇ Download Certificate</a>
     </div>
-    
-    <!-- Call-to-Action -->
+
     <div class="cta-box">
       <h2>🤝 Connect & Collaborate</h2>
       <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
