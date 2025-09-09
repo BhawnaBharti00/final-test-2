@@ -21,11 +21,11 @@
       font-family: 'Inter', sans-serif;
       background: var(--pink-light);
       color: var(--text-dark);
-      transition: background 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .dark {
-      background: #121212;
+      background-color: #121212;
       color: #f0f0f0;
     }
 
@@ -36,19 +36,10 @@
       border-bottom: 4px solid var(--pink-dark);
     }
 
-    .dark header {
-      background: linear-gradient(135deg, #3a3a3a, #1e1e1e);
-      border-bottom-color: #be185d;
-    }
-
     header h1 {
       font-size: 2.5rem;
       color: var(--pink-dark);
       margin-bottom: 0.5rem;
-    }
-
-    .dark header h1 {
-      color: #f0f0f0;
     }
 
     header p {
@@ -56,19 +47,12 @@
       color: var(--text-muted);
     }
 
-    .dark header p {
-      color: #ccc;
-    }
-
     nav {
       text-align: center;
       background: var(--pink-medium);
       padding: 1rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .dark nav {
-      background: #1a1a1a;
+      transition: background-color 0.3s;
     }
 
     nav a {
@@ -79,12 +63,16 @@
       transition: color 0.2s ease;
     }
 
-    .dark nav a {
-      color: #f0f0f0;
-    }
-
     nav a:hover {
       color: var(--pink-hover);
+    }
+
+    .dark nav {
+      background: #1a1a1a;
+    }
+
+    .dark nav a {
+      color: #f0f0f0;
     }
 
     section {
@@ -101,10 +89,11 @@
       padding: 2rem;
       border-radius: 1.2rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .dark .intro {
-      background: #2a2a2a;
+      background: #2a2a3a;
       color: #ccc;
     }
 
@@ -115,17 +104,17 @@
       border-radius: 1.2rem;
       padding: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    .dark .certificate-card {
-      background: #1e1e1e;
-      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s;
     }
 
     .certificate-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .dark .certificate-card {
+      background: #1e1e1e;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.08);
     }
 
     .certificate-card img {
@@ -141,18 +130,10 @@
       font-size: 1.5rem;
     }
 
-    .dark .certificate-card h2 {
-      color: #f0f0f0;
-    }
-
     .certificate-card p {
       font-size: 1rem;
       color: var(--text-muted);
       line-height: 1.6;
-    }
-
-    .dark .certificate-card p {
-      color: #ccc;
     }
 
     .download-btn {
@@ -180,6 +161,7 @@
       margin-left: auto;
       margin-right: auto;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: background-color 0.3s;
     }
 
     .dark .cta-box {
@@ -189,10 +171,6 @@
     .cta-box h2 {
       color: var(--pink-dark);
       margin-bottom: 1rem;
-    }
-
-    .dark .cta-box h2 {
-      color: #f0f0f0;
     }
 
     .cta-box a {
@@ -218,16 +196,12 @@
       color: #666;
       font-size: 0.9rem;
       margin-top: 3rem;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .dark footer {
       background: #1e1e1e;
       color: #ccc;
-    }
-
-    footer a {
-      color: var(--pink-dark);
-      text-decoration: underline;
     }
 
     .dark-mode-toggle {
@@ -285,4 +259,40 @@
     </div>
 
     <div class="certificate-card">
-      <img
+      <img src="uvp-certificate.png" alt="UVP HP LIFE Certificate">
+      <h2>🌟 UVP HP LIFE Certificate</h2>
+      <p>Successfully completed the <strong>HP LIFE program under UVP initiative</strong>, focusing on entrepreneurship, business, and digital skills to empower creative professionals.</p>
+      <a href="uvp-certificate.png" download="UVP_HP_LIFE_Certificate.png" class="download-btn">⬇ Download Certificate</a>
+    </div>
+
+    <div class="cta-box">
+      <h2>🤝 Connect & Collaborate</h2>
+      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
+      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a>
+      <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>📧 bhartibhawna4488@gmail.com | 
+      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
+    </p>
+    <p>© 2025 Bhawna Creatives</p>
+  </footer>
+
+  <!-- DARK MODE TOGGLE -->
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <!-- DARK MODE SCRIPT -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    }
+  </script>
+</body>
+</html>
