@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="hero sparkle-container">
@@ -25,7 +27,7 @@
   <section class="about container">
     <h2>💡 About Me</h2>
     <p>
-      Hi! I’m <strong>Bhawna Bharti</strong>, a self-driven artist helping startups and small businesses craft creative brand identities and artistic campaigns to boost reach. I create animations, vector art, and visual stories, blending psychology with design to build strong brand recognition. <strong>Let's Work Togeter </strong>🤝
+      Hi! I’m <strong>Bhawna Bharti</strong>, a self-driven artist helping startups and small businesses craft creative brand identities and artistic campaigns to boost reach. I create animations, vector art, and visual stories, blending psychology with design to build strong brand recognition. <strong>Let's Work Together</strong> 🤝
     </p>
   </section>
 
@@ -54,24 +56,39 @@
         <div class="progress-bar"><div class="progress w-70"></div></div>
       </div>
     </div>
-  </section>
 
-      <h2>⚙ Secondary Software</h2>
+    <h2>⚙ Secondary Software</h2>
     <div class="software-grid">
-      <div class="software-card"><img src="s5.png"><p>Premiere Pro</p><div class="progress-bar"><div class="progress w-40"></div></div></div>
-      <div class="software-card"><img src="s6.png"><p>Photoshop</p><div class="progress-bar"><div class="progress w-20"></div></div></div>
-      <div class="software-card"><img src="s7.png"><p>Figma</p><div class="progress-bar"><div class="progress w-40"></div></div></div>
-      <div class="software-card"><img src="s8.png"><p>Canva</p><div class="progress-bar"><div class="progress w-80"></div></div></div>
+      <div class="software-card">
+        <img src="s5.png" alt="Premiere Pro">
+        <p>Premiere Pro</p>
+        <div class="progress-bar"><div class="progress w-40"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s6.png" alt="Photoshop">
+        <p>Photoshop</p>
+        <div class="progress-bar"><div class="progress w-20"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s7.png" alt="Figma">
+        <p>Figma</p>
+        <div class="progress-bar"><div class="progress w-40"></div></div>
+      </div>
+      <div class="software-card">
+        <img src="s8.png" alt="Canva">
+        <p>Canva</p>
+        <div class="progress-bar"><div class="progress w-80"></div></div>
+      </div>
     </div>
 
     <h2>⚙ Organisational Tools</h2>
     <div class="software-grid">
-      <div class="software-card"><img src="s9.png"><p>Google Workspace</p></div>
-      <div class="software-card"><img src="s10.png"><p>MS Word</p></div>
-      <div class="software-card"><img src="s11.png"><p>MS Excel</p></div>
-      <div class="software-card"><img src="s12.png"><p>MS PowerPoint</p></div>
+      <div class="software-card"><img src="s9.png" alt="Google Workspace"><p>Google Workspace</p></div>
+      <div class="software-card"><img src="s10.png" alt="MS Word"><p>MS Word</p></div>
+      <div class="software-card"><img src="s11.png" alt="MS Excel"><p>MS Excel</p></div>
+      <div class="software-card"><img src="s12.png" alt="MS PowerPoint"><p>MS PowerPoint</p></div>
     </div>
-
+  </section>
 
   <!-- ARTISTIC & SOFT SKILLS -->
   <section class="skills container">
@@ -158,68 +175,13 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank">LinkedIn</a>
-      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
-      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a>
+      <a href="https://www.linkedin.com/in/bhawna-bharti-514b8221b/" target="_blank">LinkedIn</a> |
+      <a href="https://www.instagram.com/bhawna.creatives/" target="_blank">Instagram</a>
     </div>
-    <div class="footer-small">© 2025 Bhawna Creatives — All rights reserved.</div>
-    <div class="credit">Built & designed by Bhawna Creatives</div>
+    <p>© 2025 Bhawna Creatives. All rights reserved.</p>
   </footer>
 
-  <!-- DARK MODE TOGGLE -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-
-  <!-- JAVASCRIPT -->
-  <script>
-    // Dark Mode
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', mode);
-    }
-
-
-  <!-- JS -->
-  <script>
-    // Sparkle Animation
-    const sparkleContainer = document.querySelector('.sparkle-container');
-    for (let i = 0; i < 30; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.style.top = Math.random() * 100 + '%';
-      sparkle.style.left = Math.random() * 100 + '%';
-      sparkle.style.animationDelay = (Math.random() * 10) + 's';
-      sparkleContainer.appendChild(sparkle);
-    }
-
-    // Feedback Mailto
-    function handleFeedbackSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('fb-name').value.trim();
-      const feedback = document.getElementById('fb-feedback').value.trim();
-      const statusEl = document.getElementById('fb-status');
-      if (!name || !feedback) {
-        statusEl.textContent = 'Please enter your name and feedback.';
-        return;
-      }
-      const subject = encodeURIComponent('Feedback from ' + name);
-      const body = encodeURIComponent('Name: ' + name + '\n\nFeedback:\n' + feedback);
-      window.location.href = 'mailto:bhartibhawna4488@gmail.com?subject=' + subject + '&body=' + body;
-      statusEl.textContent = 'Redirecting to mail app...';
-    }
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', mode);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
