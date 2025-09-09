@@ -21,8 +21,9 @@
 
     .hero {
       text-align: center;
-      padding: 2rem 1rem;
-      background: linear-gradient(135deg, #fceabb, #f8b500);
+      padding: 2.5rem 1rem;
+      background: linear-gradient(135deg, #ffb6c1, #dda0dd); /* pink to purple */
+      color: white;
     }
 
     .logo-img {
@@ -45,16 +46,18 @@
       justify-content: center;
       gap: 1rem;
       margin-top: 1rem;
+      flex-wrap: wrap;
     }
 
     .btn-secondary {
       text-decoration: none;
       background-color: #333;
       color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px; /* elliptical shape */
       font-weight: 600;
       transition: background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .btn-secondary:hover {
@@ -123,7 +126,7 @@
       color: #fff;
       border: none;
       padding: 0.5rem 1rem;
-      border-radius: 50px;
+      border-radius: 999px;
       cursor: pointer;
       font-size: 1rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -135,6 +138,7 @@
   </style>
 </head>
 <body>
+
   <!-- HEADER -->
   <header class="hero">
     <img src="b6.png" alt="Logo" class="logo-img" />
