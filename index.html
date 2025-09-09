@@ -166,6 +166,23 @@
     <div class="credit">Built & designed by Bhawna Creatives</div>
   </footer>
 
+  <!-- DARK MODE TOGGLE -->
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Dark Mode
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+    }
+
+
   <!-- JS -->
   <script>
     // Sparkle Animation
@@ -194,12 +211,7 @@
       window.location.href = 'mailto:bhartibhawna4488@gmail.com?subject=' + subject + '&body=' + body;
       statusEl.textContent = 'Redirecting to mail app...';
     }
-  </script>
-    <!-- DARK MODE TOGGLE -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 
-  <!-- DARK MODE SCRIPT -->
-  <script>
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark');
     }
