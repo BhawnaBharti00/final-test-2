@@ -1,189 +1,1051 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bhawna Creatives – Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Bhawna Creatives - Professional 2D Animation, Illustration & Motion Design Portfolio">
+  <title>Bhawna Creatives | 2D Animation & Illustration Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #dda0dd;
+      --primary-dark: #c97bc9;
+      --secondary: #ffb6c1;
+      --accent: #a0d2ff;
+      --text-dark: #2d3748;
+      --text-light: #f8f9fa;
+      --bg-light: #ffffff;
+      --bg-card: #ffffff;
+      --bg-section: #fdf2f8;
+      --bg-footer: #f8f9fa;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 16px;
+      --container-max: 1200px;
+    }
 
+    .dark-theme {
+      --primary: #c97bc9;
+      --primary-dark: #b366b3;
+      --secondary: #e8a0a8;
+      --accent: #6fb5ff;
+      --text-dark: #f0f0f0;
+      --text-light: #f0f0f0;
+      --bg-light: #121212;
+      --bg-card: #1e1e1e;
+      --bg-section: #1a1a1a;
+      --bg-footer: #1a1a1a;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ===== RESET & BASE STYLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      transition: var(--transition);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+      opacity: 0.9;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-alt {
+      background-color: var(--bg-section);
+      padding: 4rem 0;
+      border-radius: 0;
+    }
+
+    /* ===== HEADER & NAVIGATION ===== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg-card);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.4rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tagline {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      font-weight: 500;
+    }
+
+    /* Navigation */
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      padding: 6rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(221, 160, 221, 0.1) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.03"><path d="M0,0 L100,0 L100,100 Z" fill="%23dda0dd"/></svg>');
+      background-size: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-text h2 {
+      text-align: left;
+    }
+
+    .about-text h2:after {
+      left: 0;
+      transform: none;
+    }
+
+    /* ===== SKILLS SECTION ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      background-color: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(221, 160, 221, 0.1);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .skill-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .skill-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .skill-list li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .skill-list li:before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* ===== SOFTWARE TOOLS SECTION ===== */
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .software-card {
+      background-color: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .software-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .software-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .software-card p {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-level {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+
+    /* ===== PORTFOLIO PREVIEW ===== */
+    .portfolio-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .portfolio-card {
+      background-color: var(--bg-card);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .portfolio-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-card:hover .portfolio-image img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-content {
+      padding: 1.5rem;
+    }
+
+    /* ===== YOUTUBE SECTION ===== */
+    .youtube-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .youtube-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+    }
+
+    .youtube-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(221, 160, 221, 0.1) 100%);
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(221, 160, 221, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: var(--bg-footer);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .footer-link {
+      color: var(--text-dark);
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+      opacity: 1;
+    }
+
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(221, 160, 221, 0.2);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ===== DARK MODE TOGGLE ===== */
+    .theme-toggle {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      .nav-menu {
+        gap: 1rem;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .about-text h2 {
+        text-align: center;
+      }
+      
+      .about-text h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .skills-grid, .portfolio-preview {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .section-alt {
+        padding: 3rem 0;
+      }
+      
+      .contact-section {
+        padding: 2rem;
+      }
+      
+      .software-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+      
+      .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .skills-grid, .portfolio-preview {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .nav-link {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .hero-cta, .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .software-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
 <body>
-  <!-- HEADER -->
-  <header class="hero sparkle-container">
-    <div class="sparkle"></div>
-    <img src="b6.png" alt="Logo" class="logo-img">
-    <h1 class="fade-in delay">Bhawna Creatives</h1>
-    <p class="subtitle">✨ Animation | Illustration | Motion Edits ✨</p>
-    <div class="inline-btns container">
-     <p></p> <a href="animations.html" class="btn-secondary">🎬 Animations</a>
-      <a href="illustrations.html" class="btn-secondary">🖌 Illustrations</a>
-      <a href="certificates.html" class="btn-secondary">📜 Certificates</a> </p>
-   <p> <a href="mailto:bhartibhawna4488@gmail.com" class="btn-primary">📬 Services</a></p>
+  <!-- HEADER & NAVIGATION -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <img src="b6.png" alt="Bhawna Creatives Logo" class="logo-img" />
+        <div class="brand-text">
+          <div class="brand-name">Bhawna Creatives</div>
+          <div class="brand-tagline">2D Animation & Illustration</div>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="#" class="nav-link active">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a href="animations.html" class="nav-link">
+          <i class="fas fa-film"></i> Animations
+        </a>
+        <a href="illustrations.html" class="nav-link">
+          <i class="fas fa-palette"></i> Illustrations
+        </a>
+        <a href="certificates.html" class="nav-link">
+          <i class="fas fa-certificate"></i> Certificates
+        </a>
+      </nav>
     </div>
   </header>
 
-  <!-- ABOUT ME -->
-  <section class="about container">
-    <h2>💡 About Me</h2>
-    <p>
-      Hi! I’m <strong>Bhawna Bharti</strong>, a self-driven artist helping startups and small businesses craft creative brand identities and artistic campaigns to boost reach. I create animations, vector art, and visual stories, blending psychology with design to build strong brand recognition. <strong>Let's Work Together</strong> 🤝
-    </p>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Bringing Stories to Life with Art & Animation</h1>
+      <p class="hero-subtitle">I create vibrant 2D animations, whimsical illustrations, and engaging motion graphics that capture hearts and tell compelling visual stories.</p>
+      <div class="hero-cta">
+        <a href="animations.html" class="btn btn-primary">
+          <i class="fas fa-film"></i> View Animations
+        </a>
+        <a href="illustrations.html" class="btn btn-secondary">
+          <i class="fas fa-palette"></i> View Illustrations
+        </a>
+        <a href="mailto:bhartibhawna4488@gmail.com" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i> Get in Touch
+        </a>
+      </div>
+    </div>
   </section>
 
-  <!-- SOFTWARE SKILLS -->
-  <section class="skills container">
+  <!-- ABOUT SECTION -->
+  <section class="section container">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="BP1.png" alt="Bhawna Bharti - Illustrator & Animator">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello! I'm <strong>Bhawna Bharti</strong>, a passionate 2D animator and illustrator dedicated to creating visual magic that connects with audiences on an emotional level.</p>
+        <p>With a background in botany and a heart for storytelling, I blend scientific precision with artistic expression to craft animations and illustrations that are both technically sound and emotionally resonant.</p>
+        <p>My work focuses on creating cozy, pastel-infused worlds where characters come alive through gentle movements and heartfelt narratives.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="mailto:bhartibhawna4488@gmail.com" class="btn btn-primary">
+            <i class="fas fa-comment"></i> Let's Create Together
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    
-    <h2>⚙ Software & Tools</h2>
+  <!-- SKILLS SECTION -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>Design & Animation Skills</h2>
+      <div class="skills-grid">
+        <!-- Skill 1: 2D Animation -->
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-film"></i>
+          </div>
+          <h3>2D Animation</h3>
+          <p>Frame-by-frame animation, character movement, and visual storytelling for ASMR content, explainer videos, and short films.</p>
+          <ul class="skill-list">
+            <li>Character Animation</li>
+            <li>Motion Graphics</li>
+            <li>Loop Animations</li>
+            <li>VFX Integration</li>
+          </ul>
+        </div>
+
+        <!-- Skill 2: Illustration -->
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>Digital Illustration</h3>
+          <p>Creating whimsical characters, cozy scenes, and botanical artwork with a distinct pastel aesthetic and emotional depth.</p>
+          <ul class="skill-list">
+            <li>Character Design</li>
+            <li>Botanical Illustration</li>
+            <li>Pastel Art Styles</li>
+            <li>Storytelling Visuals</li>
+          </ul>
+        </div>
+
+        <!-- Skill 3: Motion Design -->
+        <div class="skill-card">
+          <div class="skill-icon">
+            <i class="fas fa-play-circle"></i>
+          </div>
+          <h3>Motion Design</h3>
+          <p>Combining animation with graphic design principles to create engaging motion graphics for various platforms and purposes.</p>
+          <ul class="skill-list">
+            <li>Typography Animation</li>
+            <li>Logo Animation</li>
+            <li>Infographic Animation</li>
+            <li>Social Media Motion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+          <!-- SOFTWARE TOOLS SECTION -->
+  <section class="section container">
+    <h2>Software & Tools Expertise</h2>
     <div class="software-grid">
       <div class="software-card">
         <img src="s1.png" alt="Adobe Animate">
         <p>Adobe Animate</p>
-        <div class="progress-bar"><div class="progress w-90"></div></div>
+        <span class="skill-level">Advanced</span>
       </div>
       <div class="software-card">
         <img src="s2.png" alt="Illustrator">
         <p>Illustrator</p>
-        <div class="progress-bar"><div class="progress w-70"></div></div>
+        <span class="skill-level">Advanced</span>
       </div>
       <div class="software-card">
         <img src="s3.png" alt="After Effects">
         <p>After Effects</p>
-        <div class="progress-bar"><div class="progress w-40"></div></div>
+        <span class="skill-level">Intermediate</span>
       </div>
       <div class="software-card">
         <img src="s4.png" alt="DaVinci Resolve">
         <p>DaVinci Resolve</p>
-        <div class="progress-bar"><div class="progress w-70"></div></div>
+        <span class="skill-level">Intermediate</span>
       </div>
-    </div>
-
-    
-    <h2>⚙ Secondary Software</h2>
-    <div class="software-grid">
       <div class="software-card">
         <img src="s5.png" alt="Premiere Pro">
         <p>Premiere Pro</p>
-        <div class="progress-bar"><div class="progress w-40"></div></div>
+        <span class="skill-level">Intermediate</span>
       </div>
       <div class="software-card">
         <img src="s6.png" alt="Photoshop">
         <p>Photoshop</p>
-        <div class="progress-bar"><div class="progress w-20"></div></div>
+        <span class="skill-level">Intermediate</span>
       </div>
       <div class="software-card">
         <img src="s7.png" alt="Figma">
         <p>Figma</p>
-        <div class="progress-bar"><div class="progress w-40"></div></div>
+        <span class="skill-level">Intermediate</span>
       </div>
       <div class="software-card">
         <img src="s8.png" alt="Canva">
         <p>Canva</p>
-        <div class="progress-bar"><div class="progress w-80"></div></div>
+        <span class="skill-level">Advanced</span>
       </div>
     </div>
+  </section>
 
-    
-    <h2>⚙ Organisational Tools</h2>
-    <div class="software-grid">
-      <div class="software-card"><img src="s9.png" alt="Google Workspace"><p>Google Workspace</p></div>
-      <div class="software-card"><img src="s10.png" alt="MS Word"><p>MS Word</p></div>
-      <div class="software-card"><img src="s11.png" alt="MS Excel"><p>MS Excel</p></div>
-      <div class="software-card"><img src="s12.png" alt="MS PowerPoint"><p>MS PowerPoint</p></div>
+  <!-- PORTFOLIO PREVIEW -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>Portfolio Highlights</h2>
+      <div class="portfolio-preview">
+        <!-- Animation Preview -->
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Animation Projects">
+          </div>
+          <div class="portfolio-content">
+            <h3>2D Animations</h3>
+            <p>Explore my collection of ASMR animations, character animations, and motion graphics projects.</p>
+            <a href="animations.html" class="btn btn-primary" style="margin-top: 1rem;">
+              <i class="fas fa-eye"></i> View Animations
+            </a>
+          </div>
+        </div>
+
+        <!-- Illustration Preview -->
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="BP1.png" alt="Illustration Projects">
+          </div>
+          <div class="portfolio-content">
+            <h3>Illustrations</h3>
+            <p>Browse through my pastel illustrations, character designs, and botanical artwork collection.</p>
+            <a href="illustrations.html" class="btn btn-primary" style="margin-top: 1rem;">
+              <i class="fas fa-eye"></i> View Illustrations
+            </a>
+          </div>
+        </div>
+
+        <!-- Certificates Preview -->
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Certificates">
+          </div>
+          <div class="portfolio-content">
+            <h3>Certifications</h3>
+            <p>View my professional certifications from Coursera, Adobe, HP LIFE, and other recognized programs.</p>
+            <a href="certificates.html" class="btn btn-primary" style="margin-top: 1rem;">
+              <i class="fas fa-eye"></i> View Certificates
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-
-  <!-- PROJECTS -->
-  <section class="projects container">
-    <h2>📺 Welcome</h2>
-    <video controls><source src="BB.mp4" type="video/mp4"></video>
-  </section>
-
-  <section class="projects container">
-    <h2>🌸 In Progress: Misho in the Flower Shop</h2>
-    <p>A cozy ASMR episode in development. Misho, our cute pup, explores a flower shop filled with warmth, blossoms, and magic.</p>
-    <div class="video-grid">
-      <video controls><source src="p1.mp4" type="video/mp4"></video>
-      <video controls><source src="p2.mp4" type="video/mp4"></video>
-      <video controls><source src="p4.mp4" type="video/mp4"></video>
-    </div>
-    <div class="image-gallery">
-      <img src="p1.png" alt="Misho frame 1">
-      <img src="p2.png" alt="Misho frame 2">
-      <img src="p3.png" alt="Misho frame 3">
+  <!-- YOUTUBE SECTION -->
+  <section class="section container">
+    <div class="youtube-container">
+      <h2>Featured on YouTube</h2>
+      <p>Check out my animation work featured on Berry Paws ASMR channel</p>
+      <div class="youtube-embed">
+        <iframe src="https://www.youtube.com/embed/piMhxxVwJ50" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <a href="https://youtube.com/@berrypawsasmr" target="_blank" class="btn btn-secondary">
+        <i class="fab fa-youtube"></i> Visit YouTube Channel
+      </a>
     </div>
   </section>
 
-  <!-- YOUTUBE -->
-  <section class="youtube container">
-    <h2>📺 Featured on YouTube</h2>
-    <iframe src="https://www.youtube.com/embed/piMhxxVwJ50?si=lI4Q2UHYnsLpCb-V" allowfullscreen></iframe>
-    <p class="youtube-link">
-      <a href="https://youtube.com/@berrypawsasmr" target="_blank">📽 Watch More on YouTube</a>
-    </p>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="services container">
-    <h2>💼 Services & Cost </h2>
-    <ul>
-      <li>📍Custom Animation: ₹1000</li>
-      <li>📍Infographics: ₹800</li>
-      <li>📍Motion Edits: ₹1000</li>
-      <li>📍Illustration: ₹500</li>
-    </ul>
-  </section>
-
-  <!-- BOOK -->
-  <section id="book-link" class="book container">
-    <h2>📩 Book Animation</h2>
-    <a href="mailto:bhartibhawna4488@gmail.com" class="btn-primary">📬 Click Here to Book</a>
-  </section>
-
-  <!-- FEEDBACK -->
-  <section id="feedback" class="feedback container">
-    <h2>💬 Feedback</h2>
-    <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)">
-      <input id="fb-name" type="text" placeholder="Your Name" required />
-      <textarea id="fb-feedback" placeholder="Your feedback" required></textarea>
-      <button type="submit" class="btn-secondary">Send</button>
-      <p id="fb-status" class="status-msg"></p>
-    </form>
-    <p>Or email me directly at <a href="mailto:bhartibhawna4488@gmail.com">bhartibhawna4488@gmail.com</a></p>
+  <!-- CONTACT SECTION -->
+  <section class="container">
+    <div class="contact-section">
+      <h2>Ready to Bring Your Vision to Life?</h2>
+      <p>Whether you need custom animations, illustrations, or motion graphics, I'd love to collaborate on your next project.</p>
+      <div class="contact-buttons">
+        <a href="mailto:bhartibhawna4488@gmail.com" class="btn btn-primary">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="animations.html" class="btn btn-secondary">
+          <i class="fas fa-film"></i> View Animation Portfolio
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <footer class="footer">
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank">LinkedIn</a>
-      <a href="https://www.behance.net/bhawnabharti48" target="_blank">Behance</a>
-      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a>
+    <div class="container footer-content">
+      <h3>Bhawna Creatives</h3>
+      <p>2D Animator & Illustrator</p>
+      
+      <div class="social-links">
+        <a href="https://www.behance.net/bhawnabharti48" target="_blank" class="social-link" aria-label="Behance">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://pin.it/7BvtTQsCY" target="_blank" class="social-link" aria-label="Pinterest">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://youtube.com/@berrypawsasmr" target="_blank" class="social-link" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#" class="footer-link">Home</a>
+        <a href="animations.html" class="footer-link">Animations</a>
+        <a href="illustrations.html" class="footer-link">Illustrations</a>
+        <a href="certificates.html" class="footer-link">Certificates</a>
+      </div>
+      
+      <p>📧 bhartibhawna4488@gmail.com</p>
+      <div class="copyright">
+        <p>© 2025 Bhawna Creatives. All rights reserved.</p>
+      </div>
     </div>
-    <p>© 2025 Bhawna Creatives. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- DARK MODE TOGGLE -->
+  <button class="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
 
-  <!-- DARK MODE TOGGLE BUTTON -->
-<button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-
-<!-- DARK MODE SCRIPT -->
-<script>
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-  }
-
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark');
-    const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-    localStorage.setItem('theme', mode);
-  }
-</script>
-
+  <!-- JAVASCRIPT -->
+  <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference or default to light
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+    
+    // Toggle theme function
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+      
+      if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Active navigation link highlighting
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
 </body>
-
 </html>
