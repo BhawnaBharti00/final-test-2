@@ -778,4 +778,107 @@
         <div class="project-icon">
           <i class="fas fa-magic"></i>
         </div>
-        <h3>VFX in 2D Animati
+        <h3>VFX and Motion Animation</h3>
+        <p class="project-desc">Create deapth of visual flair, for better viewer experiance and story immersion.</p>
+        <ul class="project-features">
+          <li>Story immersion</li>
+          <li>Vector animation</li>
+          <li>Infographics</li>
+          <li>Editing</li>
+        </ul>
+      </div>
+
+
+
+          
+    <!-- CTA SECTION -->
+    <section class="section">
+      <div class="cta-box">
+        <h2>🤝 Let's Create Something Beautiful Together</h2>
+        <p>Whether you need custom illustrations, logo designs, or animations, I'd love to bring your vision to life with my unique artistic style.</p>
+        <div class="cta-buttons">
+          <a href="mailto:bhartibhawna4488@gmail.com" class="btn">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+          <a href="#logo-designs" class="btn btn-outline">
+            <i class="fas fa-pen-nib"></i> View Logo Designs
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <h3>Bhawna Creatives</h3>
+      <p>Illustrator, Animator & Logo Designer</p>
+      
+      <div class="social-links">
+        <a href="https://www.behance.net/bhawnabharti48" target="_blank" aria-label="Behance">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://pin.it/7BvtTQsCY" target="_blank" aria-label="Pinterest">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:bhartibhawna4488@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      
+      <p>📧 bhartibhawna4488@gmail.com</p>
+      <div class="copyright">
+        <p>© 2025 Bhawna Creatives. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DARK MODE TOGGLE -->
+  <button class="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference or default to light
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+    
+    // Toggle theme function
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+      
+      if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.
