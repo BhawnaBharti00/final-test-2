@@ -3,259 +3,704 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Illustrations | Bhawna Creatives</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Bhawna Creatives - Portfolio of illustrations, animations, and logo designs">
+  <title>Illustrations & Logo Designs | Bhawna Creatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* RESET & BASE */
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #fff;
-      color: #333;
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
+    /* CSS Variables for consistent theming */
+    :root {
+      --primary: #dda0dd;
+      --primary-light: #f0d6f0;
+      --secondary: #ffc0cb;
+      --text-dark: #333;
+      --text-light: #f0f0f0;
+      --bg-light: #fff;
+      --bg-card-light: #fff;
+      --bg-nav-light: #f9f9f9;
+      --bg-footer-light: #fafafa;
+      --shadow-light: rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+      --section-spacing: 3rem;
+      --container-max: 1200px;
     }
 
-    .dark {
-      background-color: #121212;
-      color: #f0f0f0;
+    .dark-theme {
+      --primary: #c97bc9;
+      --primary-light: #2a1e2a;
+      --secondary: #e8a0a8;
+      --text-dark: #f0f0f0;
+      --text-light: #f0f0f0;
+      --bg-light: #121212;
+      --bg-card-light: #1e1e1e;
+      --bg-nav-light: #1a1a1a;
+      --bg-footer-light: #1e1e1e;
+      --shadow-light: rgba(255, 255, 255, 0.05);
+    }
+
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      transition: var(--transition);
+      overflow-x: hidden;
     }
 
     img {
       max-width: 100%;
       height: auto;
       display: block;
-      border-radius: 12px;
+      border-radius: var(--border-radius);
     }
 
-    h1, h2 {
-      margin: 0.5rem 0;
+    h1, h2, h3 {
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-weight: 600;
     }
 
     p {
-      margin: 0.5rem 0 1rem;
+      margin-bottom: 1rem;
     }
 
     a {
       text-decoration: none;
-      color: #555;
-      font-weight: 600;
+      color: inherit;
+      transition: var(--transition);
     }
 
-    /* HEADER WITH GRADIENT */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: var(--section-spacing) 0;
+    }
+
+    /* HEADER */
     header {
       text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, #ffc0cb, #dda0dd);
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
       color: white;
+      position: relative;
+      overflow: hidden;
     }
 
-    header h1 {
-      font-size: 2.5rem;
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><path d="M0,0 L100,0 L100,100 Z" fill="white"/></svg>');
+      background-size: cover;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 3vw, 1.3rem);
       font-weight: 600;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     /* NAVIGATION */
     nav {
+      background-color: var(--bg-nav-light);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px var(--shadow-light);
+      transition: var(--transition);
+    }
+
+    .nav-container {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
-      padding: 1rem;
-      background-color: #f9f9f9;
     }
 
-    nav a {
+    .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
       padding: 0.5rem 1rem;
-      background-color: #eee;
       border-radius: 8px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .dark nav {
-      background-color: #1a1a1a;
+    .nav-links a:hover {
+      background-color: var(--primary-light);
+      color: var(--primary);
     }
 
-    .dark nav a {
-      background-color: #333;
-      color: #f0f0f0;
-    }
-
-    /* INTRO */
+    /* MAIN CONTENT */
     .intro {
       max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      margin: 0 auto 2rem;
       text-align: center;
       font-size: 1.1rem;
+      padding: 0 1rem;
     }
 
-    /* CARD STYLING */
-    .certificate-card {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    /* PROJECT CARDS GRID */
+    .section-title {
       text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .dark .certificate-card {
-      background-color: #1e1e1e;
-      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      background-color: var(--bg-card-light);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 6px 16px var(--shadow-light);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px var(--shadow-light);
+    }
+
+    .project-image {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .project-content p {
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .project-tag {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
 
     /* CTA BOX */
     .cta-box {
-      max-width: 600px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background-color: #f0f0ff;
-      border-radius: 12px;
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2.5rem;
+      background: linear-gradient(135deg, var(--primary-light), var(--bg-card-light));
+      border-radius: var(--border-radius);
       text-align: center;
+      box-shadow: 0 8px 24px var(--shadow-light);
     }
 
-    .dark .cta-box {
-      background-color: #2a2a3a;
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
-    .cta-box a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #dda0dd;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      background-color: var(--primary);
       color: white;
       border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
     }
 
     /* FOOTER */
     footer {
+      background-color: var(--bg-footer-light);
+      padding: 3rem 0 2rem;
       text-align: center;
-      padding: 2rem 1rem;
-      background-color: #fafafa;
-      font-size: 0.9rem;
     }
 
-    .dark footer {
-      background-color: #1e1e1e;
-      color: #ccc;
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background-color: var(--primary-light);
+      border-radius: 50%;
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    .dark-theme .copyright {
+      border-top-color: #333;
     }
 
     /* DARK MODE TOGGLE */
-    .dark-mode-toggle {
+    .theme-toggle {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
+      bottom: 25px;
+      right: 25px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
       cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      transition: var(--transition);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
 
-      .certificate-card, .cta-box {
-        margin: 1rem;
-        padding: 1rem;
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
       }
+      
+      .nav-links {
+        justify-content: center;
+      }
+      
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .cta-box {
+        margin: 2rem auto;
+        padding: 1.5rem;
+      }
+      
+      .section {
+        padding: 2rem 0;
+      }
+      
+      .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+      }
+      
+      .nav-links a {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* SKIP TO CONTENT FOR ACCESSIBILITY */
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 0 0 4px 0;
+      z-index: 101;
+    }
+
+    .skip-to-content:focus {
+      top: 0;
     }
   </style>
 </head>
 <body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
   <!-- HEADER -->
   <header>
-    <h1>🖌 Illustrations</h1>
-    <p>Pastel dreams, cozy characters, and whimsical storytelling</p>
+    <div class="header-content">
+      <h1>🖌️ Illustrations & Logo Designs</h1>
+      <p>Pastel dreams, cozy characters, whimsical storytelling, and memorable branding</p>
+    </div>
   </header>
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="index.html">🏠 Home</a>
-    <a href="animations.html">🎬 Animations</a>
-    <a href="illustrations.html">🖌 Illustrations</a>
-    <a href="certificates.html">📜 Certificates</a>
+    <div class="container nav-container">
+      <div class="logo">Bhawna Creatives</div>
+      <div class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="animations.html"><i class="fas fa-film"></i> Animations</a>
+        <a href="illustrations.html" class="active"><i class="fas fa-palette"></i> Illustrations</a>
+        <a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a>
+        <a href="#logo-designs"><i class="fas fa-pen-nib"></i> Logo Designs</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- INTRO -->
-  <section>
-    <div class="intro">
-      I love crafting soft, story-rich illustrations that evoke warmth and wonder. 
-      From dreamy characters to cottagecore scenes, each piece is a little world of its own.
-    </div>
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="container">
+    <!-- INTRO SECTION -->
+    <section class="section">
+      <div class="intro">
+        <p>I love crafting soft, story-rich illustrations that evoke warmth and wonder. From dreamy characters to cottagecore scenes, each piece is a little world of its own. I also create unique, memorable logos that capture brand essence with elegance and creativity.</p>
+      </div>
+    </section>
 
-    <!-- FEATURED PROJECT -->
-    <div class="certificate-card">
-      <img src="b4.png" alt="Magic Market Mornings">
-      <h2>🌸 Magic Market Mornings</h2>
-      <p>A whimsical pastel series capturing the charm of cottage life. 
-      Cozy corners, animated characters, and gentle storytelling come together in this ongoing project.</p>
-    </div>
+    <!-- ILLUSTRATIONS SECTION -->
+    <section class="section">
+      <h2 class="section-title">Illustration Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Featured Project -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="b4.png" alt="Magic Market Mornings illustration">
+          </div>
+          <div class="project-content">
+            <h3>🌸 Magic Market Mornings</h3>
+            <p>A whimsical pastel series capturing the charm of cottage life. Cozy corners, animated characters, and gentle storytelling come together in this ongoing project.</p>
+            <div class="project-tags">
+              <span class="project-tag">Pastel</span>
+              <span class="project-tag">Cottagecore</span>
+              <span class="project-tag">Series</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- GALLERY -->
-    <div class="certificate-card">
-      <img src="b1.png" alt="Illustration 1">
-      <h2>🍓 Berry Paws</h2>
-      <p>Character design for ASMR channel mascot. Soft textures and playful expressions bring Berry to life.</p>
-    </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="b1.png" alt="Berry Paws character illustration">
+          </div>
+          <div class="project-content">
+            <h3>🍓 Berry Paws</h3>
+            <p>Character design for ASMR channel mascot. Soft textures and playful expressions bring Berry to life with warmth and personality.</p>
+            <div class="project-tags">
+              <span class="project-tag">Character Design</span>
+              <span class="project-tag">Mascot</span>
+              <span class="project-tag">ASMR</span>
+            </div>
+          </div>
+        </div>
 
-    <div class="certificate-card">
-      <img src="b5.png" alt="Illustration 2">
-      <h2>🌿 Botanical Whispers</h2>
-      <p>Inspired by your botany roots—this series blends flora with fantasy, creating serene visual poems.</p>
-    </div>
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="b5.png" alt="Botanical Whispers illustration">
+          </div>
+          <div class="project-content">
+            <h3>🌿 Botanical Whispers</h3>
+            <p>Inspired by botany roots—this series blends flora with fantasy, creating serene visual poems that celebrate nature's beauty.</p>
+            <div class="project-tags">
+              <span class="project-tag">Botanical</span>
+              <span class="project-tag">Fantasy</span>
+              <span class="project-tag">Nature</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- CTA BOX -->
-    <div class="cta-box">
-      <h2>🤝 Let’s Create Together</h2>
-      <a href="mailto:bhartibhawna4488@gmail.com">📬 Contact me</a>
-     
-    </div>
-  </section>
+    <!-- LOGO DESIGNS SECTION -->
+    <section id="logo-designs" class="section">
+      <h2 class="section-title">Logo Design Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Logo Project 1 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Bloom & Grow logo design">
+          </div>
+          <div class="project-content">
+            <h3>🌱 Bloom & Grow</h3>
+            <p>Organic gardening brand logo combining leaf motifs with modern typography. Designed to represent growth, sustainability, and natural beauty.</p>
+            <div class="project-tags">
+              <span class="project-tag">Organic</span>
+              <span class="project-tag">Nature</span>
+              <span class="project-tag">Typography</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo Project 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1634942536826-86ecf5c66e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Starlight Cafe logo design">
+          </div>
+          <div class="project-content">
+            <h3>✨ Starlight Cafe</h3>
+            <p>Whimsical cafe logo featuring a celestial theme with coffee cup and star elements. Evokes warmth, magic, and late-night conversations.</p>
+            <div class="project-tags">
+              <span class="project-tag">Cafe</span>
+              <span class="project-tag">Celestial</span>
+              <span class="project-tag">Whimsical</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo Project 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1634942536949-5bd5a5b3c58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Zenith Tech logo design">
+          </div>
+          <div class="project-content">
+            <h3>⚡ Zenith Tech</h3>
+            <p>Modern tech company logo with geometric shapes and clean lines. Represents innovation, precision, and forward-thinking solutions.</p>
+            <div class="project-tags">
+              <span class="project-tag">Tech</span>
+              <span class="project-tag">Geometric</span>
+              <span class="project-tag">Modern</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo Project 4 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Wildheart Studio logo design">
+          </div>
+          <div class="project-content">
+            <h3>🦋 Wildheart Studio</h3>
+            <p>Art studio logo with flowing brush strokes and butterfly element. Captures creative freedom, artistic expression, and organic inspiration.</p>
+            <div class="project-tags">
+              <span class="project-tag">Art Studio</span>
+              <span class="project-tag">Organic</span>
+              <span class="project-tag">Creative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo Project 5 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1634942536826-86ecf5c66e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Petal & Pot logo design">
+          </div>
+          <div class="project-content">
+            <h3>🏺 Petal & Pot</h3>
+            <p>Floral pottery brand logo blending plant and ceramic elements. Represents craftsmanship, natural beauty, and handmade artistry.</p>
+            <div class="project-tags">
+              <span class="project-tag">Floral</span>
+              <span class="project-tag">Handmade</span>
+              <span class="project-tag">Craft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section">
+      <div class="cta-box">
+        <h2>🤝 Let's Create Something Beautiful Together</h2>
+        <p>Whether you need custom illustrations, logo designs, or animations, I'd love to bring your vision to life with my unique artistic style.</p>
+        <div class="cta-buttons">
+          <a href="mailto:bhartibhawna4488@gmail.com" class="btn">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+          <a href="#logo-designs" class="btn btn-outline">
+            <i class="fas fa-pen-nib"></i> View Logo Designs
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>📧 bhartibhawna4488@gmail.com</p>
-     <p>
-      <a href="https://www.behance.net/bhawnabharti48" target="_blank"
-        >Behance</a
-      >
-      |
-      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a> |
-      <a
-        href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316"
-        target="_blank"
-        >LinkedIn</a
-      >
-    </p>
-    <p>© 2025 Bhawna Creatives</p>
-  </footer>
-
-  <!-- DARK MODE TOGGLE -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-
-  <!-- DARK MODE SCRIPT -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', mode);
-    }
-  </script>
-</body>
-</html>
+    <div class="container footer-content">
+      <h3>Bhawna Creatives</h3>
+      <p>Illustrator, Animator & Logo Designer</p>
+      
+      <div class="social-links">
+        <a href="https://www.behance.net/bhawnabharti48" target="_blank" aria-label="Behance">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://pin.it/7BvtTQsCY" target="_blank" aria-label="Pinterest">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:bhartibhawna4488@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      
+      <p>📧 bhartibhawna4488@gmail.com</p>
+      <div cl
