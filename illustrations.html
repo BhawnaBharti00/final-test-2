@@ -236,15 +236,20 @@
       box-shadow: 0 12px 24px var(--shadow-light);
     }
 
+    /* FIXED: Removed fixed height to prevent cropping */
     .project-image {
-      height: 220px;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f8f8;
     }
 
     .project-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      max-height: 250px;
+      object-fit: contain; /* Changed from cover to contain */
       transition: transform 0.5s ease;
     }
 
@@ -282,6 +287,21 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 600;
+    }
+
+    /* NEW: Special card for multiple images */
+    .multi-image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .multi-image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
     }
 
     /* CTA BOX */
@@ -440,6 +460,11 @@
         width: 45px;
         height: 45px;
       }
+      
+      /* Adjust multi-image grid for mobile */
+      .multi-image-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 480px) {
@@ -467,6 +492,11 @@
       .btn {
         width: 100%;
         justify-content: center;
+      }
+      
+      /* Single column for multi-image grid on small screens */
+      .multi-image-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -500,7 +530,7 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <div>
+    <div class="container nav-container">
       <div class="logo">Bhawna Creatives</div>
       <div class="nav-links">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
@@ -516,48 +546,45 @@
       <h2 class="section-title">Illustration Projects</h2>
       
       <div class="projects-grid">
-
-
-         <!-- intro -->
+        <!-- About Me Card -->
         <div class="project-card">
           <div class="project-image">
-            <img src="BP1.png" alt="Botanical Whispers illustration">
+            <img src="BP1.png" alt="About me illustration">
           </div>
           <div class="project-content">
-            <h3> About me</h3>
-            <p>Welcome to my illustration portfolio website.</p>
+            <h3>About Me</h3>
+            <p>Welcome to my illustration portfolio website. I create vibrant, story-rich illustrations that bring ideas to life.</p>
             <div class="project-tags">
               <span class="project-tag">Adobe Illustrator</span>
               <span class="project-tag">Photoshop</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-        <!-- Project 2 -->
+        <!-- Animation Project -->
         <div class="project-card">
           <div class="project-image">
-            <img src="b1.png" alt="Berry Paws character illustration">
+            <img src="b1.png" alt="Animation project">
           </div>
           <div class="project-content">
-            <h3>🍓🌿 Animation</h3>
-            <p>Slice of life animation project</p>
+            <h3>Slice of Life Animation</h3>
+            <p>Slice of life animation project capturing everyday moments with charm and warmth.</p>
             <div class="project-tags">
               <span class="project-tag">Character Design</span>
+              <span class="project-tag">Animation</span>
               <span class="project-tag">ASMR</span>
             </div>
           </div>
         </div>
-        
 
-    <!-- Featured Project -->
+        <!-- Berry's Paws ASMR -->
         <div class="project-card">
           <div class="project-image">
-            <img src="b4.png" alt="Magic Market Mornings illustration">
+            <img src="b4.png" alt="Berry's paws ASMR illustration">
           </div>
           <div class="project-content">
-            <h3>🌸 Berry's paws ASMR</h3>
+            <h3>Berry's Paws ASMR</h3>
+            <p>A cozy ASMR animation series featuring soft pastel colors and gentle storytelling.</p>
             <div class="project-tags">
               <span class="project-tag">Pastel</span>
               <span class="project-tag">Animation</span>
@@ -565,21 +592,22 @@
             </div>
           </div>
         </div>
-        
+      </div>
+    </section>
 
     <!-- LOGO DESIGNS SECTION -->
     <section id="logo-designs" class="section">
       <h2 class="section-title">Logo Design Projects</h2>
       
       <div class="projects-grid">
-        <!-- Logo Project 1 -->
+        <!-- Botanic Logo -->
         <div class="project-card">
           <div class="project-image">
-            <img src="BP2.jpg">
+            <img src="BP2.jpg" alt="Botanic logo design">
           </div>
           <div class="project-content">
             <h3>Botanic</h3>
-            <p>A Mock brand logo design project.</p>
+            <p>A mock brand logo design project featuring organic shapes and natural elements.</p>
             <div class="project-tags">
               <span class="project-tag">Branding</span>
               <span class="project-tag">Logo</span>
@@ -588,10 +616,10 @@
           </div>
         </div>
 
-        <!-- Logo Project 2 -->
+        <!-- Cafe Logo -->
         <div class="project-card">
           <div class="project-image">
-            <img src="BP3.jpg">
+            <img src="BP3.jpg" alt="Cafe logo design">
           </div>
           <div class="project-content">
             <h3>Cafe Logo</h3>
@@ -599,33 +627,45 @@
             <div class="project-tags">
               <span class="project-tag">Cafe</span>
               <span class="project-tag">Logo</span>
+              <span class="project-tag">Branding</span>
             </div>
           </div>
         </div>
 
-        <!-- Logo Project 3 -->
-        <!-- Logo Project 4 -->
+        <!-- Graphics Illustration -->
         <div class="project-card">
           <div class="project-image">
-            <img src="BP4.jpg">
+            <img src="BP4.jpg" alt="Graphics illustration">
           </div>
           <div class="project-content">
-            <h3>Graphics illustration</h3>
-            <p> Thank you !</p>
+            <h3>Graphics Illustration</h3>
+            <p>A vibrant graphic design project showcasing creative illustration techniques.</p>
+            <div class="project-tags">
+              <span class="project-tag">Graphics</span>
+              <span class="project-tag">Illustration</span>
+              <span class="project-tag">Digital Art</span>
+            </div>
           </div>
         </div>
 
- <div class="project-card">
+        <!-- Branding Project - Multi Image Card -->
+        <div class="project-card">
           <div class="project-image">
-            <img src="BP5.jpg">
-             <img src="BP6.jpg">
-             <img src="BP7.jpg">
+            <div class="multi-image-grid">
+              <img src="BP5.jpg" alt="Branding project image 1">
+              <img src="BP6.jpg" alt="Branding project image 2">
+              <img src="BP7.jpg" alt="Branding project image 3">
+            </div>
           </div>
           <div class="project-content">
             <h3>Branding Project</h3>
+            <p>A comprehensive branding project including logo, color palette, typography, and brand applications.</p>
+            <div class="project-tags">
+              <span class="project-tag">Branding</span>
+              <span class="project-tag">Identity</span>
+              <span class="project-tag">Design System</span>
+            </div>
           </div>
-        </div>
-        
         </div>
       </div>
     </section>
@@ -669,4 +709,55 @@
       </div>
       
       <p>📧 bhartibhawna4488@gmail.com</p>
-      <div cl
+      <div class="copyright">
+        <p>© 2025 Bhawna Creatives. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DARK MODE TOGGLE -->
+  <button class="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference or default to light
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    }
+    
+    // Toggle theme function
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+      
+      if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.
