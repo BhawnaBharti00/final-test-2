@@ -3,253 +3,794 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎥 Animations | Bhawna Creatives</title>
+  <meta name="description" content="Professional 2D animation portfolio featuring VFX, loop animations, and ASMR animations by Bhawna Creatives">
+  <title>🎥 2D Animation & Motion Graphics | Bhawna Creatives</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Base & Dark */
-    body {
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #dda0dd;
+      --primary-dark: #c97bc9;
+      --secondary: #ffb6c1;
+      --accent: #a0d2ff;
+      --text-dark: #2d3748;
+      --text-light: #f8f9fa;
+      --bg-light: #ffffff;
+      --bg-card: #ffffff;
+      --bg-nav: #ffffff;
+      --bg-footer: #f8f9fa;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 16px;
+      --container-max: 1200px;
+    }
+
+    .dark-theme {
+      --primary: #c97bc9;
+      --primary-dark: #b366b3;
+      --secondary: #e8a0a8;
+      --accent: #6fb5ff;
+      --text-dark: #f0f0f0;
+      --text-light: #f0f0f0;
+      --bg-light: #121212;
+      --bg-card: #1e1e1e;
+      --bg-nav: #1a1a1a;
+      --bg-footer: #1a1a1a;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ===== RESET & BASE STYLES ===== */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
-      background-color: #fdfdfd;
-      color: #333;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    .dark {
-      background-color: #121212;
-      color: #f0f0f0;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      transition: var(--transition);
+      overflow-x: hidden;
     }
 
-    /* HERO / HEADER */
-    .hero {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: linear-gradient(135deg, #ffb6c1 0%, #dda0dd 100%);
-      padding: 1rem 2%;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    }
-    .hero-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: auto;
-      flex-wrap: wrap;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
-    /* Logo */
-    .logo-img {
-       max-height: 60px;
-       width: 60px;
-       border-radius: 50%;
-       object-fit: cover;
-       overflow: hidden;
-       animation: float 4s ease-in-out infinite;
-}
-
-      object-fit: contain;
-      margin-right: 1rem;
-    }
-
-    /* Hero Text */
-    .hero-text {
-      flex: 1 1 40px;
-      text-align: center;
-      margin: 0.5rem 1rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin: 0.5rem 0;
-    }
-    .subtitle {
-      font-size: 1.1rem;
+    h1, h2, h3, h4 {
+      line-height: 1.2;
       margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-dark);
       opacity: 0.9;
     }
 
-    /* NAV PILLS */
-    .main-nav {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-    .main-nav a {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.9);
-      color: #333;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-    }
-    .main-nav a:hover,
-    .main-nav a:focus {
-      background: #fff;
-      color: #dd2dcc;
-      transform: translateY(-2px);
-      outline: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
     }
 
-    /* Dark-mode nav pills */
-    .dark .main-nav a {
-      background: rgba(50, 50, 50, 0.8);
-      color: #eee;
-    }
-    .dark .main-nav a:hover,
-    .dark .main-nav a:focus {
-      background: #333;
-      color: #ffb6c1;
-    }
-
-    /* CONTAINER & TEXT */
     .container {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-align: center;
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    /* VIDEOS */
-    .video-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .section {
+      padding: 4rem 0;
+    }
+
+    /* ===== HEADER & NAVIGATION ===== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg-nav);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
       gap: 1rem;
     }
-    video {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+      animation: float 6s ease-in-out infinite;
     }
 
-    /* UPCOMING */
-    .upcoming img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      display: block;
-      margin: 1rem auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
-    /* FOOTER */
-    .footer {
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tagline {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      font-weight: 500;
+    }
+
+    /* Navigation */
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .nav-link.active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      padding: 5rem 0;
       text-align: center;
-      padding: 1rem;
-      background-color: #eee;
+      background: linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(221, 160, 221, 0.1) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.03"><path d="M0,0 L100,0 L100,100 Z" fill="%23dda0dd"/></svg>');
+      background-size: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .hero-tag {
+      padding: 0.5rem 1.2rem;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
       font-size: 0.9rem;
     }
-    .dark .footer {
-      background-color: #1e1e1e;
+
+    /* ===== VIDEO GALLERY ===== */
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
-    /* DARK MODE BUTTON */
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #333;
-      color: #fff;
+    .video-card {
+      background-color: var(--bg-card);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .video-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .video-card:hover .video-overlay {
+      opacity: 1;
+    }
+
+    .play-btn {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary);
+      transform: scale(0.8);
+      transition: var(--transition);
+    }
+
+    .video-card:hover .play-btn {
+      transform: scale(1);
+    }
+
+    .video-info {
+      padding: 1.5rem;
+    }
+
+    .video-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .video-description {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .video-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .video-tag {
+      padding: 0.3rem 0.8rem;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* ===== ANIMATION PROJECTS SECTION ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background-color: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(221, 160, 221, 0.1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .project-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .project-desc {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-features {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .project-features li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-features li:before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(221, 160, 221, 0.1) 100%);
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: var(--transition);
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
       cursor: pointer;
       font-size: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* RESPONSIVE TWEAKS */
-    @media (max-width: 600px) {
-      .hero-inner {
-        flex-direction: column;
-        text-align: center;
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(221, 160, 221, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background-color: var(--bg-footer);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .footer-link {
+      color: var(--text-dark);
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+      opacity: 1;
+    }
+
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(221, 160, 221, 0.2);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ===== DARK MODE TOGGLE ===== */
+    .theme-toggle {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      .nav-menu {
+        gap: 1rem;
       }
-      .logo-img {
-        margin-bottom: 0.5rem;
+      
+      .video-gallery, .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .cta-section {
+        padding: 2rem;
+      }
+      
+      .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .video-gallery, .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .nav-link {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .hero-tags {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="hero">
-    <div class="hero-inner">
-      <img src="b6.png" alt="Bhawna Creatives Logo" class="logo-img" />
-      <div class="hero-text">
-        <h1>🎥 Animations</h1>
+  <!-- HEADER & NAVIGATION -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <img src="b6.png" alt="Bhawna Creatives Logo" class="logo-img" />
+        <div class="brand-text">
+          <div class="brand-name">Bhawna Creatives</div>
+          <div class="brand-tagline">2D Animation & Motion Design</div>
+        </div>
       </div>
-      <nav class="main-nav">
-        <a href="index.html" aria-label="Home">🏠 Home</a>
-        <a href="illustrations.html" aria-label="Illustrations">🖌 Illustrations</a>
-        <a href="certificates.html" aria-label="Certificates">📜 Certificates</a>
-        <a href="projectsa.html" aria-label="Upcoming">📂 Upcoming</a>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a href="illustrations.html" class="nav-link">
+          <i class="fas fa-palette"></i> Illustrations
+        </a>
+        <a href="#" class="nav-link active">
+          <i class="fas fa-film"></i> Animations
+        </a>
+        <a href="certificates.html" class="nav-link">
+          <i class="fas fa-certificate"></i> Certificates
+        </a>
       </nav>
     </div>
   </header>
 
-  <!-- FEATURED ANIMATIONS -->
-  <section class="container">
-    <h2>🎬 Featured Animations</h2>
-    <div class="video-wrapper">
-      <video controls><source src="b2.mp4" type="video/mp4" /></video>
-      <video controls><source src="p1.mp4" type="video/mp4" /></video>
-      <video controls><source src="p2.mp4" type="video/mp4" /></video>
-      <video controls><source src="p4.mp4" type="video/mp4" /></video>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>🎬 2D Animation & Motion Graphics</h1>
+      <p class="hero-subtitle">Bringing stories to life through frame-by-frame animation, VFX, and seamless motion design</p>
+      <div class="hero-tags">
+        <span class="hero-tag">VFX in 2D Animation</span>
+        <span class="hero-tag">Loop Animations</span>
+        <span class="hero-tag">ASMR Animations</span>
+        <span class="hero-tag">Motion Graphics</span>
+      </div>
     </div>
   </section>
 
-  <!-- UPCOMING PROJECT -->
-  <section class="upcoming container">
-    <h2>🌸 Upcoming Animation</h2>
-    <p>
-      Coming soon:
-      <strong>“Cat ASMR: Purring in Peace”</strong> — a cozy visual
-      experience with soft lighting, gentle sounds, and feline charm. 🐾
-    </p>
-    <img src="b7.png" alt="Cat ASMR Preview" />
+  <!-- VIDEO GALLERY SECTION -->
+  <section class="section container">
+    <h2>Featured Animation Projects</h2>
+    <div class="video-gallery">
+      <!-- Video 1 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video controls poster="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+            <source src="b2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay">
+            <div class="play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Character Animation Sequence</h3>
+          <p class="video-description">Smooth character movements with expressive facial animations and dynamic timing.</p>
+          <div class="video-tags">
+            <span class="video-tag">Character Animation</span>
+            <span class="video-tag">2D</span>
+            <span class="video-tag">Frame-by-Frame</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video controls poster="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+            <source src="p1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay">
+            <div class="play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Motion Graphics Demo</h3>
+          <p class="video-description">Dynamic typography and shape animations with synchronized audio cues.</p>
+          <div class="video-tags">
+            <span class="video-tag">Motion Graphics</span>
+            <span class="video-tag">Typography</span>
+            <span class="video-tag">Sound Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video controls poster="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+            <source src="p2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay">
+            <div class="play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">VFX Animation Showcase</h3>
+          <p class="video-description">Special effects integration within 2D animation, including particle systems and lighting effects.</p>
+          <div class="video-tags">
+            <span class="video-tag">VFX</span>
+            <span class="video-tag">2D Effects</span>
+            <span class="video-tag">Particles</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video controls poster="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80">
+            <source src="p4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay">
+            <div class="play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Loop Animation Series</h3>
+          <p class="video-description">Seamless looping animations perfect for web interfaces, social media, and interactive projects.</p>
+          <div class="video-tags">
+            <span class="video-tag">Loop Animation</span>
+            <span class="video-tag">Seamless</span>
+            <span class="video-tag">Web Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>📧 bhartibhawna4488@gmail.com</p>
-    <p>
-      <a href="https://www.behance.net/bhawnabharti48" target="_blank"
-        >Behance</a
-      >
-      |
-      <a href="https://pin.it/7BvtTQsCY" target="_blank">Pinterest</a> |
-      <a
-        href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316"
-        target="_blank"
-        >LinkedIn</a
-      >
-    </p>
-    <p>© 2025 Bhawna Creatives</p>
-  </footer>
-
-  <!-- DARK MODE TOGGLE -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-    🌙 Dark Mode
-  </button>
-
-  <!-- DARK MODE SCRIPT -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-    }
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', mode);
-    }
-  </script>
-</body>
-</html>
+  <!-- ANIMATION SPECIALTIES SECTION -->
+  <section class="section container">
+    <h2>Animation Specialties</h2>
+    <div class="projects-grid">
+      <!-- Project 1: VFX in 2D Animation -->
+      <div class="project-card">
+        <div class="project-icon">
+          <i class="fas fa-magic"></i>
+        </div>
+        <h3>VFX in 2D Animation</h3>
+        <p class="project-desc">Integrating visual effects into traditional 2D animation to create dynamic, immersive scenes with particle systems, lighting effects, and atmospheric elements.</p>
+        <ul class="project-features">
+          <li>Particle effects and simulations</li>
+          <li>Lighting and glow effects</li>
+          <li>Atmospheric VFX integration</l
