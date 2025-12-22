@@ -720,9 +720,6 @@
   <!-- MAIN CONTENT -->
   <main id="main-content" class="container">
 
-
-
-    
     <!-- BRAND IDENTITY & TYPOGRAPHIC STUDY SECTION -->
     <section id="brand-identity" class="section">
       <h2 class="section-title">Brand Identity & Typographic Study</h2>
@@ -767,7 +764,8 @@
               </div>
               <div class="slide" data-category="brand">
                 <img src="q6.png" alt="Brand Identity - Digital Applications">
-                 <div class="slide active" data-category="brand">
+              </div>
+              <div class="slide" data-category="brand">
                 <img src="q7.png" alt="Brand Identity - Logo Exploration">
               </div>
               <div class="slide" data-category="brand">
@@ -784,9 +782,11 @@
               </div>
               <div class="slide" data-category="brand">
                 <img src="q12.png" alt="Brand Identity - Digital Applications">
-                  <div class="slide" data-category="brand">
+              </div>
+              <div class="slide" data-category="brand">
                 <img src="q13.png" alt="Brand Identity - Digital Applications">
-                 <div class="slide active" data-category="brand">
+              </div>
+              <div class="slide" data-category="brand">
                 <img src="q14.png" alt="Brand Identity - Logo Exploration">
               </div>
               <div class="slide" data-category="brand">
@@ -798,20 +798,12 @@
               <div class="slide" data-category="brand">
                 <img src="q17.png" alt="Brand Identity - Brand Applications">
               </div>
-              <div class="slide" data-category="brand">
-                <img src="q20.png" alt="Brand Identity - Packaging Mockup">
-              </div>
-              <div class="slide" data-category="brand">
-                <img src="q21.png" alt="Brand Identity - Digital Applications">
-              </div>
-              
               <!-- Typographic Study Images (2 images) -->
               <div class="slide" data-category="typo">
-                <img src="q20.png" alt="Brand Identity - Packaging Mockup">
+                <img src="q20.png" alt="Typographic Study">
               </div>
               <div class="slide" data-category="typo">
-                <img src="q21.png" alt="Brand Identity - Digital Applications">
-              </div>
+                <img src="q21.png" alt="Typographic Study">
               </div>
             </div>
             
@@ -826,7 +818,7 @@
               </div>
               
               <div class="slideshow-counter">
-                <span id="current-slide">1</span> / <span id="total-slides">8</span>
+                <span id="current-slide">1</span> / <span id="total-slides">19</span>
               </div>
               
               <div class="slideshow-dots" id="slideshow-dots">
@@ -838,8 +830,7 @@
       </div>
     </section>
 
-    <!-- LOGO DESIGNS SECTION -->
-     <!-- ILLUSTRATIONS SECTION -->
+    <!-- ILLUSTRATIONS SECTION -->
     <section class="section">
       <h2 class="section-title">Illustration Projects</h2>
       
@@ -872,6 +863,25 @@
       </div>
     </section>
 
+    <!-- LOGO DESIGNS SECTION -->
+    <section id="logo-designs" class="section">
+      <h2 class="section-title">Logo Design Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Botanic Logo -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="BP2.jpg" alt="Botanic logo design">
+          </div>
+          <div class="project-content">
+            <h3>Botanic</h3>
+            <div class="project-tags">
+              <span class="project-tag">Branding</span>
+              <span class="project-tag">Logo</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Cafe Logo -->
         <div class="project-card">
           <div class="project-image">
@@ -901,7 +911,22 @@
         </div>
 
         <!-- Branding Project - Multi Image Card -->
-       
+        <div class="project-card">
+          <div class="project-image">
+            <div class="multi-image-grid">
+              <img src="BP5.png" alt="Branding project image 1">
+              <img src="BP6.jpg" alt="Branding project image 2">
+              <img src="BP7.jpg" alt="Branding project image 3">
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Branding Project</h3>
+            <div class="project-tags">
+              <span class="project-tag">Branding</span>
+              <span class="project-tag">Brand Identity</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1022,15 +1047,20 @@
         // Set total slides
         totalSlidesEl.textContent = filteredSlides.length;
         
-        // Create dots
+        // Create dots - only show up to 10 dots for better UX
         slideshowDots.innerHTML = '';
-        filteredSlides.forEach((_, index) => {
+        const maxDots = Math.min(filteredSlides.length, 10);
+        for (let i = 0; i < maxDots; i++) {
           const dot = document.createElement('div');
           dot.classList.add('dot');
-          if (index === currentSlide) dot.classList.add('active');
-          dot.addEventListener('click', () => goToSlide(index));
+          if (i === currentSlide % maxDots) dot.classList.add('active');
+          dot.addEventListener('click', () => {
+            // Calculate which slide to go to based on dot index
+            const slideIndex = Math.floor(currentSlide / maxDots) * maxDots + i;
+            goToSlide(slideIndex % filteredSlides.length);
+          });
           slideshowDots.appendChild(dot);
-        });
+        }
         
         updateSlideshow();
       }
@@ -1051,8 +1081,10 @@
         currentSlideEl.textContent = currentSlide + 1;
         
         // Update dots
+        const maxDots = Math.min(filteredSlides.length, 10);
+        const dotIndex = currentSlide % maxDots;
         document.querySelectorAll('.dot').forEach((dot, index) => {
-          if (index === currentSlide) {
+          if (index === dotIndex) {
             dot.classList.add('active');
           } else {
             dot.classList.remove('active');
@@ -1131,16 +1163,4 @@
       // Pause auto-advance on hover
       const slideshowContainer = document.getElementById('slideshow-container');
       slideshowContainer.addEventListener('mouseenter', () => {
-        clearInterval(slideshowInterval);
-      });
-      
-      slideshowContainer.addEventListener('mouseleave', () => {
-        slideshowInterval = setInterval(nextSlide, 5000);
-      });
-      
-      // Initialize slideshow
-      initSlideshow();
-    });
-  </script>
-</body>
-</html>
+        clearInterval
