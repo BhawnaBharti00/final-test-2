@@ -1,3 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Bhawna Creatives - Portfolio of illustrations, animations, and logo designs">
+  <title>Illustrations & Logo Designs | Bhawna Creatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS Variables for consistent theming */
+    :root {
+      --primary: #dda0dd;
+      --primary-light: #f0d6f0;
+      --secondary: #ffc0cb;
+      --text-dark: #333;
+      --text-light: #f0f0f0;
+      --bg-light: #fff;
+      --bg-card-light: #fff;
+      --bg-nav-light: #f9f9f9;
+      --bg-footer-light: #fafafa;
+      --shadow-light: rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+      --section-spacing: 3rem;
+      --container-max: 1200px;
+    }
+
+    .dark-theme {
+      --primary: #c97bc9;
+      --primary-light: #2a1e2a;
+      --secondary: #e8a0a8;
+      --text-dark: #f0f0f0;
+      --text-light: #f0f0f0;
+      --bg-light: #121212;
+      --bg-card-light: #1e1e1e;
+      --bg-nav-light: #1a1a1a;
+      --bg-footer-light: #1e1e1e;
+      --shadow-light: rgba(255, 255, 255, 0.05);
+    }
+
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      transition: var(--transition);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--border-radius);
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: var(--section-spacing) 0;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><path d="M0,0 L100,0 L100,100 Z" fill="white"/></svg>');
+      background-size: cover;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-weight: 600;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: var(--bg-nav-light);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px var(--shadow-light);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* MAIN CONTENT */
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+
+    /* PROJECT CARDS GRID */
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      background-color: var(--bg-card-light);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 6px 16px var(--shadow-light);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px var(--shadow-light);
+    }
+
+    .project-image {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f8f8;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .project-content p {
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .project-tag {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* NEW: Special card for multiple images */
+    .multi-image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .multi-image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* BRAND IDENTITY SECTION */
+    .brand-section {
+      background-color: var(--primary-light);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin: 2rem 0 4rem;
+      padding: 2rem;
+    }
+
+    .brand-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .brand-content {
+        flex-direction: row;
+      }
+    }
+
+    .brand-info {
+      flex: 1;
+    }
+
+    .brand-info h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .brand-slideshow {
+      flex: 2;
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      background-color: var(--bg-card-light);
+    }
+
+    .slideshow-container {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .slideshow-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      gap: 1rem;
+      background-color: var(--bg-card-light);
+    }
+
+    .slideshow-nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .slideshow-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .slideshow-btn:hover {
+      background-color: var(--secondary);
+      transform: scale(1.1);
+    }
+
+    .slideshow-dots {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--primary-light);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .dot.active {
+      background-color: var(--primary);
+      transform: scale(1.2);
+    }
+
+    .slideshow-counter {
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .project-category {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .category-btn {
+      background-color: var(--bg-card-light);
+      color: var(--text-dark);
+      border: 2px solid var(--primary-light);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .category-btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* CTA BOX */
+    .cta-box {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2.5rem;
+      background: linear-gradient(135deg, var(--primary-light), var(--bg-card-light));
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: 0 8px 24px var(--shadow-light);
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--bg-footer-light);
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background-color: var(--primary-light);
+      border-radius: 50%;
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+    }
+
+    .dark-theme .copyright {
+      border-top-color: #333;
+    }
+
+    /* DARK MODE TOGGLE */
+    .theme-toggle {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        justify-content: center;
+      }
+      
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .cta-box {
+        margin: 2rem auto;
+        padding: 1.5rem;
+      }
+      
+      .section {
+        padding: 2rem 0;
+      }
+      
+      .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+      
+      /* Adjust multi-image grid for mobile */
+      .multi-image-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .slideshow-container {
+        height: 300px;
+      }
+      
+      .brand-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+      }
+      
+      .nav-links a {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      /* Single column for multi-image grid on small screens */
+      .multi-image-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .slideshow-container {
+        height: 250px;
+      }
+      
+      .slideshow-controls {
+        flex-direction: column;
+      }
+      
+      .slideshow-nav {
+        order: 2;
+      }
+      
+      .slideshow-counter {
+        order: 1;
+      }
+      
+      .slideshow-dots {
+        order: 3;
+        margin-top: 0.5rem;
+      }
+    }
+
+    /* SKIP TO CONTENT FOR ACCESSIBILITY */
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 0 0 4px 0;
+      z-index: 101;
+    }
+
+    .skip-to-content:focus {
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">Bhawna Creatives</div>
+       <div class="logo">Illustrations</div>
+      <div class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="container">
+
+    <!-- BRAND IDENTITY & TYPOGRAPHIC STUDY SECTION -->
+    <section id="brand-identity" class="section">
+      <h2 class="section-title">Brand Identity & Typographic Study</h2>
+      
+      <div class="brand-section">
+        <div class="brand-content">
+          <div class="brand-info">
+            <h3>Brand Identity & Typographic Exploration</h3>
+            <p>This project showcases a comprehensive brand identity study including logo development, color palette creation, typography selection, and application across various media. The typographic study explores type pairings, hierarchy, and expressive lettering techniques.</p>
+            
+            <div class="project-category">
+              <button class="category-btn active" data-category="all">All Images (19)</button>
+              <button class="category-btn" data-category="brand">Brand Identity (17)</button>
+              <button class="category-btn" data-category="typo">Typography (2)</button>
+            </div>
+            
+            <div class="project-tags" style="margin-top: 1.5rem;">
+              <span class="project-tag">Brand Identity</span>
+              <span class="project-tag">Typography</span>
+              <span class="project-tag">Logo Design</span>
+              <span class="project-tag">Visual System</span>
+            </div>
+          </div>
+          
+          <div class="brand-slideshow">
+            <div class="slideshow-container" id="slideshow-container">
+              <!-- Brand Identity Images (17 images) -->
+              <div class="slide active" data-category="brand">
+                <img src="q1.png" alt="Brand Identity - Logo Exploration">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q2.png" alt="Brand Identity - Color Palette">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q3.png" alt="Brand Identity - Stationery Design">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q4.png" alt="Brand Identity - Brand Applications">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q5.png" alt="Brand Identity - Packaging Mockup">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q6.png" alt="Brand Identity - Digital Applications">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q7.png" alt="Brand Identity - Logo Exploration">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q8.png" alt="Brand Identity - Color Palette">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q9.png" alt="Brand Identity - Stationery Design">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q10.png" alt="Brand Identity - Brand Applications">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q11.png" alt="Brand Identity - Packaging Mockup">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q12.png" alt="Brand Identity - Digital Applications">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q13.png" alt="Brand Identity - Digital Applications">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q14.png" alt="Brand Identity - Logo Exploration">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q15.png" alt="Brand Identity - Color Palette">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q16.png" alt="Brand Identity - Stationery Design">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="q17.png" alt="Brand Identity - Brand Applications">
+              </div>
+              <!-- Typographic Study Images (2 images) -->
+              <div class="slide" data-category="typo">
+                <img src="q20.png" alt="Typographic Study">
+              </div>
+              <div class="slide" data-category="typo">
+                <img src="q21.png" alt="Typographic Study">
+              </div>
+            </div>
+            
+            <div class="slideshow-controls">
+              <div class="slideshow-nav">
+                <button class="slideshow-btn prev-btn">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slideshow-btn next-btn">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              
+              <div class="slideshow-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">19</span>
+              </div>
+              
+              <div class="slideshow-dots" id="slideshow-dots">
+                <!-- Dots will be generated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ILLUSTRATIONS SECTION -->
+    <section class="section">
+      <h2 class="section-title">Illustration Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Animation Project -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="b1.png" alt="Animation project">
+          </div>
+          <div class="project-content">
+            <h3>Slice of Life Animation</h3>
+            <div class="project-tags">
+              <span class="project-tag">Animation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Berry's Paws ASMR -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="b4.png" alt="Berry's paws ASMR illustration">
+          </div>
+          <div class="project-content">
+            <h3>Berry's Paws ASMR</h3>
+            <div class="project-tags">
+              <span class="project-tag">ASMR Animation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGO DESIGNS SECTION -->
+    <section id="logo-designs" class="section">
+      <h2 class="section-title">Logo Design Projects</h2>
+      
+      <div class="projects-grid">
+        <!-- Botanic Logo -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="BP2.jpg" alt="Botanic logo design">
+          </div>
+          <div class="project-content">
+            <h3>Botanic</h3>
+            <div class="project-tags">
+              <span class="project-tag">Branding</span>
+              <span class="project-tag">Logo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cafe Logo -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="BP3.jpg" alt="Cafe logo design">
+          </div>
+          <div class="project-content">
+            <h3>Cafe Logo</h3>
+            <div class="project-tags">
+              <span class="project-tag">Logo</span>
+              <span class="project-tag">Branding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graphics Illustration -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="BP4.jpg" alt="Graphics illustration">
+          </div>
+          <div class="project-content">
+            <h3>Graphics Illustration</h3>
+            <div class="project-tags">
+              <span class="project-tag">Graphics</span>
+              <span class="project-tag">Illustration</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Branding Project - Multi Image Card -->
+        <div class="project-card">
+          <div class="project-image">
+            <div class="multi-image-grid">
+              <img src="BP5.png" alt="Branding project image 1">
+              <img src="BP6.jpg" alt="Branding project image 2">
+              <img src="BP7.jpg" alt="Branding project image 3">
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Branding Project</h3>
+            <div class="project-tags">
+              <span class="project-tag">Branding</span>
+              <span class="project-tag">Brand Identity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section">
+      <div class="cta-box">
+        <h2>🤝 Let's Create Something Beautiful Together</h2>
+        <p>Whether you need custom illustrations, logo designs, or animations, I'd love to bring your vision to life with my unique artistic style.</p>
+        <div class="cta-buttons">
+          <a href="mailto:bhartibhawna4488@gmail.com" class="btn">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+          <a href="#logo-designs" class="btn btn-outline">
+            <i class="fas fa-pen-nib"></i> View Logo Designs
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <h3>Bhawna Creatives</h3>
+      <p>Illustrator, Animator & Logo Designer</p>
+      
+      <div class="social-links">
+        <a href="https://www.behance.net/bhawnabharti48" target="_blank" aria-label="Behance">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://pin.it/7BvtTQsCY" target="_blank" aria-label="Pinterest">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/bhawna-bharti-25ba2a316" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:bhartibhawna4488@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      
+      <p>📧 bhartibhawna4488@gmail.com</p>
+      <div class="copyright">
+        <p>© 2025 Bhawna Creatives. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DARK MODE TOGGLE -->
+  <button class="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
   <!-- JAVASCRIPT -->
   <script>
     // Theme Toggle Functionality
