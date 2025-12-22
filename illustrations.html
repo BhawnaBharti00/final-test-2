@@ -304,6 +304,162 @@
       object-fit: cover;
     }
 
+    /* BRAND IDENTITY SECTION */
+    .brand-section {
+      background-color: var(--primary-light);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin: 2rem 0 4rem;
+      padding: 2rem;
+    }
+
+    .brand-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .brand-content {
+        flex-direction: row;
+      }
+    }
+
+    .brand-info {
+      flex: 1;
+    }
+
+    .brand-info h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .brand-slideshow {
+      flex: 2;
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      background-color: var(--bg-card-light);
+    }
+
+    .slideshow-container {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .slideshow-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      gap: 1rem;
+      background-color: var(--bg-card-light);
+    }
+
+    .slideshow-nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .slideshow-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .slideshow-btn:hover {
+      background-color: var(--secondary);
+      transform: scale(1.1);
+    }
+
+    .slideshow-dots {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--primary-light);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .dot.active {
+      background-color: var(--primary);
+      transform: scale(1.2);
+    }
+
+    .slideshow-counter {
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .project-category {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .category-btn {
+      background-color: var(--bg-card-light);
+      color: var(--text-dark);
+      border: 2px solid var(--primary-light);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .category-btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
     /* CTA BOX */
     .cta-box {
       max-width: 800px;
@@ -465,6 +621,14 @@
       .multi-image-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      
+      .slideshow-container {
+        height: 300px;
+      }
+      
+      .brand-content {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 480px) {
@@ -497,6 +661,27 @@
       /* Single column for multi-image grid on small screens */
       .multi-image-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .slideshow-container {
+        height: 250px;
+      }
+      
+      .slideshow-controls {
+        flex-direction: column;
+      }
+      
+      .slideshow-nav {
+        order: 2;
+      }
+      
+      .slideshow-counter {
+        order: 1;
+      }
+      
+      .slideshow-dots {
+        order: 3;
+        margin-top: 0.5rem;
       }
     }
 
@@ -540,17 +725,6 @@
       <h2 class="section-title">Illustration Projects</h2>
       
       <div class="projects-grid">
-        <!-- About Me Card -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="BP1.png" alt="About me illustration">
-          </div>
-          <div class="project-content">
-              <span class="project-tag">About Me</span>
-            </div>
-          </div>
-        </div>
-
         <!-- Animation Project -->
         <div class="project-card">
           <div class="project-image">
@@ -573,6 +747,84 @@
             <h3>Berry's Paws ASMR</h3>
             <div class="project-tags">
               <span class="project-tag">ASMR Animation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND IDENTITY & TYPOGRAPHIC STUDY SECTION -->
+    <section id="brand-identity" class="section">
+      <h2 class="section-title">Brand Identity & Typographic Study</h2>
+      
+      <div class="brand-section">
+        <div class="brand-content">
+          <div class="brand-info">
+            <h3>Brand Identity & Typographic Exploration</h3>
+            <p>This project showcases a comprehensive brand identity study including logo development, color palette creation, typography selection, and application across various media. The typographic study explores type pairings, hierarchy, and expressive lettering techniques.</p>
+            
+            <div class="project-category">
+              <button class="category-btn active" data-category="all">All Images (19)</button>
+              <button class="category-btn" data-category="brand">Brand Identity (17)</button>
+              <button class="category-btn" data-category="typo">Typography (2)</button>
+            </div>
+            
+            <div class="project-tags" style="margin-top: 1.5rem;">
+              <span class="project-tag">Brand Identity</span>
+              <span class="project-tag">Typography</span>
+              <span class="project-tag">Logo Design</span>
+              <span class="project-tag">Visual System</span>
+            </div>
+          </div>
+          
+          <div class="brand-slideshow">
+            <div class="slideshow-container" id="slideshow-container">
+              <!-- Brand Identity Images (17 images) -->
+              <div class="slide active" data-category="brand">
+                <img src="https://images.unsplash.com/photo-1567446537710-0c5ff5a6ac32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brand Identity - Logo Exploration">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brand Identity - Color Palette">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brand Identity - Stationery Design">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brand Identity - Brand Applications">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="https://images.unsplash.com/photo-1634942536826-3081776a6312?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brand Identity - Packaging Mockup">
+              </div>
+              <div class="slide" data-category="brand">
+                <img src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brand Identity - Digital Applications">
+              </div>
+              
+              <!-- Typographic Study Images (2 images) -->
+              <div class="slide" data-category="typo">
+                <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Typographic Study - Type Hierarchy">
+              </div>
+              <div class="slide" data-category="typo">
+                <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Typographic Study - Expressive Lettering">
+              </div>
+            </div>
+            
+            <div class="slideshow-controls">
+              <div class="slideshow-nav">
+                <button class="slideshow-btn prev-btn">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slideshow-btn next-btn">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              
+              <div class="slideshow-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">8</span>
+              </div>
+              
+              <div class="slideshow-dots" id="slideshow-dots">
+                <!-- Dots will be generated by JavaScript -->
+              </div>
             </div>
           </div>
         </div>
@@ -736,4 +988,152 @@
         
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          window.
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Brand Identity Slideshow Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      const currentSlideEl = document.getElementById('current-slide');
+      const totalSlidesEl = document.getElementById('total-slides');
+      const slideshowDots = document.getElementById('slideshow-dots');
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      
+      let currentSlide = 0;
+      let filteredSlides = Array.from(slides);
+      let activeCategory = 'all';
+      
+      // Initialize slideshow
+      function initSlideshow() {
+        // Set total slides
+        totalSlidesEl.textContent = filteredSlides.length;
+        
+        // Create dots
+        slideshowDots.innerHTML = '';
+        filteredSlides.forEach((_, index) => {
+          const dot = document.createElement('div');
+          dot.classList.add('dot');
+          if (index === currentSlide) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(index));
+          slideshowDots.appendChild(dot);
+        });
+        
+        updateSlideshow();
+      }
+      
+      // Update slideshow display
+      function updateSlideshow() {
+        // Hide all slides
+        slides.forEach(slide => {
+          slide.classList.remove('active');
+        });
+        
+        // Show current slide
+        if (filteredSlides[currentSlide]) {
+          filteredSlides[currentSlide].classList.add('active');
+        }
+        
+        // Update current slide counter
+        currentSlideEl.textContent = currentSlide + 1;
+        
+        // Update dots
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+      
+      // Go to specific slide
+      function goToSlide(index) {
+        if (index >= 0 && index < filteredSlides.length) {
+          currentSlide = index;
+          updateSlideshow();
+        }
+      }
+      
+      // Next slide
+      function nextSlide() {
+        if (currentSlide < filteredSlides.length - 1) {
+          currentSlide++;
+        } else {
+          currentSlide = 0; // Loop back to first slide
+        }
+        updateSlideshow();
+      }
+      
+      // Previous slide
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+        } else {
+          currentSlide = filteredSlides.length - 1; // Loop to last slide
+        }
+        updateSlideshow();
+      }
+      
+      // Filter slides by category
+      function filterSlides(category) {
+        activeCategory = category;
+        currentSlide = 0; // Reset to first slide
+        
+        if (category === 'all') {
+          filteredSlides = Array.from(slides);
+        } else {
+          filteredSlides = Array.from(slides).filter(slide => 
+            slide.getAttribute('data-category') === category
+          );
+        }
+        
+        // Update category buttons
+        categoryBtns.forEach(btn => {
+          if (btn.getAttribute('data-category') === category) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+        
+        initSlideshow();
+      }
+      
+      // Event listeners
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+      
+      // Category filter buttons
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const category = btn.getAttribute('data-category');
+          filterSlides(category);
+        });
+      });
+      
+      // Auto-advance slideshow every 5 seconds
+      let slideshowInterval = setInterval(nextSlide, 5000);
+      
+      // Pause auto-advance on hover
+      const slideshowContainer = document.getElementById('slideshow-container');
+      slideshowContainer.addEventListener('mouseenter', () => {
+        clearInterval(slideshowInterval);
+      });
+      
+      slideshowContainer.addEventListener('mouseleave', () => {
+        slideshowInterval = setInterval(nextSlide, 5000);
+      });
+      
+      // Initialize slideshow
+      initSlideshow();
+    });
+  </script>
+</body>
+</html>
